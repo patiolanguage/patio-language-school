@@ -1,3 +1,11 @@
 .DS_Store
 Thumbs.db
 .claude/
+
+# Cloudflare Wrangler local state (contains account id) and build artifacts
+.wrangler/
+dist/
+patio-site.zip
+
+# Local font-comparison scratch page
+font-preview.html

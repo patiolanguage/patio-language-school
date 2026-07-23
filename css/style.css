@@ -8,9 +8,9 @@
   --cream: #FBF6EE;
   --max-width: 1120px;
 
-  /* Duke Fill is a licensed display font (see notes in README) — Stardos Stencil
-     is used here as a free stand-in with a similar chunky stencil feel. */
-  --font-headline: 'Stardos Stencil', 'Arial Black', sans-serif;
+  /* Headlines: DM Serif Display (elegant editorial serif). The brand's original
+     Duke Fill is a licensed font — swap it in here if/when a web license is bought. */
+  --font-headline: 'DM Serif Display', Georgia, 'Times New Roman', serif;
   --font-body: 'Barlow', 'Segoe UI', sans-serif;
 }
 
@@ -28,8 +28,8 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-headline);
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-weight: 400; /* DM Serif Display ships at 400; it's already heavy */
+  letter-spacing: 0;
   margin: 0 0 0.5em;
   color: var(--chocolate);
 }
