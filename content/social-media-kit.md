@@ -4,23 +4,23 @@
 
 **Instagram bio** (150 char limit)
 ```
-Patio Language School 🍊
-Language school & cultural community · Lagos, Portugal
-Learn European Portuguese through conversation & culture
+Patio Language School
+Language school & cultural community · Lagos, Portugal 🇵🇹
+Learn European Portuguese
 👇 Say olá · patiolanguage.pt
 ```
 
 **Facebook "About / Bio" (short)**
 ```
-A language school and cultural community in Lagos, Portugal — a relaxed place
-to gather, learn European Portuguese, and get to know the culture behind it.
-Learn through conversation, at your own pace. Everyone welcome.
+A language school and cultural community in Lagos, Portugal 🇵🇹 — a relaxed
+place to gather, learn European Portuguese, and get to know the culture behind
+it. Learn through conversation, at your own pace. Everyone welcome.
 ```
 
 **Facebook "About" (long/detailed page description)**
 ```
 Patio Language School is a language school and cultural community in Lagos,
-Portugal — a relaxed place to gather, learn, and connect.
+Portugal 🇵🇹 — a relaxed place to gather, learn, and connect.
 
 The idea is simple: like a good patio, it's an easy place to sit, talk, and
 feel at home. You learn European Portuguese through conversation rather than
