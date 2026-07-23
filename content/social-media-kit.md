@@ -5,29 +5,33 @@
 **Instagram bio** (150 char limit)
 ```
 Patio Language School 🍊
-European Portuguese in Lagos, Portugal
-Private • Group • Cultural outings
-👇 Book a class / say olá
-patiolanguage.pt
+Language school & cultural community · Lagos, Portugal
+Learn European Portuguese through conversation & culture
+👇 Say olá · patiolanguage.pt
 ```
 
 **Facebook "About / Bio" (short)**
 ```
-European Portuguese lessons in Lagos, Portugal — private and small-group
-classes, plus cultural workshops, city outings, and talks. Learn the language
-the way it's actually spoken: over coffee, in conversation, out in the city.
+A language school and cultural community in Lagos, Portugal — a relaxed place
+to gather, learn European Portuguese, and get to know the culture behind it.
+Learn through conversation, at your own pace. Everyone welcome.
 ```
 
 **Facebook "About" (long/detailed page description)**
 ```
-Patio Language School teaches European Portuguese to adults in Lagos,
-Portugal. We offer private lessons, small group classes, and cultural
-workshops, city outings, and talks — because learning a language means
-learning the culture around it too. Whether you've just moved to the
-Algarve or you've been dreaming of Portugal for years, come learn on
-the patio.
+Patio Language School is a language school and cultural community in Lagos,
+Portugal — a relaxed place to gather, learn, and connect.
 
-📍 Lagos, Algarve, Portugal
+The idea is simple: like a good patio, it's an easy place to sit, talk, and
+feel at home. You learn European Portuguese through conversation rather than
+pressure, and get to know the customs, heritage, and everyday culture of
+Portugal along the way.
+
+Whether you're 28 or 78, new to Portugal or years in, you'll find a warm,
+welcoming space to learn at your own pace — among people who make it
+enjoyable.
+
+📍 Lagos, Portugal
 ✉️ patiolanguage@gmail.com
 📱 WhatsApp +351 928 129 560
 ```
