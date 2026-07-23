@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Patio Language School</title>
+<meta name="description" content="Get in touch with Patio Language School in Lagos, Portugal.">
+<link rel="icon" href="assets/img/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Stardos+Stencil:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <img src="assets/img/Patio-Language-School-Logo-Color.png" alt="Patio Language School">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:40px;">
+  <div class="container" style="grid-template-columns:1fr;">
+    <div>
+      <span class="eyebrow">Get in Touch</span>
+      <h1>Let's find the right fit.</h1>
+      <p class="lede">Questions about classes, pricing, or the next cultural outing? Send a message, WhatsApp, or email directly — whichever's easiest.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container contact-grid">
+    <div>
+      <h2>Send a message</h2>
+      <!--
+        Wired for Netlify Forms: deploying this site on Netlify will detect
+        this form automatically (no backend needed). If hosting elsewhere,
+        swap the form action for a service like Formspree instead.
+      -->
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div>
+          <label for="interest">I'm interested in</label>
+          <select id="interest" name="interest">
+            <option>Private lessons</option>
+            <option>Small group classes</option>
+            <option>Cultural workshops &amp; outings</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div>
+      <h2>Direct contact</h2>
+      <div class="contact-detail">
+        <span class="icon">&#9993;</span>
+        <div><strong>Email</strong><br><a href="mailto:patiolanguage@gmail.com">patiolanguage@gmail.com</a></div>
+      </div>
+      <div class="contact-detail">
+        <span class="icon">&#128241;</span>
+        <div><strong>WhatsApp</strong><br><a href="https://wa.me/351928129560">+351 928 129 560</a></div>
+      </div>
+      <div class="contact-detail">
+        <span class="icon">&#128205;</span>
+        <div><strong>Location</strong><br>Lagos, Algarve, Portugal</div>
+      </div>
+      <div class="contact-detail">
+        <span class="icon">&#128247;</span>
+        <div><strong>Instagram &amp; Facebook</strong><br>
+          <a href="https://instagram.com/patiolanguage">@patiolanguage</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/img/Patio-Language-School-Logo-White.png" alt="Patio Language School">
+        <p>European Portuguese lessons and cultural experiences in Lagos, Portugal.</p>
+      </div>
+      <div>
+        <h4 style="color:#F3ECDD;">Contact</h4>
+        <p>Lagos, Algarve, Portugal<br>
+        <a href="mailto:patiolanguage@gmail.com">patiolanguage@gmail.com</a><br>
+        <a href="https://wa.me/351928129560">WhatsApp +351 928 129 560</a></p>
+      </div>
+      <div>
+        <h4 style="color:#F3ECDD;">Follow</h4>
+        <div class="social-icons">
+          <a href="https://instagram.com/patiolanguage" aria-label="Instagram">IG</a>
+          <a href="https://facebook.com/patiolanguage" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Patio Language School</span>
+      <span>Lagos, Portugal</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
