@@ -8,7 +8,7 @@ Patio Language School 🍊
 European Portuguese in Lagos, Portugal
 Private • Group • Cultural outings
 👇 Book a class / say olá
-patiolanguageschool.pt
+patiolanguage.pt
 ```
 
 **Facebook "About / Bio" (short)**
@@ -89,6 +89,6 @@ a textbook. Spots are limited — send a message to join.
 `#EuropeanPortuguese #PortugueseLanguage #LearnPortuguese #LagosPortugal #Algarve #ExpatLife #LanguageSchool #PatioLanguageSchool`
 
 ## Notes / TODO for you
-- Swap `patiolanguageschool.pt` into the bio once the site is live there (currently just a folder on your computer — see the main handoff notes for hosting steps).
+- Swap `patiolanguage.pt` into the bio once the site is live there (currently just a folder on your computer — see the main handoff notes for hosting steps).
 - Set Instagram/Facebook to **Business** account type so you get the WhatsApp/email contact buttons and insights.
 - Once you have 3–4 real photos (you, a class, Lagos streets/cafés), swap them in for the placeholder ideas above — real photos will outperform graphics.

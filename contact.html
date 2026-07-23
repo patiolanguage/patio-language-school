@@ -45,12 +45,11 @@
     <div>
       <h2>Send a message</h2>
       <!--
-        Wired for Netlify Forms: deploying this site on Netlify will detect
-        this form automatically (no backend needed). If hosting elsewhere,
-        swap the form action for a service like Formspree instead.
+        Wired for Formspree (free, no backend/server needed): sign up at
+        formspree.io, create a form, and replace YOUR_FORM_ID below with the
+        ID it gives you. Works on any static host, including Cloudflare Pages.
       -->
-      <form name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact">
+      <form name="contact" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
         <div>
           <label for="name">Name</label>
           <input id="name" name="name" type="text" required>
