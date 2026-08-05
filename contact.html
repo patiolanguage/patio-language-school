@@ -11,6 +11,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style>
+  /* Contact page: keep the form above the fold */
+  .contact-hero { padding: 28px 0 4px; }
+  .contact-hero h1 { font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 8px; }
+  .contact-hero .lede { font-size: 1rem; max-width: 68ch; margin-bottom: 0; }
+  .contact-section { padding: 20px 0 40px; }
+  .contact-section h2 { font-size: 1.5rem; margin-bottom: 12px; }
+  .contact-section form { gap: 12px; }
+  .contact-section textarea { min-height: 84px; }
+  .contact-section input, .contact-section textarea, .contact-section select { padding: 10px 12px; }
+</style>
 </head>
 <body>
 
@@ -30,17 +41,17 @@
   </div>
 </header>
 
-<section class="hero" style="padding-bottom:40px;">
+<section class="hero contact-hero">
   <div class="container" style="grid-template-columns:1fr;">
     <div>
       <span class="eyebrow">Get in Touch</span>
       <h1>Let's find the right fit.</h1>
-      <p class="lede">Questions about classes, pricing, or the next cultural outing? Send a message, WhatsApp, or email directly — whichever's easiest.</p>
+      <p class="lede">Questions about classes, pricing, or your current level of Portuguese? Message us here, contact us through WhatsApp, or email directly. Whichever works best for you.</p>
     </div>
   </div>
 </section>
 
-<section>
+<section class="contact-section">
   <div class="container contact-grid">
     <div>
       <h2>Send a message</h2>
