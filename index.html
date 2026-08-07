@@ -9,42 +9,55 @@
 <link rel="apple-touch-icon" href="assets/img/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=3">
+<style>
+  /* offset anchor scrolling for the sticky header */
+  section[id] { scroll-margin-top: 84px; }
+  /* map */
+  .map-frame {
+    width: 100%; height: 380px; border: 0; display: block;
+    border-radius: 14px; box-shadow: 0 2px 12px rgba(43,31,24,0.10); margin-top: 24px;
+  }
+  .end-cta .container { text-align: center; }
+  .end-cta p { max-width: 54ch; margin-left: auto; margin-right: auto; }
+</style>
 </head>
 <body>
 
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="index.html">
+    <a class="brand" href="#top">
       <img src="assets/img/Patio-Language-School-Logo-Color.png" alt="Patio Language School">
     </a>
     <nav>
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="classes.html">Classes</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<section class="hero">
+<!-- HERO + top call to action -->
+<section class="hero" id="top">
   <div class="container">
     <div>
       <span class="eyebrow">Language school &amp; cultural community · Lagos, Portugal</span>
       <h1>Portuguese, learned the way it's actually spoken.</h1>
       <p class="lede">Learn European Portuguese, and get to know the culture behind it. Everyone welcome.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="contact.html">Book a Free Chat</a>
-        <a class="btn btn-secondary" href="classes.html">See Classes &amp; Pricing</a>
+        <a class="btn btn-primary" href="#contact">Book a Free Chat</a>
+        <a class="btn btn-secondary" href="#classes">See Classes &amp; Pricing</a>
       </div>
     </div>
     <img class="hero-mark" src="assets/img/Patio-Language-School-Logo-Color.png" alt="">
   </div>
 </section>
 
+<!-- OFFERINGS -->
 <section>
   <div class="container">
     <div class="section-intro">
@@ -68,12 +81,12 @@
   </div>
 </section>
 
+<!-- BRAND MOMENT -->
 <section class="section-dark">
   <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
     <div>
       <h2>Rooted in Lagos, built for real life</h2>
       <p>Whether you're 28 or 78, just arrived in the Algarve or years in, split between here and home or simply in love with Portugal — you'll find a place at the table. We meet you where you are, in the city that inspired the school.</p>
-      <a class="btn btn-primary" href="about.html">More about our approach</a>
     </div>
     <div>
       <p style="font-family: var(--font-headline); font-size:1.6rem; color:var(--praia);">"Café, conversa, e um bocadinho de gramática — nessa ordem."</p>
@@ -82,7 +95,156 @@
   </div>
 </section>
 
-<footer class="site-footer" id="contact">
+<!-- ABOUT + FOUNDERS -->
+<section class="section-alt" id="about">
+  <div class="container">
+    <span class="eyebrow">About Us</span>
+    <h2>A language and culture space in Lagos.</h2>
+    <div class="section-intro">
+      <p>Patio Language School was created to bring people together through meaningful learning and shared experiences. Reading, writing, listening, and speaking are the foundations of language learning, but we believe language comes alive through conversation, culture, and community.</p>
+      <p>Our patio is more than a name. It is the idea at the heart of everything we do. A patio is a natural meeting spot, open and unhurried, where people gather and share a coffee, a story, and a laugh. We wanted to build exactly that, a warm, welcoming space where you can learn Portuguese and step into Portuguese culture without fear or hesitation.</p>
+    </div>
+
+    <span class="eyebrow" style="margin-top:24px;">Meet the Founders</span>
+    <h3 style="font-size:1.8rem; margin-bottom:10px;">Built by two people who understand what it's like to live abroad.</h3>
+    <p class="section-intro">Patio Language School was founded by Sofia Nabais and Claire Lehto, who bring together their academic background and real-world experience of learning a new language and building a life in a different culture.</p>
+
+    <div class="founders">
+      <div class="founder-card">
+        <div class="founder-head">
+          <img class="founder-avatar" src="assets/img/founder-sofia.png" alt="Sofia Nabais">
+          <div>
+            <p class="founder-name">Sofia Nabais</p>
+            <div class="founder-role">Co-Founder &amp; Director of Studies</div>
+          </div>
+        </div>
+        <p>Sofia leads Patio's academic programmes, designing courses that are practical, engaging, and rooted in real-life Portuguese. She holds a degree in Mathematics and is certified in pedagogical skills, with many years of teaching experience. Sofia lived in Barcelona and Frankfurt from 2014 to 2023, an experience that gave her a deep, personal understanding of what it takes to master the language of your host country. Since returning to Portugal in 2023, she has dedicated herself to teaching European Portuguese to foreign residents and visitors, drawing on her own experience abroad to help students navigate learning a new language and find their place in Portuguese culture.</p>
+      </div>
+
+      <div class="founder-card">
+        <div class="founder-head">
+          <img class="founder-avatar" src="assets/img/founder-claire.png" alt="Claire Lehto">
+          <div>
+            <p class="founder-name">Claire Lehto</p>
+            <div class="founder-role">Co-Founder &amp; Managing Director</div>
+          </div>
+        </div>
+        <p>Claire leads operations and the overall student experience at Patio, making sure everything feels welcoming and organized. She holds a BA in Cultural Geography from the University of Texas at Austin and a Master of Public Administration from Bowie State University. Having lived in five countries, Claire's path has taken her from serving Girl Scout communities in Alaska, to teaching English online to children in China, to leading educational programmes in US National Parks. That curiosity and cultural fluency now shape Patio's programming and community.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASSES & PRICING -->
+<section id="classes">
+  <div class="container">
+    <span class="eyebrow">Classes &amp; Pricing</span>
+    <h2>Pick the format that fits your life.</h2>
+    <p class="section-intro">Drop in for a single session, or commit to a package for a better rate and steadier progress. Every format is built around real conversation, not just drills.</p>
+
+    <div class="price-table">
+      <div class="price-card">
+        <h3>Private Lessons</h3>
+        <span class="amount">&euro;45<span style="font-size:1rem; color:var(--galao);">/hour</span></span>
+        <p>One-on-one, fully tailored to your goals and pace.</p>
+      </div>
+      <div class="price-card">
+        <h3>Small Group Classes</h3>
+        <span class="amount">&euro;11<span style="font-size:1rem; color:var(--galao);">/hour, per person</span></span>
+        <p>Small groups of fellow learners — more conversation practice for less.</p>
+      </div>
+      <div class="price-card">
+        <h3>Cultural Gatherings &amp; Outings</h3>
+        <span class="amount">Ask for dates</span>
+        <p>City walks, market visits, and get-togethers — see the current schedule on Instagram or just get in touch.</p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      Drop-in sessions are always welcome — or ask about multi-class packages for a better per-lesson rate if you're planning to learn regularly.
+    </div>
+  </div>
+</section>
+
+<!-- END call to action -->
+<section class="section-dark end-cta">
+  <div class="container">
+    <h2>Ready to pull up a chair?</h2>
+    <p>Send a message and we'll figure out the right fit for you — private lessons, a small group, or your first cultural gathering. No pressure, just a friendly chat to get started.</p>
+    <div class="btn-row" style="justify-content:center;">
+      <a class="btn btn-primary" href="#contact">Book a Free Chat</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <span class="eyebrow">Get in Touch</span>
+    <h2>Let's find the right fit.</h2>
+    <p class="section-intro">Questions about classes, pricing, or your current level of Portuguese? Message us here, contact us through WhatsApp, or email directly. Whichever works best for you.</p>
+
+    <div class="contact-grid">
+      <div>
+        <!-- Formspree form; submissions go to patiolanguage@gmail.com -->
+        <form name="contact" method="POST" action="https://formspree.io/f/xlgqpogz">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div>
+            <label for="interest">I'm interested in</label>
+            <select id="interest" name="interest">
+              <option>Private lessons</option>
+              <option>Small group classes</option>
+              <option>Cultural gatherings &amp; outings</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <div>
+        <div class="contact-detail">
+          <span class="icon">&#9993;</span>
+          <div><strong>Email</strong><br><a href="mailto:patiolanguage@gmail.com">patiolanguage@gmail.com</a></div>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">&#128241;</span>
+          <div><strong>WhatsApp</strong><br><a href="https://wa.me/351928129560">+351 928 129 560</a></div>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">&#128205;</span>
+          <div><strong>Location</strong><br>Praça do Poder Local, Lote 14, Loja C<br>8600-524 Lagos, Portugal</div>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">&#128247;</span>
+          <div><strong>Instagram &amp; Facebook</strong><br>
+            <a href="https://instagram.com/patiolanguage">@patiolanguage</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <iframe
+      class="map-frame"
+      title="Patio Language School location on Google Maps"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://maps.google.com/maps?q=37.09331275002373,-8.679635260631711&z=17&output=embed"></iframe>
+  </div>
+</section>
+
+<footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div>
