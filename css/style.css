@@ -189,8 +189,19 @@ section { padding: 64px 0; }
   gap: 28px;
 }
 
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
 @media (max-width: 860px) {
   .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .grid-4 { grid-template-columns: 1fr; }
 }
 
 .card {
@@ -203,6 +214,7 @@ section { padding: 64px 0; }
 
 .card:nth-child(2) { border-top-color: var(--mar); }
 .card:nth-child(3) { border-top-color: var(--praia); }
+.card:nth-child(4) { border-top-color: var(--galao); }
 
 .card h3 { margin-bottom: 10px; }
 .card p { color: var(--galao); margin-bottom: 0; }
@@ -395,3 +407,121 @@ textarea { resize: vertical; min-height: 120px; }
 }
 .founder-card:nth-child(2) .founder-role { color: var(--mar); }
 .founder-card p { color: var(--galao); margin-bottom: 0; }
+
+/* Hero newsletter signup (compact, top of page) */
+.hero-signup { margin-top: 24px; max-width: 440px; }
+.hero-signup-label {
+  font-weight: 700;
+  color: var(--chocolate);
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+#hero-signup .ml-form-embedContent { display: none !important; }
+#hero-signup .ml-form-embedWrapper {
+  background: transparent !important;
+  border: none !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+#hero-signup .ml-form-embedBody { padding: 0 !important; border: none !important; }
+#hero-signup .ml-form-formContent { margin: 0 !important; }
+#hero-signup .ml-form-fieldRow, #hero-signup .ml-field-group { margin: 0 !important; }
+#hero-signup#hero-signup .ml-form-embedBody input.form-control {
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+  color: var(--chocolate) !important;
+  border-radius: 999px !important;
+  border: 2px solid rgba(43,31,24,0.15) !important;
+  padding: 12px 18px !important;
+  height: auto !important;
+  width: 100% !important;
+}
+#hero-signup#hero-signup .ml-form-embedBody input.form-control:focus {
+  border-color: var(--terracota) !important;
+}
+#hero-signup .ml-form-embedSubmit { margin-top: 10px !important; }
+#hero-signup#hero-signup .ml-form-embedSubmit button.primary,
+#hero-signup#hero-signup .ml-form-embedSubmit button.primary:hover {
+  background: var(--terracota) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 999px !important;
+  font-family: var(--font-body) !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  padding: 12px 26px !important;
+}
+#hero-signup#hero-signup .ml-form-embedSubmit button.loading {
+  background: var(--terracota) !important;
+  border-radius: 999px !important;
+}
+#hero-signup .ml-form-successBody { color: var(--galao) !important; }
+#hero-signup .ml-form-successBody h4 {
+  font-family: var(--font-headline) !important;
+  color: var(--chocolate) !important;
+}
+
+/* Newsletter signup */
+.newsletter .newsletter-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(43,31,24,0.06);
+  border-top: 4px solid var(--praia);
+}
+.newsletter-sub {
+  color: var(--galao);
+  max-width: 52ch;
+  margin: 0 auto 18px;
+}
+
+/* Brand overrides for the embedded MailerLite form.
+   Uses #newsletter (ID) so it outranks MailerLite's runtime-injected !important rules. */
+#newsletter .ml-form-embedContent { display: none !important; } /* we use our own heading */
+#newsletter .ml-form-embedWrapper {
+  background: transparent !important;
+  border: none !important;
+  max-width: 480px !important;
+  margin: 0 auto !important;
+}
+#newsletter .ml-form-embedBody { padding: 0 !important; border: none !important; }
+#newsletter .ml-form-formContent { margin: 0 !important; }
+/* #newsletter#newsletter = double-ID specificity hack: 2 IDs beats MailerLite's
+   single-ID (#mlb2-...) !important rules no matter how many classes they chain. */
+#newsletter#newsletter .ml-form-embedBody input.form-control {
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+  color: var(--chocolate) !important;
+  border-radius: 999px !important;
+  border: 2px solid rgba(43,31,24,0.15) !important;
+  padding: 12px 18px !important;
+  height: auto !important;
+}
+#newsletter#newsletter .ml-form-embedBody input.form-control:focus {
+  border-color: var(--terracota) !important;
+}
+#newsletter .ml-form-embedSubmit { margin-top: 14px !important; }
+#newsletter#newsletter .ml-form-embedSubmit button.primary,
+#newsletter#newsletter .ml-form-embedSubmit button.primary:hover {
+  background-color: var(--terracota) !important;
+  background: var(--terracota) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 999px !important;
+  font-family: var(--font-body) !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  padding: 12px 26px !important;
+}
+#newsletter#newsletter .ml-form-embedSubmit button.loading {
+  background: var(--terracota) !important;
+  border-radius: 999px !important;
+}
+#newsletter .ml-form-successBody { color: var(--galao) !important; }
+#newsletter .ml-form-successBody h4 {
+  font-family: var(--font-headline) !important;
+  color: var(--chocolate) !important;
+}
