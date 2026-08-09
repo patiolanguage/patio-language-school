@@ -19,15 +19,25 @@
   }
   .end-cta .container { text-align: center; }
   .end-cta p { max-width: 56ch; margin-left: auto; margin-right: auto; }
-  /* testimonial */
-  .testimonial-section .container { max-width: 780px; text-align: center; }
+  /* testimonials */
+  .testimonial-section .container { max-width: 980px; text-align: center; }
+  .testimonial-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+    margin-top: 24px; text-align: left;
+  }
+  @media (max-width: 760px) { .testimonial-grid { grid-template-columns: 1fr; } }
+  .testimonial-card {
+    background: #fff; border-radius: 16px; padding: 30px 32px; margin: 0;
+    box-shadow: 0 2px 12px rgba(43,31,24,0.06); border-top: 4px solid var(--praia);
+    display: flex; flex-direction: column;
+  }
   .testimonial {
-    font-size: 1.5rem; line-height: 1.5; color: var(--chocolate);
-    margin: 10px auto 20px; font-style: italic;
+    font-size: 1.18rem; line-height: 1.5; color: var(--chocolate);
+    margin: 0 0 18px; font-style: italic;
   }
   .testimonial-name {
     font-weight: 700; color: var(--terracota); letter-spacing: 0.05em;
-    text-transform: uppercase; font-size: 0.9rem; margin: 0;
+    text-transform: uppercase; font-size: 0.9rem; margin: auto 0 0;
   }
 </style>
 </head>
@@ -159,8 +169,16 @@
 <section class="testimonial-section">
   <div class="container">
     <span class="eyebrow">What students say</span>
-    <blockquote class="testimonial">"Learning a new language can be overwhelming. Sofia makes it easier. She is a knowledgeable and patient teacher, who adapts her lessons to what the class needs in the moment. She truly enjoys teaching and seeing her students make progress."</blockquote>
-    <p class="testimonial-name">Nancy Lee</p>
+    <div class="testimonial-grid">
+      <blockquote class="testimonial-card">
+        <p class="testimonial">"Learning a new language can be overwhelming. Sofia makes it easier. She is a knowledgeable and patient teacher, who adapts her lessons to what the class needs in the moment. She truly enjoys teaching and seeing her students make progress."</p>
+        <p class="testimonial-name">Nancy Lee</p>
+      </blockquote>
+      <blockquote class="testimonial-card">
+        <p class="testimonial">"My wife and I have completed 4 months of private lessons with Sofia Nabais and we would recommend her. She uses formal, but relaxed professional teaching methodology and speaks excellent English."</p>
+        <p class="testimonial-name">Simon Mahon</p>
+      </blockquote>
+    </div>
   </div>
 </section>
 
