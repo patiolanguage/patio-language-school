@@ -38,6 +38,20 @@
     font-weight: 700; color: var(--terracota); letter-spacing: 0.05em;
     text-transform: uppercase; font-size: 0.9rem; margin: auto 0 0;
   }
+  /* photos */
+  .photo-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 16px; margin: 36px auto 0; max-width: 760px;
+  }
+  .photo-row img {
+    width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center;
+    border-radius: 14px; box-shadow: 0 4px 16px rgba(43,31,24,0.10); display: block;
+  }
+  .photo-duo { max-width: 600px; }
+  .photo-feature {
+    display: block; width: 100%; max-width: 300px; border-radius: 16px;
+    margin: 28px auto 4px; box-shadow: 0 6px 20px rgba(43,31,24,0.14);
+  }
 </style>
 </head>
 <body>
@@ -107,6 +121,11 @@
     <div class="note-box">
       Our first classes begin in <strong>September 2026</strong>. We're finalising the schedule and details now. <a href="#contact">Get in touch</a> to register your interest, and we'll share everything as soon as it's ready.
     </div>
+    <div class="photo-row">
+      <img src="assets/img/class-group.jpg" alt="A small Portuguese class around the table at Patio Language School" loading="lazy">
+      <img src="assets/img/class-conversation.jpg" alt="Sofia teaching a student, sharing a laugh" loading="lazy">
+      <img src="assets/img/class-standing.jpg" alt="Sofia leading a small group lesson" loading="lazy">
+    </div>
   </div>
 </section>
 
@@ -134,14 +153,21 @@
       <p>Our patio is more than a name. It is the idea at the heart of everything we do. A patio is a natural meeting spot, open and unhurried, where people gather and share a coffee, a story, and a laugh. We wanted to build exactly that, a warm, welcoming space where you can learn Portuguese and step into Portuguese culture without fear or hesitation.</p>
     </div>
 
+    <div class="photo-row photo-duo">
+      <img src="assets/img/space-office.jpg" alt="A bright, calm study space at Patio Language School" loading="lazy">
+      <img src="assets/img/space-classroom.jpg" alt="The classroom at Patio Language School in Lagos" loading="lazy">
+    </div>
+
     <span class="eyebrow" style="margin-top:24px;">Meet the Founders</span>
     <h3 style="font-size:1.8rem; margin-bottom:10px;">Built by two people who understand what it's like to live abroad.</h3>
     <p class="section-intro">Patio Language School was founded by Sofia Nabais and Claire Lehto, who bring together their academic background and real-world experience of learning a new language and building a life in a different culture.</p>
 
+    <img class="photo-feature" src="assets/img/founders-together.jpg" alt="Claire and Sofia at Patio Language School in Lagos" loading="lazy">
+
     <div class="founders">
       <div class="founder-card">
         <div class="founder-head">
-          <img class="founder-avatar" src="assets/img/founder-sofia.png" alt="Sofia Nabais">
+          <img class="founder-avatar" src="assets/img/founder-sofia.jpg" alt="Sofia Nabais">
           <div>
             <p class="founder-name">Sofia Nabais</p>
             <div class="founder-role">Co-Founder &amp; Director of Studies</div>
