@@ -20,19 +20,18 @@
   .end-cta .container { text-align: center; }
   .end-cta p { max-width: 56ch; margin-left: auto; margin-right: auto; }
   /* testimonials */
-  .testimonial-section .container { max-width: 980px; text-align: center; }
+  .testimonial-section .container { max-width: 1120px; text-align: center; }
   .testimonial-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;
     margin-top: 24px; text-align: left;
   }
-  @media (max-width: 760px) { .testimonial-grid { grid-template-columns: 1fr; } }
   .testimonial-card {
-    background: #fff; border-radius: 16px; padding: 30px 32px; margin: 0;
+    background: #fff; border-radius: 16px; padding: 28px 30px; margin: 0;
     box-shadow: 0 2px 12px rgba(43,31,24,0.06); border-top: 4px solid var(--praia);
     display: flex; flex-direction: column;
   }
   .testimonial {
-    font-size: 1.18rem; line-height: 1.5; color: var(--chocolate);
+    font-size: 1.06rem; line-height: 1.5; color: var(--chocolate);
     margin: 0 0 18px; font-style: italic;
   }
   .testimonial-name {
@@ -177,6 +176,10 @@
       <blockquote class="testimonial-card">
         <p class="testimonial">"My wife and I have completed 4 months of private lessons with Sofia Nabais and we would recommend her. She uses formal, but relaxed professional teaching methodology and speaks excellent English."</p>
         <p class="testimonial-name">Simon Mahon</p>
+      </blockquote>
+      <blockquote class="testimonial-card">
+        <p class="testimonial">"Sofia represents everything that is great about Portugal. She is a kind and caring teacher who goes above and beyond to ensure her classes learn effectively. Her lessons are both enjoyable and fun, but also challenging! The perfect person to introduce you to learning Portuguese."</p>
+        <p class="testimonial-name">Alison and Bill Forder</p>
       </blockquote>
     </div>
   </div>
