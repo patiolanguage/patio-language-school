@@ -22,13 +22,18 @@
   /* testimonials */
   .testimonial-section .container { max-width: 1120px; text-align: center; }
   .testimonial-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;
-    margin-top: 24px; text-align: left;
+    display: flex; gap: 24px; margin-top: 24px; text-align: left;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; padding-bottom: 14px;
   }
+  .testimonial-grid::-webkit-scrollbar { height: 8px; }
+  .testimonial-grid::-webkit-scrollbar-thumb { background: rgba(43,31,24,0.18); border-radius: 4px; }
+  .testimonial-grid::-webkit-scrollbar-track { background: transparent; }
   .testimonial-card {
     background: #fff; border-radius: 16px; padding: 28px 30px; margin: 0;
     box-shadow: 0 2px 12px rgba(43,31,24,0.06); border-top: 4px solid var(--praia);
     display: flex; flex-direction: column;
+    flex: 0 0 340px; scroll-snap-align: start;
   }
   .testimonial {
     font-size: 1.06rem; line-height: 1.5; color: var(--chocolate);
@@ -52,6 +57,12 @@
     display: block; width: 100%; max-width: 300px; border-radius: 16px;
     margin: 28px auto 4px; box-shadow: 0 6px 20px rgba(43,31,24,0.14);
   }
+  /* language switch */
+  .nav-lang { display: inline-flex; align-items: center; gap: 4px; margin-left: 6px; }
+  .nav-lang a { padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 0.82rem;
+    letter-spacing: 0.04em; color: var(--galao); text-decoration: none; }
+  .nav-lang a.active { background: var(--terracota); color: #fff; }
+  .nav-lang a:not(.active):hover { color: var(--terracota); }
 </style>
 </head>
 <body>
@@ -206,6 +217,10 @@
       <blockquote class="testimonial-card">
         <p class="testimonial">"Sofia represents everything that is great about Portugal. She is a kind and caring teacher who goes above and beyond to ensure her classes learn effectively. Her lessons are both enjoyable and fun, but also challenging! The perfect person to introduce you to learning Portuguese."</p>
         <p class="testimonial-name">Alison and Bill Forder</p>
+      </blockquote>
+      <blockquote class="testimonial-card">
+        <p class="testimonial">"I greatly value my private lessons with Sofia Nabais. She works systematically with excellent materials, and explains tricky grammar with patience and clarity. She happily follows the questions that come up, and loves pointing you to the culture too: writers, architecture, regional food, concerts. Professional and deeply personable, she leaves me motivated after every lesson."</p>
+        <p class="testimonial-name">Wolfgang Helmut Pump &middot; Germany</p>
       </blockquote>
     </div>
   </div>
