@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patio Language School | Escola de Línguas e Comunidade Cultural em Lagos, Portugal</title>
+<meta name="description" content="Uma nova escola de línguas e comunidade cultural em Lagos, Portugal. Aprende português europeu através da conversa e da cultura. O horário do primeiro período já está definido para setembro de 2026 e as inscrições estão abertas.">
+<link rel="alternate" hreflang="en" href="https://patiolanguage.pt/">
+<link rel="alternate" hreflang="pt-PT" href="https://patiolanguage.pt/pt/">
+<link rel="alternate" hreflang="x-default" href="https://patiolanguage.pt/">
+<link rel="icon" href="../assets/img/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=9">
+<style>
+  section[id] { scroll-margin-top: 84px; }
+  .map-frame {
+    width: 100%; height: 380px; border: 0; display: block;
+    border-radius: 14px; box-shadow: 0 2px 12px rgba(43,31,24,0.10); margin-top: 24px;
+  }
+  .end-cta .container { text-align: center; }
+  .end-cta p { max-width: 56ch; margin-left: auto; margin-right: auto; }
+  /* testimonials */
+  .testimonial-section .container { max-width: 1120px; text-align: center; }
+  .testimonial-grid {
+    display: flex; gap: 24px; margin-top: 24px; text-align: left;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; padding-bottom: 14px;
+  }
+  .testimonial-grid::-webkit-scrollbar { height: 8px; }
+  .testimonial-grid::-webkit-scrollbar-thumb { background: rgba(43,31,24,0.18); border-radius: 4px; }
+  .testimonial-grid::-webkit-scrollbar-track { background: transparent; }
+  .testimonial-card {
+    background: #fff; border-radius: 16px; padding: 28px 30px; margin: 0;
+    box-shadow: 0 2px 12px rgba(43,31,24,0.06); border-top: 4px solid var(--praia);
+    display: flex; flex-direction: column;
+    flex: 0 0 340px; scroll-snap-align: start;
+  }
+  .testimonial {
+    font-size: 1.06rem; line-height: 1.5; color: var(--chocolate);
+    margin: 0 0 18px; font-style: italic;
+  }
+  .testimonial-name {
+    font-weight: 700; color: var(--terracota); letter-spacing: 0.05em;
+    text-transform: uppercase; font-size: 0.9rem; margin: auto 0 0;
+  }
+  /* photos */
+  .photo-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 16px; margin: 36px auto 0; max-width: 760px;
+  }
+  .photo-row img {
+    width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center;
+    border-radius: 14px; box-shadow: 0 4px 16px rgba(43,31,24,0.10); display: block;
+  }
+  .photo-duo { max-width: 600px; }
+  .photo-feature {
+    display: block; width: 100%; max-width: 300px; border-radius: 16px;
+    margin: 28px auto 4px; box-shadow: 0 6px 20px rgba(43,31,24,0.14);
+  }
+  /* language switch */
+  .nav-lang { display: inline-flex; align-items: center; gap: 4px; margin-left: 6px; }
+  .nav-lang a { padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 0.82rem;
+    letter-spacing: 0.04em; color: var(--galao); text-decoration: none; }
+  .nav-lang a.active { background: var(--terracota); color: #fff; }
+  .nav-lang a:not(.active):hover { color: var(--terracota); }
+  /* schedule */
+  .schedule-img {
+    display: block; width: 100%; max-width: 540px; margin: 30px auto 0;
+    border-radius: 16px; box-shadow: 0 6px 24px rgba(43,31,24,0.12);
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="#top">
+      <img src="../assets/img/Patio-Language-School-Logo-Color.png" alt="Patio Language School">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#top">Início</a></li>
+        <li><a href="#about">Sobre nós</a></li>
+        <li><a href="#classes">Aulas</a></li>
+        <li><a href="#schedule">Hor&aacute;rio</a></li>
+        <li><a href="#contact">Contactos</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+        <li class="nav-lang">
+          <a href="index.html" class="active" aria-current="true">PT</a>
+          <a href="../index.html">EN</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO + top call to action -->
+<section class="hero" id="top">
+  <div class="container">
+    <div>
+      <span class="eyebrow">Inscri&ccedil;&otilde;es abertas · Lagos, Portugal</span>
+      <h1>Aprende português tal como é falado em Portugal.</h1>
+      <p class="lede">Uma nova escola de línguas e comunidade cultural em Lagos. Aprende português europeu através da conversa, da cultura e do convívio. O horário do nosso primeiro período já está definido e as inscrições estão abertas para as aulas que começam a 21 de setembro de 2026.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#schedule">Vê o horário</a>
+        <a class="btn btn-secondary" href="#contact">Reserva o teu lugar</a>
+      </div>
+      <div class="hero-signup" id="hero-signup">
+        <p class="hero-signup-label">Ainda não te queres inscrever? Junta-te à newsletter para ficares a par:</p>
+        <div class="ml-embedded" data-form="XWTBKD"></div>
+      </div>
+    </div>
+    <img class="hero-mark" src="../assets/img/Patio-Language-School-Logo-Color.png" alt="">
+  </div>
+</section>
+
+<!-- CLASSES / WHAT WE OFFER -->
+<section id="classes">
+  <div class="container">
+    <span class="eyebrow">Aulas · a partir de setembro de 2026</span>
+    <div class="section-intro">
+      <h2>Não é uma sala de aula, é um pátio.</h2>
+      <p>Os exercícios de gramática só te levam até certo ponto. Na Patio Language School, vais aprender português tal como é falado: em conversa, à mesa de um café, entre amigos. Parte escola de línguas, parte comunidade cultural: o Pátio é um espaço acolhedor e caloroso em Lagos para aprender português europeu e descobrir a cultura que o rodeia, sem pressões e sem medo de errar.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card">
+        <h3>Aulas Particulares</h3>
+        <p>Sessões individuais feitas à tua medida: ao teu ritmo, com os teus objetivos e de acordo com a tua disponibilidade.</p>
+      </div>
+      <div class="card">
+        <h3>Aulas de Grupo</h3>
+        <p>Aprende entre colegas: mais conversa, mais convívio, mais diversão.</p>
+      </div>
+      <div class="card">
+        <h3>Conversação</h3>
+        <p>Sessões descontraídas e sem pressão, focadas na compreensão e expressão oral, com o objetivo de ganhar fluência e confiança para falar português no dia a dia.</p>
+      </div>
+      <div class="card">
+        <h3>Experiências Culturais</h3>
+        <p>Oficinas e eventos que dão vida à língua e que te ligam à cultura local, porque a cultura é metade da diversão.</p>
+      </div>
+    </div>
+    <div class="note-box">
+      O nosso primeiro período decorre de <strong>21 de setembro a 18 de dezembro de 2026</strong>, e as <strong>inscrições já estão abertas</strong>. Vê o <a href="#schedule">horário semanal completo</a> aqui em baixo e depois <a href="#contact">fala connosco</a>. Ajudamos-te a encontrar o teu nível.
+    </div>
+    <div class="photo-row">
+      <img src="../assets/img/class-group.jpg" alt="Uma pequena aula de português à volta da mesa na Patio Language School" loading="lazy">
+      <img src="../assets/img/class-conversation.jpg" alt="Sofia a ensinar uma aluna, partilhando uma gargalhada" loading="lazy">
+      <img src="../assets/img/class-standing.jpg" alt="Sofia a orientar uma aula em pequeno grupo" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="section-alt" id="schedule">
+  <div class="container">
+    <span class="eyebrow">Hor&aacute;rio Semanal · 1.&ordm; Per&iacute;odo</span>
+    <h2>O nosso primeiro período está definido, e as inscrições estão abertas.</h2>
+    <p class="section-intro">Isto é uma semana no Pátio, de <strong>21 de setembro a 18 de dezembro de 2026</strong>: aulas de grupo, conversação e oficinas temáticas em português europeu e, aulas particulares sob marcação. Não sabes em que nível estás? Fala connosco e descobrimos juntos.</p>
+    <img class="schedule-img" src="../assets/img/weekly-schedule-pt.png" alt="Horário semanal de aulas da Patio Language School para o período de setembro a dezembro de 2026, com aulas de grupo, conversação e oficinas temáticas ao longo da semana e os preços">
+    <div class="btn-row" style="justify-content:center;">
+      <a class="btn btn-primary" href="#contact">Reserva o teu lugar</a>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND MOMENT -->
+<section class="section-dark">
+  <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
+    <div>
+      <h2>Enraizada em Lagos, construída para a vida real</h2>
+      <p>Quer tenhas 28 ou 78 anos, chegado agora ao Algarve ou cá há anos, dividido entre este lugar e o teu país ou simplesmente apaixonado por Portugal, há sempre um lugar para ti à mesa. Encontramo-nos contigo onde estás, na cidade que inspirou esta escola.</p>
+    </div>
+    <div>
+      <p style="font-family: var(--font-headline); font-size:1.6rem; color:var(--praia); line-height:1.2;">"Um café, dois dedos de conversa e um bocadinho de gramática, por esta ordem."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT + FOUNDERS -->
+<section class="section-alt" id="about">
+  <div class="container">
+    <span class="eyebrow">Sobre Nós</span>
+    <h2>Um espaço de língua e cultura em Lagos.</h2>
+    <div class="section-intro">
+      <p>A Patio Language School nasceu do desejo de aproximar pessoas através de aprendizagens com significado e experiências partilhadas que ficam na memória. Ler, escrever, ouvir e falar são os pilares do ensino de qualquer idioma, mas acreditamos que a língua só ganha vida através da conversa, da cultura e da comunidade.</p>
+      <p>O nosso pátio é mais do que um nome. É a ideia que inspira tudo o que fazemos. Um pátio é um lugar de encontro natural, aberto e tranquilo, onde as pessoas chegam sem pressa, partilham um café, uma história e uma gargalhada. Foi isso mesmo que quisemos criar: um espaço acolhedor e convidativo onde possas aprender português e entrar na cultura portuguesa com tranquilidade, sem receios nem hesitações.</p>
+    </div>
+
+    <div class="photo-row photo-duo">
+      <img src="../assets/img/space-office.jpg" alt="Um espaço de estudo luminoso e tranquilo na Patio Language School" loading="lazy">
+      <img src="../assets/img/space-classroom.jpg" alt="A sala de aula da Patio Language School em Lagos" loading="lazy">
+    </div>
+
+    <span class="eyebrow" style="margin-top:24px;">Conheça as Fundadoras</span>
+    <h3 style="font-size:1.8rem; margin-bottom:10px;">Criada por duas pessoas que sabem o que é viver noutro país.</h3>
+    <p class="section-intro">A Patio Language School foi fundada por Sofia Nabais e Claire Lehto, que unem à sua formação académica a experiência real de aprender uma nova língua e construir uma vida numa cultura diferente. Juntas, transformaram esse caminho, feito de descobertas, desafios e muita partilha, num espaço onde outras pessoas podem encontrar o mesmo: acolhimento, confiança e uma nova forma de pertencer.</p>
+
+    <img class="photo-feature" src="../assets/img/founders-together.jpg" alt="Claire e Sofia na Patio Language School em Lagos" loading="lazy">
+
+    <div class="founders">
+      <div class="founder-card">
+        <div class="founder-head">
+          <img class="founder-avatar" src="../assets/img/founder-sofia.jpg" alt="Sofia Nabais">
+          <div>
+            <p class="founder-name">Sofia Nabais</p>
+            <div class="founder-role">Cofundadora e Diretora Pedagógica</div>
+          </div>
+        </div>
+        <p>Sofia lidera os programas académicos da Patio, criando cursos práticos, envolventes e enraizados no português do dia a dia. É licenciada em Matemática e possui certificação em competências pedagógicas, com muitos anos de experiência em ensino. Entre 2014 e 2023, Sofia viveu em Barcelona e Frankfurt, uma experiência que lhe deu uma compreensão profunda e pessoal do que é preciso para dominar a língua do país que nos acolhe. Desde que regressou a Portugal em 2023, dedica-se a ensinar português europeu a residentes estrangeiros e visitantes, apoiando-se na sua própria experiência no estrangeiro para ajudar os alunos a aprender uma nova língua e a encontrar o seu lugar na cultura portuguesa.</p>
+      </div>
+
+      <div class="founder-card">
+        <div class="founder-head">
+          <img class="founder-avatar" src="../assets/img/founder-claire.png" alt="Claire Lehto">
+          <div>
+            <p class="founder-name">Claire Lehto</p>
+            <div class="founder-role">Cofundadora e Diretora-Geral</div>
+          </div>
+        </div>
+        <p>Claire lidera as operações e a experiência dos alunos na Patio, garantindo que tudo é acolhedor e bem organizado. É licenciada em Geografia Cultural pela Universidade do Texas em Austin e tem um mestrado em Administração Pública pela Bowie State University. Tendo vivido em cinco países, o percurso de Claire levou-a de apoiar comunidades de escuteiros no Alasca, a ensinar inglês online a crianças na China, até liderar programas educativos em Parques Nacionais dos EUA. Essa curiosidade e fluência cultural moldam agora a programação e a comunidade da Patio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section">
+  <div class="container">
+    <span class="eyebrow">O que dizem os alunos</span>
+    <div class="testimonial-grid">
+      <blockquote class="testimonial-card">
+        <p class="testimonial">"Aprender uma nova língua pode ser assoberbante. A Sofia torna tudo mais fácil. É uma professora competente e paciente, que adapta as aulas ao que a turma precisa em cada momento. Gosta genuinamente de ensinar e de ver os alunos a progredir."</p>
+        <p class="testimonial-name">Nancy Lee</p>
+      </blockquote>
+      <blockquote class="testimonial-card">
+        <p class="testimonial">"Eu e a minha mulher completámos 4 meses de aulas individuais com a Sofia Nabais e recomendamo-la. Usa uma metodologia de ensino profissional, formal mas descontraída, e fala um inglês excelente."</p>
+        <p class="testimonial-name">Simon Mahon</p>
+      </blockquote>
+      <blockquote class="testimonial-card">
+        <p class="testimonial">"A Sofia representa tudo o que Portugal tem de melhor. É uma professora amável e atenciosa, que faz tudo para que as suas turmas aprendam de forma eficaz. As aulas são agradáveis e divertidas, mas também desafiantes! A pessoa perfeita para o iniciar na aprendizagem do português."</p>
+        <p class="testimonial-name">Alison e Bill Forder</p>
+      </blockquote>
+      <blockquote class="testimonial-card">
+        <p class="testimonial">"Valorizo imenso as minhas aulas individuais com a Sofia Nabais. Trabalha de forma sistemática, com ótimos materiais, e explica a gramática mais difícil com paciência e clareza. Segue de bom grado as perguntas que surgem e adora mostrar também a cultura: escritores, arquitetura, cozinha regional, concertos. Profissional e muito atenciosa, deixa-me motivado depois de cada aula."</p>
+        <p class="testimonial-name">Wolfgang Helmut Pump &middot; Alemanha</p>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- END call to action -->
+<section class="section-dark end-cta">
+  <div class="container">
+    <h2>O 1.º período começa a 21 de setembro de 2026</h2>
+    <p>O horário está definido e as inscrições estão abertas. Aulas de grupo, conversação e oficinas temáticas em português europeu, aqui mesmo em Lagos. Fala connosco e ajudamos-te a encontrar o teu nível e a garantir o teu lugar.</p>
+    <div class="btn-row" style="justify-content:center;">
+      <a class="btn btn-primary" href="#contact">Reserva o teu lugar</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <span class="eyebrow">Fala connosco</span>
+    <h2>Vem dizer olá.</h2>
+    <p class="section-intro">Queres reservar o teu lugar ou só tens curiosidade sobre aprender português connosco? Envia-nos uma mensagem aqui, por WhatsApp ou por email, como te der mais jeito, e ajudamos-te a encontrar o teu nível.</p>
+
+    <div class="contact-grid">
+      <div>
+        <!-- Formspree form; submissions go to patiolanguage@gmail.com -->
+        <form name="contact" method="POST" action="https://formspree.io/f/xlgqpogz">
+          <div>
+            <label for="name">Nome</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div>
+            <label for="interest">Tenho interesse em</label>
+            <select id="interest" name="interest">
+              <option>Aulas particulares</option>
+              <option>Aulas de grupo</option>
+              <option>Conversação</option>
+              <option>Experiências culturais</option>
+              <option>Só quero ser informado</option>
+              <option>Ainda não sei</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Enviar Mensagem</button>
+        </form>
+      </div>
+
+      <div>
+        <div class="contact-detail">
+          <span class="icon">&#9993;</span>
+          <div><strong>Email</strong><br><a href="mailto:patiolanguage@gmail.com">patiolanguage@gmail.com</a></div>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">&#128241;</span>
+          <div><strong>WhatsApp</strong><br><a href="https://wa.me/351928129560">+351 928 129 560</a></div>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">&#128205;</span>
+          <div><strong>Localização</strong><br>Praça do Poder Local, Lote 14, Loja C<br>8600-524 Lagos, Portugal</div>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">&#128247;</span>
+          <div><strong>Instagram &amp; Facebook</strong><br>
+            <a href="https://instagram.com/patiolanguage">@patiolanguage</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <iframe
+      class="map-frame"
+      title="Localização da Patio Language School no Google Maps"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://maps.google.com/maps?q=37.09331275002373,-8.679635260631711&z=17&output=embed"></iframe>
+  </div>
+</section>
+
+<!-- NEWSLETTER SIGNUP (MailerLite) -->
+<section class="section-alt newsletter" id="newsletter">
+  <div class="container">
+    <div class="newsletter-card">
+      <span class="eyebrow">Subscreve a nossa newsletter</span>
+      <h2>Fica a par de tudo.</h2>
+      <p class="newsletter-sub">Ainda não te queres inscrever? Deixa o teu email e mantemos-te a par do nosso período de setembro, assim como das novidades e eventos da nossa pequena comunidade em Lagos. Sem spam, e podes cancelar a subscrição quando quiseres.</p>
+      <div class="ml-embedded" data-form="XWTBKD"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="../assets/img/Patio-Language-School-Logo-White.png" alt="Patio Language School">
+        <p>Uma escola de línguas e comunidade cultural em Lagos, Portugal. Inscrições abertas para o nosso primeiro período, com início em setembro de 2026.</p>
+      </div>
+      <div>
+        <h4 style="color:#F3ECDD;">Contactos</h4>
+        <p>Lagos, Algarve, Portugal<br>
+        <a href="mailto:patiolanguage@gmail.com">patiolanguage@gmail.com</a><br>
+        <a href="https://wa.me/351928129560">WhatsApp +351 928 129 560</a></p>
+      </div>
+      <div>
+        <h4 style="color:#F3ECDD;">Segue-nos</h4>
+        <div class="social-icons">
+          <a href="https://instagram.com/patiolanguage" aria-label="Instagram">IG</a>
+          <a href="https://facebook.com/patiolanguage" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Patio Language School</span>
+      <span>Lagos, Portugal</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2565261');
+</script>
+<!-- End MailerLite Universal -->
+<!-- Same MailerLite form is embedded twice (hero + footer); uniquify duplicate ids once both render -->
+<script>
+(function(){
+  var tries = 0;
+  var iv = setInterval(function(){
+    tries++;
+    var forms = document.querySelectorAll('.ml-embedded form').length;
+    if (forms >= 2 || tries > 30) {
+      clearInterval(iv);
+      var seen = {};
+      document.querySelectorAll('[id]').forEach(function(el){
+        if (seen[el.id]) { el.id = el.id + '-' + (++seen[el.id]); }
+        else { seen[el.id] = 1; }
+      });
+    }
+  }, 400);
+})();
+</script>
+
+</body>
+</html>

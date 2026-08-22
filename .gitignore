@@ -9,3 +9,7 @@ patio-site.zip
 
 # Local font-comparison scratch page
 font-preview.html
+
+# Python bytecode cache
+__pycache__/
+*.pyc
