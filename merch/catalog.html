@@ -1,0 +1,678 @@
+<title>Patio Merch Catalogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow+Semi+Condensed:wght@500;600&display=swap">
+
+<style>
+  :root{
+    --cream:#FBF6EE;
+    --cream-2:#F3EADA;
+    --ink:#2B1F18;
+    --terra:#B8593A;
+    --teal:#617C7B;
+    --gold:#C19D5F;
+    --galao:#726651;
+    --line:#E4D8C4;
+    --paper:#FFFFFF;
+    --shadow:24px 24px 60px rgba(43,31,24,.10);
+  }
+  :root:not([data-theme="light"]){
+    /* Catalogue commits to its warm printed world in both themes;
+       dark viewers get a deep chocolate ground, same accents. */
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --cream:#211711;
+      --cream-2:#2B1F18;
+      --ink:#F3E9D9;
+      --line:#42332a;
+      --paper:#2A1E16;
+      --galao:#c9b491;
+      --shadow:24px 24px 60px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --cream:#211711;
+    --cream-2:#2B1F18;
+    --ink:#F3E9D9;
+    --line:#42332a;
+    --paper:#2A1E16;
+    --galao:#c9b491;
+    --shadow:24px 24px 60px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:"Barlow",system-ui,sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+
+  /* ---------- type ---------- */
+  h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.05;text-wrap:balance;margin:0}
+  .eyebrow{
+    font-family:"Barlow",sans-serif;
+    font-weight:600;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--terra);margin:0 0 .8rem;
+  }
+  .serif-i{font-family:"DM Serif Display",serif;font-style:italic}
+  a{color:var(--terra)}
+
+  /* ---------- monogram ---------- */
+  .mono{display:block}
+  .mono .sq{fill:var(--terra)}
+  .mono .p{fill:var(--teal)}
+
+  /* ---------- cover ---------- */
+  .cover{
+    padding:64px 0 40px;
+    border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(120% 90% at 88% -8%, rgba(97,124,123,.16), transparent 60%),
+      radial-gradient(90% 80% at 6% 108%, rgba(184,89,58,.12), transparent 55%);
+  }
+  .cover-top{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .cover-top .logo{width:230px;max-width:56vw;height:auto}
+  .cover-tag{
+    margin-left:auto;text-align:right;font-size:.82rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--galao);font-weight:500;line-height:1.5;
+  }
+  .cover-head{display:grid;grid-template-columns:1.35fr .9fr;gap:40px;align-items:end;margin-top:52px}
+  .cover-head h1{font-size:clamp(2.9rem,7vw,5rem)}
+  .cover-head h1 em{color:var(--terra)}
+  .cover-lede{color:var(--galao);font-size:1.05rem;max-width:34ch;border-left:2px solid var(--gold);padding-left:18px}
+  @media(max-width:720px){.cover-head{grid-template-columns:1fr;gap:22px}.cover-tag{text-align:left;margin-left:0}}
+
+  /* ---------- section shell ---------- */
+  section{padding:52px 0}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:30px;flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(1.9rem,4vw,2.7rem)}
+  .sec-head .rule{flex:1;height:1px;background:var(--line);min-width:40px}
+  .sec-head .count{font-family:"Barlow Semi Condensed",sans-serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.74rem;color:var(--galao)}
+
+  /* ---------- product grid ---------- */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}}
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:18px;
+    padding:26px;display:flex;flex-direction:column;gap:18px;
+    box-shadow:var(--shadow);
+  }
+  .card.wide{grid-column:1 / -1}
+  .card.bundle{background:var(--cream-2);border-color:var(--gold)}
+  .figure-set{background:var(--paper)}
+  .card-top{display:flex;gap:22px;align-items:flex-start}
+  .figure{
+    flex:0 0 148px;height:150px;border-radius:14px;
+    background:var(--cream-2);border:1px solid var(--line);
+    position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  }
+  .figure svg.garment{width:118px;height:118px;display:block}
+  .figure .chest{position:absolute;pointer-events:none}
+  .card-title{flex:1;min-width:0}
+  .card-title h3{font-size:1.55rem;line-height:1.1}
+  .card-title .sub{color:var(--galao);font-size:.9rem;margin-top:4px}
+  .price{
+    font-family:"Barlow Semi Condensed",sans-serif;font-weight:600;
+    color:var(--ink);font-size:1.02rem;white-space:nowrap;
+    background:var(--cream);border:1px solid var(--line);border-radius:999px;
+    padding:5px 13px;margin-top:10px;display:inline-block;
+  }
+  .card p.desc{margin:0;color:var(--galao);font-size:.94rem}
+
+  .meta{display:flex;flex-direction:column;gap:12px;border-top:1px dashed var(--line);padding-top:16px}
+  .row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+  .row .k{
+    font-family:"Barlow",sans-serif;font-weight:600;font-size:.68rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--terra);flex:0 0 78px;padding-top:2px;
+  }
+  .fits{display:flex;gap:7px;flex-wrap:wrap}
+  .chip{
+    font-family:"Barlow Semi Condensed",sans-serif;font-weight:500;font-size:.82rem;
+    border:1px solid var(--line);border-radius:7px;padding:3px 9px;color:var(--ink);background:var(--cream);
+  }
+  .chip.on{border-color:var(--teal);color:var(--teal)}
+  .swatches{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .sw{display:inline-flex;align-items:center;gap:7px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--galao);white-space:nowrap}
+  .sw i{width:18px;height:18px;border-radius:50%;border:1px solid rgba(43,31,24,.28);display:block;flex:0 0 auto}
+
+  /* ---------- phrases ---------- */
+  .phrases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:720px){.phrases{grid-template-columns:1fr 1fr}}
+  @media(max-width:460px){.phrases{grid-template-columns:1fr}}
+  .phrase{
+    border:1px solid var(--line);border-radius:16px;padding:24px 20px;min-height:158px;
+    display:flex;flex-direction:column;justify-content:space-between;gap:14px;background:var(--paper);
+  }
+  .phrase .pt{font-family:"DM Serif Display",serif;font-size:1.34rem;line-height:1.14;color:var(--ink)}
+  .phrase .en{font-size:.82rem;color:var(--galao);font-style:italic}
+  .phrase .tag{font-family:"Barlow Semi Condensed",sans-serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terra)}
+  .phrase.dark{background:var(--ink);border-color:var(--ink)}
+  .phrase.dark .pt{color:var(--cream)}
+  .phrase.dark .en{color:var(--gold)}
+  .phrase.dark .tag{color:var(--gold)}
+
+  /* ---------- size chart ---------- */
+  .tables{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:720px){.tables{grid-template-columns:1fr}}
+  .tbl h3{font-size:1.15rem;margin-bottom:12px;color:var(--ink)}
+  .tbl h3 small{font-family:"Barlow",sans-serif;font-weight:500;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:2px}
+  table{width:100%;border-collapse:collapse;font-size:.86rem;font-variant-numeric:tabular-nums}
+  th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}
+  th{font-family:"Barlow Semi Condensed",sans-serif;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.72rem;color:var(--galao)}
+  tr td:first-child{font-weight:600;color:var(--ink)}
+
+  /* ---------- order footer ---------- */
+  .order{background:var(--ink);color:var(--cream);border-radius:22px;padding:44px;margin:20px 0 60px;
+    display:grid;grid-template-columns:1.4fr 1fr;gap:34px;align-items:center}
+  @media(max-width:720px){.order{grid-template-columns:1fr;padding:30px}}
+  .order h2{color:var(--cream);font-size:2rem;margin-bottom:12px}
+  .order p{color:#e7dbc9;max-width:44ch}
+  .order .steps{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+  .order .step{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;color:#efe6d6}
+  .order .step b{font-family:"DM Serif Display",serif;color:var(--gold);font-size:1.15rem;line-height:1;flex:0 0 auto;min-width:22px}
+  .order-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:24px;text-align:center}
+  .order-card .mono{width:60px;margin:0 auto 14px}
+  .order-card .name{font-family:"DM Serif Display",serif;font-size:1.3rem;color:var(--cream)}
+  .order-card .lines{margin-top:14px;font-size:.9rem;color:#e7dbc9;line-height:1.8}
+  .order-card .lines a{color:var(--gold);text-decoration:none}
+
+  .foot{border-top:1px solid var(--line);padding:26px 0 60px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--galao);font-size:.8rem;letter-spacing:.04em}
+  .note{font-size:.76rem;color:var(--galao);font-style:italic;margin-top:14px}
+
+  @media print{
+    body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .card,.phrase,.figure{box-shadow:none}
+    section{padding:14px 0}
+    .card,.phrase,.tbl{break-inside:avoid}
+    .sec-head{break-after:avoid;margin-bottom:22px}
+    .cover{break-after:page}
+    #hoodies,#hats-mugs,#totes,#phrases{break-before:page}
+    .order{background:#2B1F18 !important;margin:14px 0 16px;padding:34px;break-inside:avoid}
+    .foot{padding:16px 0 10px}
+  }
+</style>
+
+<!-- reusable monogram symbol -->
+<!-- ===================== COVER ===================== -->
+<header class="cover">
+  <div class="wrap">
+    <div class="cover-top">
+      <svg class="logo" viewBox="0 0 138.38 105.02" role="img" aria-label="Patio Language School">
+        <rect fill="#B8593A" x="86.91" y="6.02" width="27.48" height="27.48" rx="1.08" ry="1.08"/>
+        <path fill="#617C7B" d="M123.33.72v40.46c0,.7-.56,1.26-1.26,1.26h-42.83c-.6,0-1.08.48-1.08,1.08v46.42c0,.67.27,1.31.74,1.78l13.08,13.08c.45.45,1.23.13,1.23-.51v-46.09c0-.4.32-.72.72-.72h43.37c.6,0,1.08-.48,1.08-1.08V15.08c0-.67-.27-1.31-.74-1.78L124.56.21c-.45-.45-1.23-.13-1.23.51Z"/>
+        <path fill="#C19D5F" d="M8.4,19.93h7.71c1.34,0,2.36,1.1,2.36,2.36v10.34c0,1.26-1.06,2.32-2.36,2.32h-4.17v12.5h-3.54v-27.53ZM14.92,23.47h-2.99v7.94h2.99v-7.94Z"/>
+        <path fill="#C19D5F" d="M29.51,42.07h-3.93l-.55,5.39h-3.54l2.91-27.53h6.29l2.83,27.53h-3.46l-.55-5.39ZM25.97,38.53h3.15l-1.57-15.06-1.57,15.06Z"/>
+        <path fill="#C19D5F" d="M38.64,23.47h-3.15v-3.54h9.83v3.54h-3.15v23.99h-3.54v-23.99Z"/>
+        <path fill="#C19D5F" d="M49.25,19.93h3.54v27.53h-3.54v-27.53Z"/>
+        <path fill="#C19D5F" d="M57.9,22.29c0-1.26,1.1-2.36,2.36-2.36h5.35c1.34,0,2.36,1.1,2.36,2.36v22.85c0,1.26-1.06,2.32-2.36,2.32h-5.35c-1.26,0-2.36-1.06-2.36-2.32v-22.85ZM64.43,23.47h-2.99v20.45h2.99v-20.45Z"/>
+        <path fill="#C19D5F" d="M0,52.2h2.44v14.37h2.87v2.12H0v-16.49Z"/>
+        <path fill="#C19D5F" d="M11.78,65.47h-2.71l-.38,3.23h-2.44l2-16.49h4.33l1.95,16.49h-2.38l-.38-3.23ZM9.35,63.35h2.17l-1.08-9.02-1.08,9.02Z"/>
+        <path fill="#C19D5F" d="M19.04,52.2l2.33,8.2v-8.2h2.44v16.49h-2.87l-2.44-8.86v8.86h-2.44v-16.49h2.98Z"/>
+        <path fill="#C19D5F" d="M30.48,57.15v-2.83h-2.06v12.25h2.06v-3.79h-.81v-2.12h3.25v6.64c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/>
+        <path fill="#C19D5F" d="M37.52,52.2v14.37h2.06v-14.37h2.44v15.1c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-15.1h2.44Z"/>
+        <path fill="#C19D5F" d="M49.06,65.47h-2.71l-.38,3.23h-2.44l2-16.49h4.33l1.95,16.49h-2.38l-.38-3.23ZM46.62,63.35h2.17l-1.08-9.02-1.08,9.02Z"/>
+        <path fill="#C19D5F" d="M57.84,57.15v-2.83h-2.06v12.25h2.06v-3.79h-.81v-2.12h3.25v6.64c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/>
+        <path fill="#C19D5F" d="M68.73,68.69h-6.28v-16.49h6.09v2.12h-3.66v4.55h2.57v2.12h-2.57v5.58h3.85v2.12Z"/>
+        <path fill="#C19D5F" d="M21.02,84.42v2.85h2.06v-5.32h-2.87c-.95,0-1.62-.68-1.62-1.39v-6.24c0-.82.65-1.41,1.62-1.41h3.68c.92,0,1.62.59,1.62,1.39v3.46h-2.44v-2.73h-2.06v4.81h2.87c.92,0,1.62.66,1.62,1.41v6.76c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-3.58h2.44Z"/>
+        <path fill="#C19D5F" d="M32.18,77.85v-2.83h-2.06v12.25h2.06v-2.85h2.44v3.58c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/>
+        <path fill="#C19D5F" d="M36.41,72.9h2.44v7.61h2.06v-7.61h2.44v16.49h-2.44v-6.76h-2.06v6.76h-2.44v-16.49Z"/>
+        <path fill="#C19D5F" d="M45.51,74.31c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v13.69c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69ZM50.01,75.02h-2.06v12.25h2.06v-12.25Z"/>
+        <path fill="#C19D5F" d="M54.62,74.31c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v13.69c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69ZM59.11,75.02h-2.06v12.25h2.06v-12.25Z"/>
+        <path fill="#C19D5F" d="M63.72,72.9h2.44v14.37h2.87v2.12h-5.31v-16.49Z"/>
+      </svg>
+      <div class="cover-tag">European Portuguese<br>Lagos · Portugal</div>
+    </div>
+
+    <div class="cover-head">
+      <h1>Wear the <em>Patio.</em><br>Take a bit of Lagos home.</h1>
+      <p class="cover-lede">Our small collection of tees, hoodies, caps and mugs, for the people who come to learn, chat and belong. Have a look, pick your favourite, and grab one on your way out.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ===================== T-SHIRTS ===================== -->
+  <section id="tees">
+    <div class="sec-head">
+      <p class="eyebrow" style="margin:0">The Collection</p>
+      <h2>T&#8209;Shirts</h2>
+      <span class="rule"></span>
+      <span class="count">Men · Women · Kids</span>
+    </div>
+
+    <div class="grid">
+      <!-- Black tee -->
+      <article class="card">
+        <div class="card-top">
+          <div class="figure">
+            <svg class="garment" viewBox="0 0 200 200" aria-hidden="true">
+              <path d="M62,22 L82,22 Q100,41 118,22 L138,22 L179,51 L150,84 L140,67 L140,183 L60,183 L60,67 L50,84 L21,51 Z"
+                    fill="#FDFAF3" stroke="#cbb998" stroke-width="1.3"/>
+              <path d="M82,22 Q100,41 118,22" fill="none" stroke="#cbb998" stroke-width="2.4"/>
+            </svg>
+            <svg class="chest" style="width:26px;top:50px;left:61px" viewBox="77 -1 62 94"><rect fill="#B8593A" x="86.91" y="6.02" width="27.48" height="27.48" rx="1.08" ry="1.08"/><path fill="#617C7B" d="M123.33.72v40.46c0,.7-.56,1.26-1.26,1.26h-42.83c-.6,0-1.08.48-1.08,1.08v46.42c0,.67.27,1.31.74,1.78l13.08,13.08c.45.45,1.23.13,1.23-.51v-46.09c0-.4.32-.72.72-.72h43.37c.6,0,1.08-.48,1.08-1.08V15.08c0-.67-.27-1.31-.74-1.78L124.56.21c-.45-.45-1.23-.13-1.23.51Z"/></svg>
+          </div>
+          <div class="card-title">
+            <h3>Everyday Tee</h3>
+            <div class="sub">White · garment‑dyed ring‑spun cotton</div>
+            <span class="price">€28 · kids €19</span>
+          </div>
+        </div>
+        <p class="desc">The house favourite. A soft, heavyweight Comfort Colors tee with a small full‑colour monogram over the heart. Wears in beautifully after a few Lagos summers.</p>
+        <div class="meta">
+          <div class="row"><span class="k">Fits</span><div class="fits"><span class="chip">Men S–2XL</span><span class="chip">Women XS–XL</span><span class="chip">Kids 3–12y</span></div></div>
+          <div class="row"><span class="k">Print</span><div class="fits"><span class="chip on">Heart monogram</span><span class="chip">Full logo (front)</span></div></div>
+          <div class="row"><span class="k">Colour</span>
+            <div class="swatches">
+              <span class="sw"><i style="background:#FDFAF3"></i>White</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- White/Natural tee -->
+      <article class="card">
+        <div class="card-top">
+          <div class="figure">
+            <svg class="garment" viewBox="0 0 200 200" aria-hidden="true">
+              <path d="M62,22 L82,22 Q100,41 118,22 L138,22 L179,51 L150,84 L140,67 L140,183 L60,183 L60,67 L50,84 L21,51 Z"
+                    fill="#FDFAF3" stroke="#cbb998" stroke-width="1.3"/>
+              <path d="M82,22 Q100,41 118,22" fill="none" stroke="#cbb998" stroke-width="2.4"/>
+            </svg>
+            <svg class="chest" style="width:46px;top:56px;left:51px" viewBox="0 0 138.38 105.02"><rect fill="#B8593A" x="86.91" y="6.02" width="27.48" height="27.48" rx="1.08" ry="1.08"/><path fill="#617C7B" d="M123.33.72v40.46c0,.7-.56,1.26-1.26,1.26h-42.83c-.6,0-1.08.48-1.08,1.08v46.42c0,.67.27,1.31.74,1.78l13.08,13.08c.45.45,1.23.13,1.23-.51v-46.09c0-.4.32-.72.72-.72h43.37c.6,0,1.08-.48,1.08-1.08V15.08c0-.67-.27-1.31-.74-1.78L124.56.21c-.45-.45-1.23-.13-1.23.51Z"/><path fill="#C19D5F" d="M8.4,19.93h7.71c1.34,0,2.36,1.1,2.36,2.36v10.34c0,1.26-1.06,2.32-2.36,2.32h-4.17v12.5h-3.54v-27.53ZM14.92,23.47h-2.99v7.94h2.99v-7.94Z"/><path fill="#C19D5F" d="M29.51,42.07h-3.93l-.55,5.39h-3.54l2.91-27.53h6.29l2.83,27.53h-3.46l-.55-5.39ZM25.97,38.53h3.15l-1.57-15.06-1.57,15.06Z"/><path fill="#C19D5F" d="M38.64,23.47h-3.15v-3.54h9.83v3.54h-3.15v23.99h-3.54v-23.99Z"/><path fill="#C19D5F" d="M49.25,19.93h3.54v27.53h-3.54v-27.53Z"/><path fill="#C19D5F" d="M57.9,22.29c0-1.26,1.1-2.36,2.36-2.36h5.35c1.34,0,2.36,1.1,2.36,2.36v22.85c0,1.26-1.06,2.32-2.36,2.32h-5.35c-1.26,0-2.36-1.06-2.36-2.32v-22.85ZM64.43,23.47h-2.99v20.45h2.99v-20.45Z"/><path fill="#C19D5F" d="M0,52.2h2.44v14.37h2.87v2.12H0v-16.49Z"/><path fill="#C19D5F" d="M11.78,65.47h-2.71l-.38,3.23h-2.44l2-16.49h4.33l1.95,16.49h-2.38l-.38-3.23ZM9.35,63.35h2.17l-1.08-9.02-1.08,9.02Z"/><path fill="#C19D5F" d="M19.04,52.2l2.33,8.2v-8.2h2.44v16.49h-2.87l-2.44-8.86v8.86h-2.44v-16.49h2.98Z"/><path fill="#C19D5F" d="M30.48,57.15v-2.83h-2.06v12.25h2.06v-3.79h-.81v-2.12h3.25v6.64c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/><path fill="#C19D5F" d="M37.52,52.2v14.37h2.06v-14.37h2.44v15.1c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-15.1h2.44Z"/><path fill="#C19D5F" d="M49.06,65.47h-2.71l-.38,3.23h-2.44l2-16.49h4.33l1.95,16.49h-2.38l-.38-3.23ZM46.62,63.35h2.17l-1.08-9.02-1.08,9.02Z"/><path fill="#C19D5F" d="M57.84,57.15v-2.83h-2.06v12.25h2.06v-3.79h-.81v-2.12h3.25v6.64c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/><path fill="#C19D5F" d="M68.73,68.69h-6.28v-16.49h6.09v2.12h-3.66v4.55h2.57v2.12h-2.57v5.58h3.85v2.12Z"/><path fill="#C19D5F" d="M21.02,84.42v2.85h2.06v-5.32h-2.87c-.95,0-1.62-.68-1.62-1.39v-6.24c0-.82.65-1.41,1.62-1.41h3.68c.92,0,1.62.59,1.62,1.39v3.46h-2.44v-2.73h-2.06v4.81h2.87c.92,0,1.62.66,1.62,1.41v6.76c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-3.58h2.44Z"/><path fill="#C19D5F" d="M32.18,77.85v-2.83h-2.06v12.25h2.06v-2.85h2.44v3.58c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/><path fill="#C19D5F" d="M36.41,72.9h2.44v7.61h2.06v-7.61h2.44v16.49h-2.44v-6.76h-2.06v6.76h-2.44v-16.49Z"/><path fill="#C19D5F" d="M45.51,74.31c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v13.69c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69ZM50.01,75.02h-2.06v12.25h2.06v-12.25Z"/><path fill="#C19D5F" d="M54.62,74.31c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v13.69c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69ZM59.11,75.02h-2.06v12.25h2.06v-12.25Z"/><path fill="#C19D5F" d="M63.72,72.9h2.44v14.37h2.87v2.12h-5.31v-16.49Z"/></svg>
+          </div>
+          <div class="card-title">
+            <h3>Statement Tee</h3>
+            <div class="sub">White · big front logo lockup</div>
+            <span class="price">€28 · kids €19</span>
+          </div>
+        </div>
+        <p class="desc">Same tee, bolder look. The full logo lockup runs large across the front, in our warm brand colours. Same soft garment‑dyed cotton.</p>
+        <div class="meta">
+          <div class="row"><span class="k">Fits</span><div class="fits"><span class="chip">Men S–2XL</span><span class="chip">Women XS–XL</span><span class="chip">Kids 3–12y</span></div></div>
+          <div class="row"><span class="k">Print</span><div class="fits"><span class="chip on">Full logo (front)</span><span class="chip">Heart monogram</span></div></div>
+          <div class="row"><span class="k">Colour</span>
+            <div class="swatches">
+              <span class="sw"><i style="background:#FDFAF3"></i>White</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="note">Comfort Colors tees have a relaxed, true‑to‑size unisex fit; each is garment‑dyed, so shades vary a touch, that's the charm. Kids' tee is a softer, lighter blank.</p>
+  </section>
+
+  <!-- ===================== HOODIES ===================== -->
+  <section id="hoodies">
+    <div class="sec-head">
+      <p class="eyebrow" style="margin:0">The Collection</p>
+      <h2>Hoodies</h2>
+      <span class="rule"></span>
+      <span class="count">Men · Women</span>
+    </div>
+
+    <div class="grid">
+      <!-- Black hoodie -->
+      <article class="card">
+        <div class="card-top">
+          <div class="figure">
+            <svg class="garment" viewBox="0 0 200 200" aria-hidden="true">
+              <path d="M70,52 Q70,20 100,20 Q130,20 130,52 Z" fill="#efe6d4"/>
+              <path d="M45,58 L67,50 L71,150 L47,156 Z" fill="#FDFAF3" stroke="#cbb998" stroke-width="1.2"/>
+              <path d="M155,58 L133,50 L129,150 L153,156 Z" fill="#FDFAF3" stroke="#cbb998" stroke-width="1.2"/>
+              <path d="M47,147 L71,141 L72,158 L48,164 Z" fill="#efe6d4"/>
+              <path d="M153,147 L129,141 L128,158 L152,164 Z" fill="#efe6d4"/>
+              <path d="M64,50 L136,50 L141,172 L59,172 Z" fill="#FDFAF3" stroke="#cbb998" stroke-width="1.2"/>
+              <rect x="59" y="163" width="82" height="11" rx="2" fill="#efe6d4"/>
+              <path d="M82,50 Q100,66 118,50" fill="#efe6d4" stroke="#cbb998" stroke-width="1"/>
+              <path d="M94,55 L94,66 M106,55 L106,66" stroke="#c2ad86" stroke-width="2.2" fill="none"/>
+              <circle cx="94" cy="68" r="2" fill="#c2ad86"/><circle cx="106" cy="68" r="2" fill="#c2ad86"/>
+              <path d="M72,116 L128,116 L133,150 L67,150 Z" fill="none" stroke="#d6c5a2" stroke-width="2"/>
+            </svg>
+            <svg class="chest" style="width:20px;top:54px;left:64px" viewBox="77 -1 62 94"><rect fill="#B8593A" x="86.91" y="6.02" width="27.48" height="27.48" rx="1.08" ry="1.08"/><path fill="#617C7B" d="M123.33.72v40.46c0,.7-.56,1.26-1.26,1.26h-42.83c-.6,0-1.08.48-1.08,1.08v46.42c0,.67.27,1.31.74,1.78l13.08,13.08c.45.45,1.23.13,1.23-.51v-46.09c0-.4.32-.72.72-.72h43.37c.6,0,1.08-.48,1.08-1.08V15.08c0-.67-.27-1.31-.74-1.78L124.56.21c-.45-.45-1.23-.13-1.23.51Z"/></svg>
+          </div>
+          <div class="card-title">
+            <h3>Patio Hoodie</h3>
+            <div class="sub">Soft white · heavy blend cotton‑poly</div>
+            <span class="price">€45</span>
+          </div>
+        </div>
+        <p class="desc">A proper pullover for the walk home when the Atlantic breeze picks up. Double‑lined hood with matching drawcord, big front pocket, ribbed cuffs and hem. Monogram on the chest, or the full logo across the back.</p>
+        <div class="meta">
+          <div class="row"><span class="k">Fits</span><div class="fits"><span class="chip">Men S–2XL</span><span class="chip">Women XS–XL</span></div></div>
+          <div class="row"><span class="k">Print</span><div class="fits"><span class="chip on">Chest monogram</span><span class="chip">Full logo (back)</span></div></div>
+          <div class="row"><span class="k">Colour</span>
+            <div class="swatches">
+              <span class="sw"><i style="background:#FDFAF3"></i>White</span>
+              <span class="sw"><i style="background:#d6c3a3"></i>Sand</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Teal hoodie -->
+      <article class="card">
+        <div class="card-top">
+          <div class="figure">
+            <svg class="garment" viewBox="0 0 200 200" aria-hidden="true">
+              <path d="M70,52 Q70,20 100,20 Q130,20 130,52 Z" fill="#c9b489"/>
+              <path d="M45,58 L67,50 L71,150 L47,156 Z" fill="#d6c3a3" stroke="#b6a079" stroke-width="1"/>
+              <path d="M155,58 L133,50 L129,150 L153,156 Z" fill="#d6c3a3" stroke="#b6a079" stroke-width="1"/>
+              <path d="M47,147 L71,141 L72,158 L48,164 Z" fill="#c9b489"/>
+              <path d="M153,147 L129,141 L128,158 L152,164 Z" fill="#c9b489"/>
+              <path d="M64,50 L136,50 L141,172 L59,172 Z" fill="#d6c3a3" stroke="#b6a079" stroke-width="1"/>
+              <rect x="59" y="163" width="82" height="11" rx="2" fill="#c9b489"/>
+              <path d="M82,50 Q100,66 118,50" fill="#c9b489" stroke="#b6a079" stroke-width="1"/>
+              <path d="M94,55 L94,66 M106,55 L106,66" stroke="#8f7c58" stroke-width="2.2" fill="none"/>
+              <circle cx="94" cy="68" r="2" fill="#8f7c58"/><circle cx="106" cy="68" r="2" fill="#8f7c58"/>
+              <path d="M72,116 L128,116 L133,150 L67,150 Z" fill="none" stroke="#b6a079" stroke-width="2"/>
+            </svg>
+            <svg class="chest" style="width:20px;top:54px;left:64px" viewBox="77 -1 62 94"><rect fill="#B8593A" x="86.91" y="6.02" width="27.48" height="27.48" rx="1.08" ry="1.08"/><path fill="#617C7B" d="M123.33.72v40.46c0,.7-.56,1.26-1.26,1.26h-42.83c-.6,0-1.08.48-1.08,1.08v46.42c0,.67.27,1.31.74,1.78l13.08,13.08c.45.45,1.23.13,1.23-.51v-46.09c0-.4.32-.72.72-.72h43.37c.6,0,1.08-.48,1.08-1.08V15.08c0-.67-.27-1.31-.74-1.78L124.56.21c-.45-.45-1.23-.13-1.23.51Z"/></svg>
+          </div>
+          <div class="card-title">
+            <h3>Patio Hoodie · Sand</h3>
+            <div class="sub">Warm sand · same cosy pullover</div>
+            <span class="price">€45</span>
+          </div>
+        </div>
+        <p class="desc">The same cosy pullover in a warm, sandy neutral that suits the Algarve light. Full‑colour monogram on the chest, with room for the big logo across the back.</p>
+        <div class="meta">
+          <div class="row"><span class="k">Fits</span><div class="fits"><span class="chip">Men S–2XL</span><span class="chip">Women XS–XL</span></div></div>
+          <div class="row"><span class="k">Print</span><div class="fits"><span class="chip on">Chest monogram</span><span class="chip">Full logo (back)</span></div></div>
+          <div class="row"><span class="k">Colour</span>
+            <div class="swatches">
+              <span class="sw"><i style="background:#d6c3a3"></i>Sand</span>
+              <span class="sw"><i style="background:#FDFAF3"></i>White</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="note">Women's hoodie runs slightly slimmer through the body. Unisex adult sizing, so size down for a closer fit.</p>
+  </section>
+
+  <!-- ===================== HATS + MUGS ===================== -->
+  <section id="hats-mugs">
+    <div class="sec-head">
+      <p class="eyebrow" style="margin:0">The Collection</p>
+      <h2>Caps &amp; Mugs</h2>
+      <span class="rule"></span>
+      <span class="count">For the sun &amp; the coffee</span>
+    </div>
+
+    <div class="grid">
+      <!-- Cap -->
+      <article class="card">
+        <div class="card-top">
+          <div class="figure">
+            <svg class="garment" viewBox="0 0 200 200" aria-hidden="true">
+              <path d="M48,116 L48,74 C48,54 66,44 100,44 C134,44 152,54 152,74 L152,116 Z" fill="#FDFAF3" stroke="#cbb998" stroke-width="1.2"/>
+              <path d="M78,45 L78,116 M122,45 L122,116" stroke="#e2d4b8" stroke-width="1.1" opacity=".8"/>
+              <path d="M128,64 h20 M128,72 h20 M128,80 h20 M128,88 h20 M128,96 h20" stroke="#e2d4b8" stroke-width="0.8" opacity=".7"/>
+              <path d="M38,118 Q100,136 162,118 Q172,122 167,133 Q100,153 33,133 Q28,122 38,118 Z" fill="#f6efe0" stroke="#cbb998" stroke-width="1"/>
+            </svg>
+            <svg class="chest" style="width:24px;top:56px;left:62px" viewBox="77 -1 62 94"><rect fill="#B8593A" x="86.91" y="6.02" width="27.48" height="27.48" rx="1.08" ry="1.08"/><path fill="#617C7B" d="M123.33.72v40.46c0,.7-.56,1.26-1.26,1.26h-42.83c-.6,0-1.08.48-1.08,1.08v46.42c0,.67.27,1.31.74,1.78l13.08,13.08c.45.45,1.23.13,1.23-.51v-46.09c0-.4.32-.72.72-.72h43.37c.6,0,1.08-.48,1.08-1.08V15.08c0-.67-.27-1.31-.74-1.78L124.56.21c-.45-.45-1.23-.13-1.23.51Z"/></svg>
+          </div>
+          <div class="card-title">
+            <h3>Patio Trucker</h3>
+            <div class="sub">White foam trucker · mesh back</div>
+            <span class="price">€18</span>
+          </div>
+        </div>
+        <p class="desc">A high‑profile foam trucker with a breathable mesh back and a pre‑curved visor. Structured five‑panel front, adjustable snapback, monogram on the front.</p>
+        <div class="meta">
+          <div class="row"><span class="k">Fits</span><div class="fits"><span class="chip">One size · snapback</span></div></div>
+          <div class="row"><span class="k">Print</span><div class="fits"><span class="chip on">Monogram, front</span></div></div>
+          <div class="row"><span class="k">Colour</span>
+            <div class="swatches">
+              <span class="sw"><i style="background:#FDFAF3"></i>White</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Mug -->
+      <article class="card">
+        <div class="card-top">
+          <div class="figure">
+            <svg class="garment" viewBox="0 0 200 200" aria-hidden="true">
+              <rect x="52" y="58" width="78" height="92" rx="12" fill="#FDFAF3" stroke="#d8c8ae" stroke-width="1.6"/>
+              <path d="M130,78 C160,78 160,132 130,132" fill="none" stroke="#d8c8ae" stroke-width="9"/>
+              <ellipse cx="91" cy="60" rx="39" ry="8" fill="#efe6d4" stroke="#d8c8ae" stroke-width="1.2"/>
+            </svg>
+            <svg class="chest" style="width:38px;top:66px;left:50px" viewBox="0 0 138.38 105.02"><rect fill="#B8593A" x="86.91" y="6.02" width="27.48" height="27.48" rx="1.08" ry="1.08"/><path fill="#617C7B" d="M123.33.72v40.46c0,.7-.56,1.26-1.26,1.26h-42.83c-.6,0-1.08.48-1.08,1.08v46.42c0,.67.27,1.31.74,1.78l13.08,13.08c.45.45,1.23.13,1.23-.51v-46.09c0-.4.32-.72.72-.72h43.37c.6,0,1.08-.48,1.08-1.08V15.08c0-.67-.27-1.31-.74-1.78L124.56.21c-.45-.45-1.23-.13-1.23.51Z"/><path fill="#C19D5F" d="M8.4,19.93h7.71c1.34,0,2.36,1.1,2.36,2.36v10.34c0,1.26-1.06,2.32-2.36,2.32h-4.17v12.5h-3.54v-27.53ZM14.92,23.47h-2.99v7.94h2.99v-7.94Z"/><path fill="#C19D5F" d="M29.51,42.07h-3.93l-.55,5.39h-3.54l2.91-27.53h6.29l2.83,27.53h-3.46l-.55-5.39ZM25.97,38.53h3.15l-1.57-15.06-1.57,15.06Z"/><path fill="#C19D5F" d="M38.64,23.47h-3.15v-3.54h9.83v3.54h-3.15v23.99h-3.54v-23.99Z"/><path fill="#C19D5F" d="M49.25,19.93h3.54v27.53h-3.54v-27.53Z"/><path fill="#C19D5F" d="M57.9,22.29c0-1.26,1.1-2.36,2.36-2.36h5.35c1.34,0,2.36,1.1,2.36,2.36v22.85c0,1.26-1.06,2.32-2.36,2.32h-5.35c-1.26,0-2.36-1.06-2.36-2.32v-22.85ZM64.43,23.47h-2.99v20.45h2.99v-20.45Z"/><path fill="#C19D5F" d="M0,52.2h2.44v14.37h2.87v2.12H0v-16.49Z"/><path fill="#C19D5F" d="M11.78,65.47h-2.71l-.38,3.23h-2.44l2-16.49h4.33l1.95,16.49h-2.38l-.38-3.23ZM9.35,63.35h2.17l-1.08-9.02-1.08,9.02Z"/><path fill="#C19D5F" d="M19.04,52.2l2.33,8.2v-8.2h2.44v16.49h-2.87l-2.44-8.86v8.86h-2.44v-16.49h2.98Z"/><path fill="#C19D5F" d="M30.48,57.15v-2.83h-2.06v12.25h2.06v-3.79h-.81v-2.12h3.25v6.64c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/><path fill="#C19D5F" d="M37.52,52.2v14.37h2.06v-14.37h2.44v15.1c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-15.1h2.44Z"/><path fill="#C19D5F" d="M49.06,65.47h-2.71l-.38,3.23h-2.44l2-16.49h4.33l1.95,16.49h-2.38l-.38-3.23ZM46.62,63.35h2.17l-1.08-9.02-1.08,9.02Z"/><path fill="#C19D5F" d="M57.84,57.15v-2.83h-2.06v12.25h2.06v-3.79h-.81v-2.12h3.25v6.64c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/><path fill="#C19D5F" d="M68.73,68.69h-6.28v-16.49h6.09v2.12h-3.66v4.55h2.57v2.12h-2.57v5.58h3.85v2.12Z"/><path fill="#C19D5F" d="M21.02,84.42v2.85h2.06v-5.32h-2.87c-.95,0-1.62-.68-1.62-1.39v-6.24c0-.82.65-1.41,1.62-1.41h3.68c.92,0,1.62.59,1.62,1.39v3.46h-2.44v-2.73h-2.06v4.81h2.87c.92,0,1.62.66,1.62,1.41v6.76c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-3.58h2.44Z"/><path fill="#C19D5F" d="M32.18,77.85v-2.83h-2.06v12.25h2.06v-2.85h2.44v3.58c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/><path fill="#C19D5F" d="M36.41,72.9h2.44v7.61h2.06v-7.61h2.44v16.49h-2.44v-6.76h-2.06v6.76h-2.44v-16.49Z"/><path fill="#C19D5F" d="M45.51,74.31c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v13.69c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69ZM50.01,75.02h-2.06v12.25h2.06v-12.25Z"/><path fill="#C19D5F" d="M54.62,74.31c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v13.69c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69ZM59.11,75.02h-2.06v12.25h2.06v-12.25Z"/><path fill="#C19D5F" d="M63.72,72.9h2.44v14.37h2.87v2.12h-5.31v-16.49Z"/></svg>
+          </div>
+          <div class="card-title">
+            <h3>Café Mug</h3>
+            <div class="sub">White ceramic · 11 &amp; 15&nbsp;oz · dishwasher‑safe</div>
+            <span class="price">€12 · 15&nbsp;oz €14</span>
+          </div>
+        </div>
+        <p class="desc">For the <span class="serif-i">galão</span> before class. Glossy white ceramic with a comfy C‑handle and the full logo wrapped around it. Fancy a phrase instead? Pick one below.</p>
+        <div class="meta">
+          <div class="row"><span class="k">Size</span><div class="fits"><span class="chip">11&nbsp;oz (0.33&nbsp;L)</span><span class="chip">15&nbsp;oz (0.44&nbsp;L)</span></div></div>
+          <div class="row"><span class="k">Print</span><div class="fits"><span class="chip on">Full logo lockup</span><span class="chip">Monogram + phrase</span></div></div>
+          <div class="row"><span class="k">Phrase</span><div class="fits"><span class="chip">Um café, uma conversa…</span><span class="chip">Devagar se vai ao longe</span></div></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== TOTES & GIFTS ===================== -->
+  <section id="totes">
+    <div class="sec-head">
+      <p class="eyebrow" style="margin:0">The Collection</p>
+      <h2>Totes &amp; Gifts</h2>
+      <span class="rule"></span>
+      <span class="count">Carry it &amp; give it</span>
+    </div>
+
+    <div class="grid">
+      <!-- Tote -->
+      <article class="card">
+        <div class="card-top">
+          <div class="figure">
+            <svg class="garment" viewBox="0 0 200 200" aria-hidden="true">
+              <path d="M70,78 C70,26 92,26 92,78" fill="none" stroke="#d8c8ae" stroke-width="6"/>
+              <path d="M130,78 C130,26 108,26 108,78" fill="none" stroke="#d8c8ae" stroke-width="6"/>
+              <path d="M52,74 L148,74 L151,180 L49,180 Z" fill="#FBF6EE" stroke="#d8c8ae" stroke-width="1.6"/>
+              <path d="M53,81 L147,81" stroke="#e4d8c4" stroke-width="1.3"/>
+            </svg>
+            <svg class="chest" style="width:44px;top:73px;left:52px" viewBox="0 0 138.38 105.02"><rect fill="#B8593A" x="86.91" y="6.02" width="27.48" height="27.48" rx="1.08" ry="1.08"/><path fill="#617C7B" d="M123.33.72v40.46c0,.7-.56,1.26-1.26,1.26h-42.83c-.6,0-1.08.48-1.08,1.08v46.42c0,.67.27,1.31.74,1.78l13.08,13.08c.45.45,1.23.13,1.23-.51v-46.09c0-.4.32-.72.72-.72h43.37c.6,0,1.08-.48,1.08-1.08V15.08c0-.67-.27-1.31-.74-1.78L124.56.21c-.45-.45-1.23-.13-1.23.51Z"/><path fill="#C19D5F" d="M8.4,19.93h7.71c1.34,0,2.36,1.1,2.36,2.36v10.34c0,1.26-1.06,2.32-2.36,2.32h-4.17v12.5h-3.54v-27.53ZM14.92,23.47h-2.99v7.94h2.99v-7.94Z"/><path fill="#C19D5F" d="M29.51,42.07h-3.93l-.55,5.39h-3.54l2.91-27.53h6.29l2.83,27.53h-3.46l-.55-5.39ZM25.97,38.53h3.15l-1.57-15.06-1.57,15.06Z"/><path fill="#C19D5F" d="M38.64,23.47h-3.15v-3.54h9.83v3.54h-3.15v23.99h-3.54v-23.99Z"/><path fill="#C19D5F" d="M49.25,19.93h3.54v27.53h-3.54v-27.53Z"/><path fill="#C19D5F" d="M57.9,22.29c0-1.26,1.1-2.36,2.36-2.36h5.35c1.34,0,2.36,1.1,2.36,2.36v22.85c0,1.26-1.06,2.32-2.36,2.32h-5.35c-1.26,0-2.36-1.06-2.36-2.32v-22.85ZM64.43,23.47h-2.99v20.45h2.99v-20.45Z"/><path fill="#C19D5F" d="M0,52.2h2.44v14.37h2.87v2.12H0v-16.49Z"/><path fill="#C19D5F" d="M11.78,65.47h-2.71l-.38,3.23h-2.44l2-16.49h4.33l1.95,16.49h-2.38l-.38-3.23ZM9.35,63.35h2.17l-1.08-9.02-1.08,9.02Z"/><path fill="#C19D5F" d="M19.04,52.2l2.33,8.2v-8.2h2.44v16.49h-2.87l-2.44-8.86v8.86h-2.44v-16.49h2.98Z"/><path fill="#C19D5F" d="M30.48,57.15v-2.83h-2.06v12.25h2.06v-3.79h-.81v-2.12h3.25v6.64c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/><path fill="#C19D5F" d="M37.52,52.2v14.37h2.06v-14.37h2.44v15.1c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-15.1h2.44Z"/><path fill="#C19D5F" d="M49.06,65.47h-2.71l-.38,3.23h-2.44l2-16.49h4.33l1.95,16.49h-2.38l-.38-3.23ZM46.62,63.35h2.17l-1.08-9.02-1.08,9.02Z"/><path fill="#C19D5F" d="M57.84,57.15v-2.83h-2.06v12.25h2.06v-3.79h-.81v-2.12h3.25v6.64c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/><path fill="#C19D5F" d="M68.73,68.69h-6.28v-16.49h6.09v2.12h-3.66v4.55h2.57v2.12h-2.57v5.58h3.85v2.12Z"/><path fill="#C19D5F" d="M21.02,84.42v2.85h2.06v-5.32h-2.87c-.95,0-1.62-.68-1.62-1.39v-6.24c0-.82.65-1.41,1.62-1.41h3.68c.92,0,1.62.59,1.62,1.39v3.46h-2.44v-2.73h-2.06v4.81h2.87c.92,0,1.62.66,1.62,1.41v6.76c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-3.58h2.44Z"/><path fill="#C19D5F" d="M32.18,77.85v-2.83h-2.06v12.25h2.06v-2.85h2.44v3.58c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/><path fill="#C19D5F" d="M36.41,72.9h2.44v7.61h2.06v-7.61h2.44v16.49h-2.44v-6.76h-2.06v6.76h-2.44v-16.49Z"/><path fill="#C19D5F" d="M45.51,74.31c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v13.69c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69ZM50.01,75.02h-2.06v12.25h2.06v-12.25Z"/><path fill="#C19D5F" d="M54.62,74.31c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v13.69c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69ZM59.11,75.02h-2.06v12.25h2.06v-12.25Z"/><path fill="#C19D5F" d="M63.72,72.9h2.44v14.37h2.87v2.12h-5.31v-16.49Z"/></svg>
+          </div>
+          <div class="card-title">
+            <h3>Beach Tote</h3>
+            <div class="sub">100% cotton canvas · heavy 12&nbsp;oz</div>
+            <span class="price">€18</span>
+          </div>
+        </div>
+        <p class="desc">The one you'll actually use. Big enough for towels, books and a bottle of <span class="serif-i">água</span> on the walk down to Meia Praia. Sturdy canvas with long shoulder handles and the full logo lockup on the front.</p>
+        <div class="meta">
+          <div class="row"><span class="k">Size</span><div class="fits"><span class="chip">38 × 40 cm (15 × 16")</span><span class="chip">Long 50 cm handles</span></div></div>
+          <div class="row"><span class="k">Print</span><div class="fits"><span class="chip on">Full logo lockup</span><span class="chip">Monogram only</span></div></div>
+          <div class="row"><span class="k">Colour</span>
+            <div class="swatches">
+              <span class="sw"><i style="background:#FBF6EE"></i>Natural</span>
+              <span class="sw"><i style="background:#2B1F18"></i>Black</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bundle -->
+      <article class="card bundle">
+        <div class="card-top">
+          <div class="figure figure-set">
+            <svg viewBox="0 0 200 200" aria-hidden="true" style="width:120px;height:120px">
+              <!-- tee -->
+              <path d="M40,64 L52,64 Q62,74 72,64 L84,64 L104,79 L92,98 L84,90 L84,150 L36,150 L36,90 L28,98 L16,79 Z" fill="#3a2c23" opacity=".95"/>
+              <!-- mug -->
+              <rect x="108" y="96" width="46" height="54" rx="7" fill="#efe4d0" stroke="#cdbd9f" stroke-width="1.2"/>
+              <path d="M154,108 C171,108 171,138 154,138" fill="none" stroke="#cdbd9f" stroke-width="6"/>
+              <!-- tote (natural canvas) -->
+              <path d="M118,46 C118,26 126,26 126,46 M146,46 C146,26 138,26 138,46" fill="none" stroke="#cdbd9f" stroke-width="3.4"/>
+              <path d="M106,46 L158,46 L161,88 L103,88 Z" fill="#FBF6EE" stroke="#cdbd9f" stroke-width="1.3"/>
+              <rect fill="#B8593A" x="127" y="57" width="9" height="9" rx="1"/>
+              <path fill="#617C7B" d="M148.5,53.2v13.1c0,.2-.2.4-.4.4h-13.9c-.2,0-.35.15-.35.35v15c0,.22.09.42.24.57l4.24,4.24c.15.15.4.04.4-.17v-14.9c0-.13.1-.23.23-.23h14.05c.2,0,.35-.16.35-.35v-8.6c0-.22-.09-.42-.24-.57l-4.24-4.24c-.15-.15-.4-.04-.4.17Z"/>
+            </svg>
+          </div>
+          <div class="card-title">
+            <h3>The Welcome Set</h3>
+            <div class="sub">A tee, a mug and the beach tote</div>
+            <span class="price">€52 · save €5</span>
+          </div>
+        </div>
+        <p class="desc">Our little starter pack, and a favourite gift for a new arrival in town. Pick the tee colour and size, choose your mug phrase, and we'll bundle it all together.</p>
+        <div class="meta">
+          <div class="row"><span class="k">Includes</span><div class="fits"><span class="chip on">Everyday Tee</span><span class="chip on">Café Mug</span><span class="chip on">Beach Tote</span></div></div>
+          <div class="row"><span class="k">Gift</span><div class="fits"><span class="chip">Free wrapping</span><span class="chip">Handwritten note</span></div></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== PHRASES ===================== -->
+  <section id="phrases">
+    <div class="sec-head">
+      <p class="eyebrow" style="margin:0">Pick your words</p>
+      <h2>Prints &amp; Phrases</h2>
+      <span class="rule"></span>
+      <span class="count">Add any to a tee or mug</span>
+    </div>
+
+    <div class="phrases">
+      <div class="phrase dark">
+        <span class="tag">The house line</span>
+        <div>
+          <div class="pt">Um café, uma conversa, e um pouco de gramática.</div>
+          <div class="en" style="margin-top:8px">A coffee, a chat, and a little grammar, in that order.</div>
+        </div>
+      </div>
+      <div class="phrase">
+        <span class="tag">Portuguese proverb</span>
+        <div>
+          <div class="pt">Devagar se vai ao longe.</div>
+          <div class="en" style="margin-top:8px">Slowly, you go far.</div>
+        </div>
+      </div>
+      <div class="phrase">
+        <span class="tag">Three little verbs</span>
+        <div>
+          <div class="pt">Aprende.<br>Fala.<br>Pertence.</div>
+          <div class="en" style="margin-top:8px">Learn. Speak. Belong.</div>
+        </div>
+      </div>
+      <div class="phrase">
+        <span class="tag">Come on in</span>
+        <div>
+          <div class="pt">Fica no Pátio.</div>
+          <div class="en" style="margin-top:8px">Stay a while on the patio.</div>
+        </div>
+      </div>
+      <div class="phrase dark">
+        <span class="tag">Made here</span>
+        <div>
+          <div class="pt">Feito em Lagos.</div>
+          <div class="en" style="margin-top:8px">Made in Lagos, Portugal.</div>
+        </div>
+      </div>
+      <div class="phrase" style="align-items:center;justify-content:center;text-align:center">
+        <span class="tag">Just the mark</span>
+        <svg style="width:40px;height:auto;margin:6px auto" viewBox="77 -1 62 94"><rect fill="#B8593A" x="86.91" y="6.02" width="27.48" height="27.48" rx="1.08" ry="1.08"/><path fill="#617C7B" d="M123.33.72v40.46c0,.7-.56,1.26-1.26,1.26h-42.83c-.6,0-1.08.48-1.08,1.08v46.42c0,.67.27,1.31.74,1.78l13.08,13.08c.45.45,1.23.13,1.23-.51v-46.09c0-.4.32-.72.72-.72h43.37c.6,0,1.08-.48,1.08-1.08V15.08c0-.67-.27-1.31-.74-1.78L124.56.21c-.45-.45-1.23-.13-1.23.51Z"/></svg>
+        <div class="en">The monogram, on its own.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SIZE CHARTS ===================== -->
+  <section id="sizes">
+    <div class="sec-head">
+      <p class="eyebrow" style="margin:0">Find your fit</p>
+      <h2>Size Guide</h2>
+      <span class="rule"></span>
+      <span class="count">Chest, in cm</span>
+    </div>
+
+    <div class="tables">
+      <div class="tbl">
+        <h3><small>Adults</small>Women</h3>
+        <table>
+          <thead><tr><th>Size</th><th>Chest</th><th>UK</th></tr></thead>
+          <tbody>
+            <tr><td>XS</td><td>82–86</td><td>6–8</td></tr>
+            <tr><td>S</td><td>86–90</td><td>8–10</td></tr>
+            <tr><td>M</td><td>90–96</td><td>10–12</td></tr>
+            <tr><td>L</td><td>96–102</td><td>14–16</td></tr>
+            <tr><td>XL</td><td>102–110</td><td>18–20</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tbl">
+        <h3><small>Adults</small>Men</h3>
+        <table>
+          <thead><tr><th>Size</th><th>Chest</th><th>EU</th></tr></thead>
+          <tbody>
+            <tr><td>S</td><td>90–96</td><td>46</td></tr>
+            <tr><td>M</td><td>96–102</td><td>48–50</td></tr>
+            <tr><td>L</td><td>102–108</td><td>52</td></tr>
+            <tr><td>XL</td><td>108–116</td><td>54–56</td></tr>
+            <tr><td>XXL</td><td>116–124</td><td>58</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tbl">
+        <h3><small>Little ones</small>Kids</h3>
+        <table>
+          <thead><tr><th>Age</th><th>Height</th><th>Chest</th></tr></thead>
+          <tbody>
+            <tr><td>3–4y</td><td>98–104</td><td>55</td></tr>
+            <tr><td>5–6y</td><td>110–116</td><td>59</td></tr>
+            <tr><td>7–8y</td><td>122–128</td><td>64</td></tr>
+            <tr><td>9–10y</td><td>134–140</td><td>69</td></tr>
+            <tr><td>11–12y</td><td>146–152</td><td>76</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="note">Not sure between two sizes? The tees are true to size; the hoodies have a little more room. Just ask us, and we're happy to help you try one on.</p>
+  </section>
+
+  <!-- ===================== ORDER ===================== -->
+  <section>
+    <div class="order">
+      <div>
+        <h2>How to order</h2>
+        <p>Each piece is made to order, just for you, so you get the right size and colour every time. Tell us what you'd like and we'll let you know when it's ready to collect at the school.</p>
+        <div class="steps">
+          <div class="step"><b>1</b><span>Pick your item, colour, size and phrase.</span></div>
+          <div class="step"><b>2</b><span>Tell us at the desk, or message us on WhatsApp.</span></div>
+          <div class="step"><b>3</b><span>Collect it at the school, usually within a week or two.</span></div>
+        </div>
+      </div>
+      <div class="order-card">
+        <svg class="mono" viewBox="77 -1 62 94" aria-hidden="true"><rect fill="#B8593A" x="86.91" y="6.02" width="27.48" height="27.48" rx="1.08" ry="1.08"/><path fill="#617C7B" d="M123.33.72v40.46c0,.7-.56,1.26-1.26,1.26h-42.83c-.6,0-1.08.48-1.08,1.08v46.42c0,.67.27,1.31.74,1.78l13.08,13.08c.45.45,1.23.13,1.23-.51v-46.09c0-.4.32-.72.72-.72h43.37c.6,0,1.08-.48,1.08-1.08V15.08c0-.67-.27-1.31-.74-1.78L124.56.21c-.45-.45-1.23-.13-1.23.51Z"/></svg>
+        <div class="name">Patio Language School</div>
+        <div class="lines">
+          Praça do Poder Local, Lagos<br>
+          WhatsApp +351 928 129 560<br>
+          <a href="https://patiolanguage.pt">patiolanguage.pt</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap foot">
+  <span>Patio Language School · Merchandise Catalogue · 2026</span>
+  <span>Prices in euros, incl. VAT · made to order in the EU</span>
+</footer>
