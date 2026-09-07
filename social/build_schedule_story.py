@@ -119,6 +119,7 @@ td.cell{{vertical-align:middle;}}
         f'<div class="cta">'
         f'<div class="big">Applications are <span class="a">open</span></div>'
         f'<div class="pill">Apply at patiolanguage.pt</div>'
+        f'<div class="note" style="margin-top:16px">+351 928 129 560 &middot; patiolanguage@gmail.com</div>'
         f'<div class="foot"><img src="{LOGO_COLOR}"><span>patiolanguage.pt</span></div>'
         f'</div>'
         f'</div>')

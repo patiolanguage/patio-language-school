@@ -116,7 +116,7 @@ td.cell{{vertical-align:middle;}}
 .info{{display:flex;align-items:center;gap:34px;}}
 .details{{flex:1;display:flex;flex-direction:column;gap:18px;}}
 .drow{{display:flex;align-items:flex-start;gap:16px;}}
-.dlabel{{flex:none;width:112px;color:#B8593A;font-weight:800;font-size:23px;
+.dlabel{{flex:none;width:150px;color:#B8593A;font-weight:800;font-size:23px;
   letter-spacing:.06em;text-transform:uppercase;padding-top:2px;}}
 .dvals{{flex:1;display:flex;flex-direction:column;gap:7px;}}
 .pline{{color:#2B1F18;font-size:24px;font-weight:600;line-height:1.25;}}
@@ -148,6 +148,9 @@ td.cell{{vertical-align:middle;}}
         f'</div></div>'
         f'<div class="drow"><span class="dlabel">Where</span><div class="dvals">'
         f'<div class="pline">Praça do Poder Local, Lote 14, Loja C &middot; 8600-524 Lagos</div>'
+        f'</div></div>'
+        f'<div class="drow"><span class="dlabel">Contact</span><div class="dvals">'
+        f'<div class="pline">+351 928 129 560 &middot; patiolanguage@gmail.com</div>'
         f'</div></div>'
         f'</div>'
         f'<div class="qr"><img src="{QR}"><span class="qrlabel">Scan to get in touch</span></div>'
