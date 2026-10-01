@@ -13,6 +13,7 @@ Outputs (social/):
   mandarin-flyer-a5.html   -> Patio-Mandarin-Flyer.pdf   (print, A5, no prices)
   mandarin-ig-1080x1350.png                              (Instagram portrait)
   mandarin-story-1080x1920.png                           (Instagram story)
+  mandarin-fb-1080x1080.png                              (Facebook post)
 
 House style: DM Serif Display + Barlow. Brand is "Patio", no accent.
 No em or en dashes.
@@ -43,6 +44,7 @@ PHOTO_ROOM = b64_photo(os.path.join(IMG, "mandarin-hero.jpg"))             # Pat
 PHOTO_HK = b64_photo(os.path.join(PIX, "skyline hong kong.jpeg"))          # Michelle's Hong Kong photo
 PHOTO_ROOM_TALL = b64_photo(os.path.join(PIX, "room pic with students.jpeg"))
 MICHELLE = b64_photo(os.path.join(IMG, "michelle.jpg"))
+MICHELLE_CHINA = b64_photo(os.path.join(IMG, "michelle-china.jpg"))  # close-up in China, for the IG post
 REGISTER = "patiolanguage.pt/mandarin-register"
 
 FONTS = ('<meta charset="UTF-8">'
@@ -190,11 +192,14 @@ body{{font-family:'Barlow',sans-serif;background:#FBF6EE;color:#2B1F18;
 # =====================================================================
 def social(w, h, out):
     story = h > 1500
+    square = w == h
     top_pad = 150 if story else 70
-    bottom_pad = 240 if story else 80
+    bottom_pad = 240 if story else (56 if square else 80)
     lines = "".join(f'<div class="ln"><b>{days}</b> &middot; {time}</div>'
                     for _, days, time, _, _ in GROUPS)
     photo = PHOTO_ROOM_TALL if story else PHOTO_HK
+    badge = (f'<div class="badge"><img src="{MICHELLE_CHINA}">'
+                              f'<span><b>Teacher</b> &middot; Michelle Kanner</span></div>')
     html = f"""<!DOCTYPE html><html><head>{FONTS}<style>
 *{{margin:0;padding:0;box-sizing:border-box;}}
 html,body{{width:{w}px;height:{h}px;overflow:hidden;}}
@@ -205,20 +210,25 @@ body{{font-family:'Barlow',sans-serif;position:relative;background:#2B1F18;}}
 .bar{{position:absolute;top:0;left:0;right:0;height:14px;background:linear-gradient(90deg,#C19D5F,#B8593A);}}
 .logo{{position:absolute;top:{top_pad}px;left:70px;height:110px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.5));}}
 .content{{position:absolute;left:70px;right:70px;bottom:{bottom_pad}px;color:#FBF6EE;}}
-.zh{{font-family:'Noto Serif SC',serif;font-weight:600;font-size:120px;line-height:1;color:#FBF6EE;}}
+.zh{{font-family:'Noto Serif SC',serif;font-weight:600;font-size:{92 if square else 120}px;line-height:1;color:#FBF6EE;}}
 .zh span{{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:56px;color:#E9C58B;margin-left:22px;}}
-.eyebrow{{color:#C19D5F;text-shadow:0 2px 6px rgba(0,0,0,.6);font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:30px;margin-top:34px;}}
-h1{{font-family:'DM Serif Display',serif;font-weight:400;font-size:{104 if story else 96}px;line-height:1.02;margin-top:14px;}}
+.eyebrow{{color:#C19D5F;text-shadow:0 2px 6px rgba(0,0,0,.6);font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:{26 if square else 30}px;margin-top:{20 if square else 34}px;}}
+h1{{font-family:'DM Serif Display',serif;font-weight:400;font-size:{104 if story else (80 if square else 96)}px;line-height:1.02;margin-top:{8 if square else 14}px;}}
 h1 .a{{color:#E9C58B;font-style:italic;}}
-.sub{{font-size:38px;font-weight:500;color:#F1E9DA;margin-top:22px;line-height:1.25;}}
-.times{{margin-top:26px;}}
-.ln{{font-size:36px;font-weight:600;color:#E9C58B;line-height:1.45;}}
+.sub{{font-size:{33 if square else 38}px;font-weight:500;color:#F1E9DA;margin-top:{14 if square else 22}px;line-height:1.25;}}
+.times{{margin-top:{14 if square else 26}px;}}
+.ln{{font-size:{32 if square else 36}px;font-weight:600;color:#E9C58B;line-height:1.45;}}
 .ln b{{color:#FBF6EE;}}
-.pill{{display:inline-block;margin-top:36px;background:#B8593A;color:#FBF6EE;font-weight:700;
+.badge{{position:absolute;top:{150 if story else (50 if square else 60)}px;right:70px;display:flex;flex-direction:column;align-items:center;gap:14px;}}
+.badge img{{width:{340 if story else (230 if square else 300)}px;height:{340 if story else (230 if square else 300)}px;border-radius:50%;object-fit:cover;border:8px solid #FBF6EE;box-shadow:0 10px 30px rgba(0,0,0,.45);}}
+.badge span{{background:rgba(43,31,24,.82);color:#FBF6EE;font-weight:700;font-size:26px;letter-spacing:.06em;padding:8px 20px;border-radius:999px;}}
+.badge span b{{color:#E9C58B;font-weight:700;}}
+.pill{{display:inline-block;margin-top:{22 if square else 36}px;background:#B8593A;color:#FBF6EE;font-weight:700;
   font-size:32px;padding:18px 38px;border-radius:999px;}}
 </style></head><body>
 <img class="photo" src="{photo}"><div class="scrim"></div><div class="bar"></div>
 <img class="logo" src="{LOGO_WHITE}">
+{badge}
 <div class="content">
   <div class="zh">你好<span>n&#464; h&#462;o</span></div>
   <div class="eyebrow">{EYEBROW}</div>
@@ -235,3 +245,4 @@ if __name__ == "__main__":
     render_pdf(flyer(), "Patio-Mandarin-Flyer.pdf")
     render_png(social(1080, 1350, "mandarin-ig-1080x1350.html"), 1080, 1350)
     render_png(social(1080, 1920, "mandarin-story-1080x1920.html"), 1080, 1920)
+    render_png(social(1080, 1080, "mandarin-fb-1080x1080.html"), 1080, 1080)

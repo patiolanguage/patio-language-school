@@ -38,9 +38,9 @@ DAYS = [("Segunda", "Mon"), ("Ter\u00e7a", "Tue"), ("Quarta", "Wed"),
 
 # two time rows, one entry per day. tag = manhã / noite
 SLOTS = [
-    ("9h15", "10h45", [[("A1", "Manh\u00e3"), ("Mandarim",)], "A2", [("A1", "Manh\u00e3"), ("Mandarim",)], "A2", "Oficinas tem\u00e1ticas"]),
+    ("9h15", "10h45", [[("A1", "Manh\u00e3"), ("Mandarim", "Manhã")], "A2", [("A1", "Manh\u00e3"), ("Mandarim", "Manhã")], "A2", "Oficinas tem\u00e1ticas"]),
     ("11h00", "12h30", ["B1+", "A1.2", "B1+", "A1.2", "Conversa\u00e7\u00e3o"]),
-    ("15h00", "16h30", ["", "Mandarim", "", "Mandarim", ""]),
+    ("15h00", "16h30", ["", ("Mandarim", "Tarde"), "", ("Mandarim", "Tarde"), ""]),
     ("18h30", "20h00", ["", ("A1", "Tarde"), "", ("A1", "Tarde"), ""]),
 ]
 
@@ -121,8 +121,9 @@ td.cell{{vertical-align:middle;}}
 .chip.tall{{height:458px;}}
 .span-time{{display:block;font-size:19px;font-weight:700;letter-spacing:.05em;margin-top:12px;opacity:.85;}}
 .split{{display:flex;flex-direction:column;gap:10px;}}
-.chip.half{{height:70px;font-size:26px;line-height:1.05;}}
-.ampm-sm{{font-size:17px;font-weight:700;letter-spacing:.08em;margin-left:8px;opacity:.82;}}
+.chip.half{{height:70px;font-size:23px;line-height:1.05;}}
+.chip.half > span{{display:flex;flex-direction:column;align-items:center;}}
+.ampm-sm{{font-size:15px;font-weight:700;letter-spacing:.08em;margin-top:3px;opacity:.85;}}
 .legend{{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 26px;margin-top:32px;}}
 .leg{{display:flex;align-items:center;gap:9px;color:#4a4038;font-size:23px;font-weight:600;}}
 .dot{{width:19px;height:19px;border-radius:50%;display:inline-block;}}

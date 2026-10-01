@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/style.css?v=12">
 <style>
-  section[id] { scroll-margin-top: 84px; }
+  section[id] { scroll-margin-top: var(--hdr, 100px); }
   .hero { padding-bottom: 24px; }
   #groups { padding-top: 40px; }
   .nav-home a { padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 0.82rem;
@@ -116,7 +116,7 @@
     <div>
       <span class="eyebrow">Novidade no Patio &middot; Mandarim &middot; Lagos</span>
       <h1>Aprende mandarim com um sorriso.</h1>
-      <p class="lede">Grupos pequenos de mandarim em Lagos, num ambiente descontra&iacute;do. Fala desde a primeira aula, com uma professora que torna tudo divertido. Todos os n&iacute;veis s&atilde;o bem-vindos, desde o teu primeiro n&#464; h&#462;o.</p>
+      <p class="lede">Pequenos grupos de mandarim em Lagos, num ambiente descontra&iacute;do. Fala desde a primeira aula, com uma professora que torna tudo divertido. Todos os n&iacute;veis s&atilde;o bem-vindos, desde o teu primeiro n&#464; h&#462;o.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="#signup">Reserva o teu lugar</a>
         <a class="btn btn-secondary" href="#groups">V&ecirc; os grupos</a>
@@ -233,8 +233,8 @@
 <!-- FAQ -->
 <section class="section-alt" id="faq">
   <div class="container">
-    <span class="eyebrow">Perguntas</span>
-    <h2>Bom saber.</h2>
+    <span class="eyebrow">Bom saber</span>
+    <h2>Perguntas frequentes.</h2>
     <div class="faq">
       <details>
         <summary>Nunca estudei mandarim. Posso participar?</summary>
@@ -298,5 +298,13 @@
   </div>
 </footer>
 
+<script>
+/* Keep section headings clear of the sticky menu, whatever its height. */
+(function () {
+  var h = document.querySelector('.site-header');
+  function set() { document.documentElement.style.setProperty('--hdr', (h.offsetHeight + 16) + 'px'); }
+  set(); window.addEventListener('resize', set);
+})();
+</script>
 </body>
 </html>
