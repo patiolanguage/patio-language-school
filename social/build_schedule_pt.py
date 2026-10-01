@@ -30,6 +30,7 @@ CLS = {
     "B1+": ("#79835F", "#FBF6EE"),
     "Conversação": ("#726651", "#FBF6EE"),
     "Oficinas tem\u00e1ticas": ("#8C6B45", "#FBF6EE"),
+    "Mandarim": ("#7A3B52", "#FBF6EE"),
 }
 
 DAYS = [("Segunda", "Mon"), ("Ter\u00e7a", "Tue"), ("Quarta", "Wed"),
@@ -37,12 +38,22 @@ DAYS = [("Segunda", "Mon"), ("Ter\u00e7a", "Tue"), ("Quarta", "Wed"),
 
 # two time rows, one entry per day. tag = manhã / noite
 SLOTS = [
-    ("9h15", "10h45", [("A1", "Manh\u00e3"), "A2", ("A1", "Manh\u00e3"), "A2", "Oficinas tem\u00e1ticas"]),
+    ("9h15", "10h45", [[("A1", "Manh\u00e3"), ("Mandarim",)], "A2", [("A1", "Manh\u00e3"), ("Mandarim",)], "A2", "Oficinas tem\u00e1ticas"]),
     ("11h00", "12h30", ["B1+", "A1.2", "B1+", "A1.2", "Conversa\u00e7\u00e3o"]),
+    ("15h00", "16h30", ["", "Mandarim", "", "Mandarim", ""]),
     ("18h30", "20h00", ["", ("A1", "Tarde"), "", ("A1", "Tarde"), ""]),
 ]
 
 def cell(entry):
+    if isinstance(entry, list):
+        halves = ""
+        for e in entry:
+            cls = e[0]; tag = e[1] if len(e) > 1 else None
+            bg, fg = CLS[cls]
+            tag_html = f'<span class="ampm-sm">{tag}</span>' if tag else ''
+            halves += (f'<span class="chip half" style="background:{bg};color:{fg};">'
+                       f'<span>{cls}{tag_html}</span></span>')
+        return f'<td class="cell"><div class="split">{halves}</div></td>'
     if not entry:
         return '<td class="cell"><span class="empty"></span></td>'
     if isinstance(entry, tuple):
@@ -73,7 +84,7 @@ def build(fname):
         f'<span class="leg"><span class="dot" style="background:{CLS[c][0]}"></span>{lbl}</span>'
         for c, lbl in [("A1","A1 &middot; Iniciante"),("A1.2","A1.2 &middot; Elementar"),
                        ("A2","A2 &middot; Pr\u00e9-Interm\u00e9dio"),("B1+","B1+ &middot; Interm\u00e9dio"),
-                       ("Oficinas tem\u00e1ticas","Oficinas tem\u00e1ticas"),("Conversa\u00e7\u00e3o","Conversa\u00e7\u00e3o")])
+                       ("Oficinas tem\u00e1ticas","Oficinas tem\u00e1ticas"),("Conversa\u00e7\u00e3o","Conversa\u00e7\u00e3o"),("Mandarim","Mandarim &middot; a partir de 19 out")])
     css = f"""
 *{{margin:0;padding:0;box-sizing:border-box;}}
 html,body{{width:{W}px;height:{H}px;}}
@@ -89,26 +100,29 @@ html,body{{width:{W}px;height:{H}px;}}
 .note{{text-align:center;color:#8a7d6c;font-size:23px;font-weight:500;margin-top:12px;}}
 table{{width:100%;border-collapse:separate;border-spacing:10px;margin-top:30px;table-layout:fixed;}}
 th.corner{{width:116px;}}
-th.day{{background:#2B1F18;border-radius:13px;color:#FBF6EE;height:118px;
+th.day{{background:#2B1F18;border-radius:13px;color:#FBF6EE;height:96px;
   text-align:center;vertical-align:middle;padding:0 6px;}}
 .day-pt{{display:block;font-family:'DM Serif Display',serif;font-size:29px;line-height:1;}}
 .day-en{{display:block;font-size:16px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
   color:#C19D5F;margin-top:6px;}}
 th.time{{width:116px;background:#EEE4D2;border-radius:13px;color:#2B1F18;
-  text-align:center;vertical-align:middle;height:224px;}}
+  text-align:center;vertical-align:middle;height:150px;}}
 .t1,.t2{{display:block;font-size:29px;font-weight:800;line-height:1.15;}}
 .tdash{{display:block;color:#B8593A;font-weight:800;font-size:20px;line-height:1;}}
 td.cell{{vertical-align:middle;}}
 .chip{{display:flex;flex-direction:column;align-items:center;justify-content:center;
-  height:224px;border-radius:13px;font-weight:800;box-shadow:0 3px 10px rgba(43,31,24,.10);
+  height:150px;border-radius:13px;font-weight:800;box-shadow:0 3px 10px rgba(43,31,24,.10);
   padding:0 4px;text-align:center;overflow:hidden;}}
 .ampm{{font-size:22px;font-weight:700;letter-spacing:.08em;margin-top:8px;opacity:.82;}}
-.empty{{display:block;height:224px;border-radius:13px;background:#F0E8DA;
+.empty{{display:block;height:150px;border-radius:13px;background:#F0E8DA;
   box-shadow:inset 0 0 0 2px rgba(43,31,24,.05);}}
 .class-lg{{font-size:46px;letter-spacing:.02em;}}
 .class-sm{{font-size:24px;line-height:1.2;}}
 .chip.tall{{height:458px;}}
 .span-time{{display:block;font-size:19px;font-weight:700;letter-spacing:.05em;margin-top:12px;opacity:.85;}}
+.split{{display:flex;flex-direction:column;gap:10px;}}
+.chip.half{{height:70px;font-size:26px;line-height:1.05;}}
+.ampm-sm{{font-size:17px;font-weight:700;letter-spacing:.08em;margin-left:8px;opacity:.82;}}
 .legend{{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 26px;margin-top:32px;}}
 .leg{{display:flex;align-items:center;gap:9px;color:#4a4038;font-size:23px;font-weight:600;}}
 .dot{{width:19px;height:19px;border-radius:50%;display:inline-block;}}
@@ -119,12 +133,12 @@ td.cell{{vertical-align:middle;}}
 .dlabel{{flex:none;width:158px;color:#B8593A;font-weight:800;font-size:23px;
   letter-spacing:.06em;text-transform:uppercase;padding-top:2px;}}
 .dvals{{flex:1;display:flex;flex-direction:column;gap:7px;}}
-.pline{{color:#2B1F18;font-size:24px;font-weight:600;line-height:1.25;}}
+.pline{{color:#2B1F18;font-size:22px;font-weight:600;line-height:1.25;}}
 .pline b{{color:#B8593A;font-weight:800;}}
 .pline.pbig{{font-size:29px;}}
 .pnote{{color:#8a7d6c;font-size:20px;font-weight:600;font-style:italic;margin-top:4px;}}
 .qr{{flex:none;display:flex;flex-direction:column;align-items:center;gap:9px;}}
-.qr img{{width:176px;height:176px;border-radius:12px;background:#fff;padding:9px;
+.qr img{{width:150px;height:150px;border-radius:12px;background:#fff;padding:9px;
   box-shadow:0 4px 14px rgba(43,31,24,.12);}}
 .qrlabel{{color:#726651;font-weight:700;font-size:20px;letter-spacing:.03em;text-align:center;max-width:200px;}}
 .foot{{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:16px;padding-top:26px;}}
@@ -133,7 +147,7 @@ td.cell{{vertical-align:middle;}}
 """
     body = (f'<div class="canvas">'
         f'<div class="eyebrow">Patio Language School</div>'
-        f'<div class="title">Aprende portugu&ecirc;s no <span class="a">P&aacute;tio</span></div>'
+        f'<div class="title">Aprende l&iacute;nguas no <span class="a">Patio</span></div>'
         f'<div class="note">Aulas &middot; 21 de setembro &ndash; 18 de dezembro de 2026</div>'
         f'<table>{head}{rows}</table>'
         f'<div class="legend">{legend}</div>'
@@ -144,6 +158,7 @@ td.cell{{vertical-align:middle;}}
         f'<div class="pline">Aulas de grupo &nbsp;<b>&euro;11 / hora</b></div>'
         f'<div class="pnote">Seg/Qua &middot; 37,5 horas &nbsp;&middot;&nbsp; Ter/Qui &middot; 34,5 horas</div>'
         f'<div class="pline">Oficinas &amp; Conversa&ccedil;&atilde;o &nbsp;<b>avulso &euro;20 &middot; pack de 5 sess&otilde;es &euro;85</b></div>'
+        f'<div class="pline">Mandarim &nbsp;<b>Seg/Qua &euro;295 &middot; Ter/Qui &euro;250</b></div>'
         f'<div class="pline">Aulas particulares &nbsp;<b>sob marca&ccedil;&atilde;o</b></div>'
         f'</div></div>'
         f'<div class="drow"><span class="dlabel">Onde</span><div class="dvals">'
@@ -165,7 +180,7 @@ td.cell{{vertical-align:middle;}}
 def render(fname):
     png = fname.replace(".html", ".png")
     subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars",
-        "--force-device-scale-factor=1", f"--window-size={W},{H}",
+        "--force-device-scale-factor=1", f"--window-size={W},{H}", "--virtual-time-budget=6000",
         f"--screenshot={os.path.join(SOCIAL, png)}", os.path.join(SOCIAL, fname)],
         check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     print("rendered", png)

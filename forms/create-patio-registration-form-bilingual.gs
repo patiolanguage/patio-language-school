@@ -22,7 +22,7 @@ function createPatioRegistrationFormBilingual() {
   form.setShowLinkToRespondAgain(false);
   form.setConfirmationMessage(
     'Thanks for registering with Patio! We’ll be in touch soon to confirm your place and help with anything you need.\n\n' +
-    'Obrigada por te inscreveres no Pátio! Entraremos em contacto em breve para confirmar o teu lugar e ajudar no que precisares. Até já!'
+    'Obrigada por te inscreveres no Patio! Entraremos em contacto em breve para confirmar o teu lugar e ajudar no que precisares. Até já!'
   );
 
   /* PAGE 1 — Course selection */
@@ -89,7 +89,7 @@ function createPatioRegistrationFormBilingual() {
   form.addMultipleChoiceItem()
     .setTitle('Photo & video consent  /  Autorização de imagem')
     .setChoiceValues([
-      'Yes — I’m happy for Patio to use photos/videos that may include me.  /  Sim — autorizo o Pátio a usar fotografias/vídeos onde eu possa aparecer.',
+      'Yes — I’m happy for Patio to use photos/videos that may include me.  /  Sim — autorizo o Patio a usar fotografias/vídeos onde eu possa aparecer.',
       'No — please don’t use images that include me.  /  Não — não usem imagens onde eu apareça.'
     ])
     .setRequired(true);
@@ -127,7 +127,7 @@ function createPatioRegistrationFormBilingual() {
     '2. Pagamento e o teu lugar\n' +
     'O teu lugar fica confirmado após a receção do pagamento. As propinas dos cursos de grupo são pagas antes do início do período, salvo acordo em contrário.\n\n' +
     '3. Reembolsos e faltas\n' +
-    'Não há reembolsos nem créditos por aulas perdidas devido a doença, viagem ou circunstâncias pessoais. Se o Pátio cancelar um curso, será oferecida uma turma alternativa ou o reembolso total.\n\n' +
+    'Não há reembolsos nem créditos por aulas perdidas devido a doença, viagem ou circunstâncias pessoais. Se o Patio cancelar um curso, será oferecida uma turma alternativa ou o reembolso total.\n\n' +
     '4. Número mínimo de alunos\n' +
     'Os cursos funcionam sujeitos a um número mínimo de alunos. Podemos ajustar, juntar ou reagendar uma turma e avisaremos com a maior antecedência possível.\n\n' +
     '5. Feriados\n' +
@@ -135,9 +135,9 @@ function createPatioRegistrationFormBilingual() {
     '6. Alterações de horário\n' +
     'Ocasionalmente poderemos ter de alterar o horário ou o professor de uma turma. Avisaremos com a maior antecedência possível.\n\n' +
     '7. Uma comunidade respeitadora\n' +
-    'O Pátio é um espaço acolhedor e caloroso. Pedimos a todos que respeitem os professores e os colegas.\n\n' +
+    'O Patio é um espaço acolhedor e caloroso. Pedimos a todos que respeitem os professores e os colegas.\n\n' +
     '8. Os teus dados\n' +
-    'Os dados que nos forneces são usados apenas para organizar as tuas aulas e manter o contacto sobre o Pátio. Não os partilhamos com terceiros.';
+    'Os dados que nos forneces são usados apenas para organizar as tuas aulas e manter o contacto sobre o Patio. Não os partilhamos com terceiros.';
 
   form.addPageBreakItem()
     .setTitle('Terms & Conditions  /  Termos e Condições')

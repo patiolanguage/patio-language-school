@@ -10,6 +10,9 @@ patio-site.zip
 # Local font-comparison scratch page
 font-preview.html
 
+# Cloudflare Pages Functions local secrets (Supabase + Turnstile)
+.dev.vars
+
 # Python bytecode cache
 __pycache__/
 *.pyc

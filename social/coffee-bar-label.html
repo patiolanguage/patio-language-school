@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<title>Patio Coffee Bar Label</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@500;600&display=swap">
+<style>
+  :root{
+    --cream:#FBF6EE;
+    --ink:#2B1F18;
+    --terra:#B8593A;
+    --teal:#617C7B;
+    --gold:#C19D5F;
+    --galao:#726651;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#efe7d8;font-family:"Barlow",system-ui,sans-serif;color:var(--ink)}
+
+  /* One A6 landscape card (148 x 105 mm). Print at 100% / actual size. */
+  .card{
+    width:148mm;height:105mm;
+    background:var(--cream);
+    position:relative;
+    overflow:hidden;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
+    padding:12mm 14mm;
+    margin:0 auto;
+  }
+  /* thin inner keyline, tote-bag minimal */
+  .card::before{
+    content:"";position:absolute;inset:5mm;
+    border:0.5mm solid var(--terra);
+    border-radius:2mm;
+    opacity:.55;
+    pointer-events:none;
+  }
+
+  .eyebrow{
+    font-family:"Barlow Semi Condensed",sans-serif;
+    font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+    font-size:10.5pt;color:var(--gold);
+    margin-bottom:5mm;
+  }
+
+  .cup{width:15mm;height:15mm;margin-bottom:4mm}
+  .cup path,.cup line{stroke:var(--terra);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+  .steam{stroke:var(--gold);stroke-width:4.5;opacity:.9}
+
+  h1{
+    font-family:"DM Serif Display",Georgia,serif;font-weight:400;
+    font-size:40pt;line-height:1;color:var(--ink);
+    letter-spacing:.01em;
+  }
+  .sub{
+    font-family:"DM Serif Display",serif;font-style:italic;
+    font-size:19pt;color:var(--terra);
+    margin-top:3mm;
+  }
+  .en{
+    font-family:"Barlow",sans-serif;font-weight:400;
+    font-size:12pt;color:var(--galao);
+    margin-top:4mm;line-height:1.4;max-width:110mm;
+  }
+  .en b{color:var(--teal);font-weight:600}
+
+  .rule{width:18mm;height:0.6mm;background:var(--gold);margin:6mm 0 5mm;border-radius:2px}
+
+  .foot{
+    display:flex;align-items:center;gap:3.5mm;
+    font-family:"Barlow Semi Condensed",sans-serif;font-weight:600;font-style:italic;
+    letter-spacing:.03em;font-size:11.5pt;color:var(--galao);
+  }
+  .foot svg{height:8.5mm;width:auto;display:block}
+
+  @page{size:148mm 105mm;margin:0}
+  @media print{
+    html,body{background:#fff}
+    .card{margin:0}
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="eyebrow">O canto do café · Patio</div>
+
+    <svg class="cup" viewBox="0 0 100 100" aria-hidden="true">
+      <!-- steam -->
+      <path class="steam" d="M40 20 q6 -8 0 -16"/>
+      <path class="steam" d="M52 20 q6 -8 0 -16"/>
+      <path class="steam" d="M64 20 q6 -8 0 -16"/>
+      <!-- cup body -->
+      <path d="M22 34 h50 v20 a25 25 0 0 1 -50 0 z"/>
+      <!-- handle -->
+      <path d="M72 38 h8 a10 10 0 0 1 0 20 h-6"/>
+      <!-- saucer -->
+      <line x1="16" y1="86" x2="84" y2="86"/>
+    </svg>
+
+    <h1>Cafezinho?</h1>
+    <div class="sub">Contribuição bem-vinda&nbsp;☕</div>
+
+    <div class="rule"></div>
+
+    <p class="en">Serve-te à vontade, café ou chá.<br>
+    <b>Help yourself</b> to a coffee or tea. A small contribution keeps the pot full.</p>
+
+    <div class="foot">
+      <svg viewBox="0 0 138.38 105.02" role="img" aria-label="Patio Language School">
+        <rect fill="#B8593A" x="86.91" y="6.02" width="27.48" height="27.48" rx="1.08" ry="1.08"/>
+        <path fill="#617C7B" d="M123.33.72v40.46c0,.7-.56,1.26-1.26,1.26h-42.83c-.6,0-1.08.48-1.08,1.08v46.42c0,.67.27,1.31.74,1.78l13.08,13.08c.45.45,1.23.13,1.23-.51v-46.09c0-.4.32-.72.72-.72h43.37c.6,0,1.08-.48,1.08-1.08V15.08c0-.67-.27-1.31-.74-1.78L124.56.21c-.45-.45-1.23-.13-1.23.51Z"/>
+        <path fill="#C19D5F" d="M8.4,19.93h7.71c1.34,0,2.36,1.1,2.36,2.36v10.34c0,1.26-1.06,2.32-2.36,2.32h-4.17v12.5h-3.54v-27.53ZM14.92,23.47h-2.99v7.94h2.99v-7.94Z"/>
+        <path fill="#C19D5F" d="M29.51,42.07h-3.93l-.55,5.39h-3.54l2.91-27.53h6.29l2.83,27.53h-3.46l-.55-5.39ZM25.97,38.53h3.15l-1.57-15.06-1.57,15.06Z"/>
+        <path fill="#C19D5F" d="M38.64,23.47h-3.15v-3.54h9.83v3.54h-3.15v23.99h-3.54v-23.99Z"/>
+        <path fill="#C19D5F" d="M49.25,19.93h3.54v27.53h-3.54v-27.53Z"/>
+        <path fill="#C19D5F" d="M57.9,22.29c0-1.26,1.1-2.36,2.36-2.36h5.35c1.34,0,2.36,1.1,2.36,2.36v22.85c0,1.26-1.06,2.32-2.36,2.32h-5.35c-1.26,0-2.36-1.06-2.36-2.32v-22.85ZM64.43,23.47h-2.99v20.45h2.99v-20.45Z"/>
+        <path fill="#C19D5F" d="M0,52.2h2.44v14.37h2.87v2.12H0v-16.49Z"/>
+        <path fill="#C19D5F" d="M11.78,65.47h-2.71l-.38,3.23h-2.44l2-16.49h4.33l1.95,16.49h-2.38l-.38-3.23ZM9.35,63.35h2.17l-1.08-9.02-1.08,9.02Z"/>
+        <path fill="#C19D5F" d="M19.04,52.2l2.33,8.2v-8.2h2.44v16.49h-2.87l-2.44-8.86v8.86h-2.44v-16.49h2.98Z"/>
+        <path fill="#C19D5F" d="M30.48,57.15v-2.83h-2.06v12.25h2.06v-3.79h-.81v-2.12h3.25v6.64c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/>
+        <path fill="#C19D5F" d="M37.52,52.2v14.37h2.06v-14.37h2.44v15.1c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-15.1h2.44Z"/>
+        <path fill="#C19D5F" d="M49.06,65.47h-2.71l-.38,3.23h-2.44l2-16.49h4.33l1.95,16.49h-2.38l-.38-3.23ZM46.62,63.35h2.17l-1.08-9.02-1.08,9.02Z"/>
+        <path fill="#C19D5F" d="M57.84,57.15v-2.83h-2.06v12.25h2.06v-3.79h-.81v-2.12h3.25v6.64c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/>
+        <path fill="#C19D5F" d="M68.73,68.69h-6.28v-16.49h6.09v2.12h-3.66v4.55h2.57v2.12h-2.57v5.58h3.85v2.12Z"/>
+        <path fill="#C19D5F" d="M21.02,84.42v2.85h2.06v-5.32h-2.87c-.95,0-1.62-.68-1.62-1.39v-6.24c0-.82.65-1.41,1.62-1.41h3.68c.92,0,1.62.59,1.62,1.39v3.46h-2.44v-2.73h-2.06v4.81h2.87c.92,0,1.62.66,1.62,1.41v6.76c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-3.58h2.44Z"/>
+        <path fill="#C19D5F" d="M32.18,77.85v-2.83h-2.06v12.25h2.06v-2.85h2.44v3.58c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v3.53h-2.44Z"/>
+        <path fill="#C19D5F" d="M36.41,72.9h2.44v7.61h2.06v-7.61h2.44v16.49h-2.44v-6.76h-2.06v6.76h-2.44v-16.49Z"/>
+        <path fill="#C19D5F" d="M45.51,74.31c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v13.69c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69ZM50.01,75.02h-2.06v12.25h2.06v-12.25Z"/>
+        <path fill="#C19D5F" d="M54.62,74.31c0-.75.76-1.41,1.62-1.41h3.68c.92,0,1.62.66,1.62,1.41v13.69c0,.75-.73,1.39-1.62,1.39h-3.68c-.87,0-1.62-.64-1.62-1.39v-13.69ZM59.11,75.02h-2.06v12.25h2.06v-12.25Z"/>
+        <path fill="#C19D5F" d="M63.72,72.9h2.44v14.37h2.87v2.12h-5.31v-16.49Z"/>
+      </svg>
+      <span>Um café, uma conversa, e um pouco de gramática.</span>
+    </div>
+  </div>
+</body>
+</html>

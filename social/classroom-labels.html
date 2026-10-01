@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<title>Patio Classroom Labels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@500;600&display=swap">
+<style>
+  :root{
+    --cream:#FBF6EE;
+    --ink:#2B1F18;
+    --terra:#B8593A;   /* feminine */
+    --teal:#617C7B;    /* masculine */
+    --gold:#C19D5F;
+    --galao:#726651;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#e9e0d0;font-family:"Barlow",system-ui,sans-serif;color:var(--ink)}
+
+  .sheet{
+    width:210mm;min-height:297mm;
+    background:#e9e0d0;
+    padding:12mm 10mm;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-auto-rows:60mm;
+    gap:6mm;
+    align-content:start;
+  }
+
+  .label{
+    background:var(--cream);
+    border:0.4mm solid rgba(43,31,24,.14);
+    border-radius:2.5mm;
+    position:relative;
+    overflow:hidden;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
+    padding:6mm 8mm;
+  }
+  /* cut guides */
+  .label::after{
+    content:"";position:absolute;inset:0;
+    border:0.3mm dashed rgba(43,31,24,.22);
+    border-radius:2.5mm;pointer-events:none;
+  }
+  /* gender accent bar down the left edge */
+  .label .accent{position:absolute;left:0;top:0;bottom:0;width:3mm}
+  .m .accent{background:var(--teal)}
+  .f .accent{background:var(--terra)}
+
+  .mono{position:absolute;top:4mm;right:4.5mm;height:7mm;width:auto;opacity:.28}
+
+  .art{
+    font-family:"DM Serif Display",Georgia,serif;font-style:italic;
+    font-size:16pt;line-height:1;margin-bottom:1mm;
+  }
+  .m .art{color:var(--teal)}
+  .f .art{color:var(--terra)}
+
+  .word{
+    font-family:"DM Serif Display",Georgia,serif;font-weight:400;
+    font-size:30pt;line-height:1.02;color:var(--ink);
+    text-wrap:balance;
+  }
+  .word.sm{font-size:23pt}
+
+  .en{
+    font-family:"Barlow Semi Condensed",sans-serif;font-weight:500;
+    letter-spacing:.16em;text-transform:uppercase;
+    font-size:8.5pt;color:var(--galao);
+    margin-top:3.5mm;
+  }
+
+  /* Cover / legend card */
+  .legend{
+    grid-column:1 / span 2;
+    background:var(--ink);color:var(--cream);
+    border-radius:2.5mm;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:7mm 10mm;gap:8mm;
+  }
+  .legend h1{font-family:"DM Serif Display",serif;font-weight:400;font-size:22pt;line-height:1.05}
+  .legend h1 span{color:var(--gold)}
+  .legend .key{display:flex;gap:10mm;font-family:"Barlow Semi Condensed",sans-serif;font-weight:600;
+    letter-spacing:.06em;font-size:10pt}
+  .legend .key .row{display:flex;align-items:center;gap:3mm}
+  .legend .dot{width:5mm;height:5mm;border-radius:1mm;display:inline-block}
+  .legend .dot.mm{background:var(--teal)}
+  .legend .dot.ff{background:var(--terra)}
+  .legend small{display:block;font-family:"Barlow",sans-serif;font-weight:400;
+    letter-spacing:0;text-transform:none;font-size:8.5pt;color:rgba(251,246,238,.7);margin-top:1mm}
+
+  @page{size:A4;margin:0}
+  @media print{
+    html,body,.sheet{background:#fff}
+    .sheet{page-break-after:always}
+  }
+</style>
+</head>
+<body>
+<div id="sheets"></div>
+
+<!-- reusable monogram (Patio "P") -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="pmono">
+    <rect fill="#B8593A" x="86.91" y="6.02" width="27.48" height="27.48" rx="1.08" ry="1.08"/>
+    <path fill="#617C7B" d="M123.33.72v40.46c0,.7-.56,1.26-1.26,1.26h-42.83c-.6,0-1.08.48-1.08,1.08v46.42c0,.67.27,1.31.74,1.78l13.08,13.08c.45.45,1.23.13,1.23-.51v-46.09c0-.4.32-.72.72-.72h43.37c.6,0,1.08-.48,1.08-1.08V15.08c0-.67-.27-1.31-.74-1.78L124.56.21c-.45-.45-1.23-.13-1.23.51Z"/>
+  </g>
+</defs></svg>
+
+<script>
+// European Portuguese classroom vocabulary. g: gender m/f. en: English.
+const items = [
+  {art:"a",  word:"janela",            en:"window",        g:"f"},
+  {art:"a",  word:"porta",             en:"door",          g:"f"},
+  {art:"a",  word:"casa de banho",     en:"bathroom",      g:"f", sm:true},
+  {art:"a",  word:"sanita",            en:"toilet",        g:"f"},
+  {art:"o",  word:"interruptor",       en:"light switch",  g:"m", sm:true},
+  {art:"o",  word:"lavatório",         en:"sink",          g:"m"},
+  {art:"o",  word:"espelho",           en:"mirror",        g:"m"},
+  {art:"a",  word:"parede",            en:"wall",          g:"f"},
+  {art:"o",  word:"chão",              en:"floor",         g:"m"},
+  {art:"o",  word:"teto",              en:"ceiling",       g:"m"},
+  {art:"o",  word:"quadro",            en:"board",         g:"m"},
+  {art:"a",  word:"mesa",              en:"table",         g:"f"},
+  {art:"a",  word:"cadeira",           en:"chair",         g:"f"},
+  {art:"a",  word:"secretária",        en:"desk",          g:"f"},
+  {art:"a",  word:"prateleira",        en:"shelf",         g:"f"},
+  {art:"o",  word:"relógio",           en:"clock",         g:"m"},
+  {art:"a",  word:"tomada",            en:"socket",        g:"f"},
+  {art:"o",  word:"candeeiro",         en:"lamp",          g:"m"},
+  {art:"o",  word:"caixote do lixo",   en:"bin",           g:"m", sm:true},
+  {art:"a",  word:"cortina",           en:"curtain",       g:"f"},
+  {art:"o",  word:"computador",        en:"computer",      g:"m", sm:true},
+  {art:"o",  word:"livro",             en:"book",          g:"m"},
+  {art:"a",  word:"caneta",            en:"pen",           g:"f"},
+  {art:"o",  word:"lápis",             en:"pencil",        g:"m"},
+  {art:"a",  word:"planta",            en:"plant",         g:"f"},
+  {art:"a",  word:"chave",             en:"key",           g:"f"},
+  {art:"o",  word:"ar condicionado",   en:"air conditioning", g:"m", sm:true},
+  {art:"as", word:"escadas",           en:"stairs",        g:"f", sm:true},
+  {art:"a",  word:"cozinha",           en:"kitchen",       g:"f"},
+  {art:"a",  word:"chávena",           en:"cup",           g:"f"},
+  {art:"o",  word:"café",              en:"coffee",        g:"m"},
+  {art:"a",  word:"água",              en:"water",         g:"f"},
+];
+
+const PER_PAGE = 8;               // 2 x 4 grid
+const legendCard = `
+  <div class="legend">
+    <div>
+      <h1>Aprende a tua <span>sala</span>.</h1>
+      <small>Learn your classroom, one label at a time.</small>
+    </div>
+    <div class="key">
+      <div class="row"><span class="dot mm"></span> o &middot; masculino</div>
+      <div class="row"><span class="dot ff"></span> a &middot; feminino</div>
+    </div>
+  </div>`;
+
+function card(it){
+  const cls = it.g === "m" ? "m" : "f";
+  const sm  = it.sm ? " sm" : "";
+  return `<div class="label ${cls}">
+      <span class="accent"></span>
+      <svg class="mono" viewBox="77 -1 62 94"><use href="#pmono"/></svg>
+      <div class="art">${it.art}</div>
+      <div class="word${sm}">${it.word}</div>
+      <div class="en">${it.en}</div>
+    </div>`;
+}
+
+// build pages; first page reserves the top row for the legend banner
+const pages = [];
+let i = 0;
+// page 1: legend (spans 2 cols = 1 row) + 6 labels
+let first = legendCard + items.slice(0,6).map(card).join("");
+pages.push(first);
+i = 6;
+while (i < items.length){
+  pages.push(items.slice(i, i+PER_PAGE).map(card).join(""));
+  i += PER_PAGE;
+}
+
+document.getElementById("sheets").innerHTML =
+  pages.map(p => `<div class="sheet">${p}</div>`).join("");
+</script>
+</body>
+</html>

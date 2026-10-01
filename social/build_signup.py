@@ -101,10 +101,56 @@ story = f"""
 </div>
 """
 
+# --- Portuguese versions (headline = Claire's chosen "O teu portugues comeca aqui.") ---
+ig_pt = f"""
+<div class="wrap">
+  <div class="eyebrow">Outono &middot; inscrições abertas</div>
+  <div class="h1" style="font-size:100px">O teu português<br><span class="gold">começa aqui.</span></div>
+  <div class="perks" style="font-size:45px;line-height:1.45;margin-top:26px">
+    Grupos pequenos <span class="dot">&middot;</span> Estacionamento fácil<br>
+    Ótimos cafés ao lado <span class="dot">&middot;</span> Todos os níveis
+  </div>
+  <div class="pill" style="font-size:40px;padding:25px 44px;margin-top:36px">
+    patiolanguage.pt &nbsp;&rarr;
+  </div>
+</div>
+"""
+
+fb_pt = f"""
+<div class="wrap" style="bottom:60px">
+  <div class="eyebrow">Outono &middot; inscrições abertas</div>
+  <div class="h1" style="font-size:80px">O teu português<br><span class="gold">começa aqui.</span></div>
+  <div class="perks" style="font-size:41px;line-height:1.45;margin-top:20px">
+    Grupos pequenos <span class="dot">&middot;</span> Estacionamento fácil<br>
+    Ótimos cafés ao lado <span class="dot">&middot;</span> Todos os níveis
+  </div>
+  <div class="pill" style="font-size:35px;padding:21px 40px;margin-top:28px">
+    patiolanguage.pt &nbsp;&rarr;
+  </div>
+</div>
+"""
+
+story_pt = f"""
+<div class="wrap" style="bottom:150px">
+  <div class="eyebrow">Outono &middot; inscrições abertas</div>
+  <div class="h1" style="font-size:104px">O teu português<br><span class="gold">começa aqui.</span></div>
+  <div class="perks" style="font-size:49px;line-height:1.45;margin-top:26px">
+    Grupos pequenos <span class="dot">&middot;</span> Estacionamento fácil<br>
+    Ótimos cafés ao lado <span class="dot">&middot;</span> Todos os níveis
+  </div>
+  <div class="pill" style="font-size:40px;padding:25px 44px;margin-top:36px">
+    patiolanguage.pt &nbsp;&rarr;
+  </div>
+</div>
+"""
+
 JOBS = [
     ("patio-signup-story-1080x1920", 1080, 1920, story, "center 44%"),
     ("patio-signup-ig-1080x1350", 1080, 1350, ig, "center 44%"),
     ("patio-signup-fb-1080x1080", 1080, 1080, fb, "center 48%"),
+    ("patio-signup-pt-story-1080x1920", 1080, 1920, story_pt, "center 44%"),
+    ("patio-signup-pt-ig-1080x1350", 1080, 1350, ig_pt, "center 44%"),
+    ("patio-signup-pt-fb-1080x1080", 1080, 1080, fb_pt, "center 48%"),
 ]
 for name, w, h, body, pos in JOBS:
     html = page(w, h, body, pos)

@@ -1,0 +1,17 @@
+# Copy this file to `.dev.vars` (git-ignored) for local development with
+#   npx wrangler pages dev dist
+# In production these are set as Cloudflare Pages > Settings > Variables and Secrets
+# (mark the Supabase service-role key and the Turnstile secret as "Secret").
+
+# Supabase project URL, e.g. https://abcdefgh.supabase.co
+SUPABASE_URL=
+
+# Supabase service_role key (server-side only, bypasses RLS). NEVER expose in the browser.
+SUPABASE_SERVICE_ROLE_KEY=
+
+# Cloudflare Turnstile secret key (server-side verification).
+# Leave blank locally to skip the spam check. For local testing you can use
+# Cloudflare's always-passes test pair:
+#   site key (in ai/index.html):  1x00000000000000000000AA
+#   secret (here):                1x0000000000000000000000000000000AA
+TURNSTILE_SECRET=

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aulas de Mandarim em Lagos | Patio Language School</title>
+<meta name="description" content="Aulas de mandarim em pequenos grupos em Lagos. Dois grupos a partir de 19 de outubro de 2026, todos os n&iacute;veis s&atilde;o bem-vindos. Fala desde a primeira aula. Inscreve-te na Patio Language School.">
+<meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="en" href="https://patiolanguage.pt/mandarin/">
+<link rel="alternate" hreflang="pt-PT" href="https://patiolanguage.pt/pt/mandarim/">
+<link rel="alternate" hreflang="x-default" href="https://patiolanguage.pt/mandarin/">
+<link rel="canonical" href="https://patiolanguage.pt/pt/mandarim/">
+<link rel="icon" href="../../assets/img/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../assets/img/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css?v=12">
+<style>
+  section[id] { scroll-margin-top: 84px; }
+  .hero { padding-bottom: 24px; }
+  #groups { padding-top: 40px; }
+  .nav-home a { padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 0.82rem;
+    letter-spacing: 0.04em; color: var(--galao); text-decoration: none; }
+  .nav-home a:hover { color: var(--terracota); }
+  .nav-lang a { padding: 3px 8px; }
+
+  .zh-hero { position: relative; }
+  .zh-hero-photo { width: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 4 / 3;
+    box-shadow: 0 6px 24px rgba(43,31,24,0.16); display: block; }
+  .zh-badge { position: absolute; left: 18px; bottom: 18px; background: rgba(43,31,24,0.82);
+    color: #FBF6EE; border-radius: 12px; padding: 10px 16px; display: flex; align-items: baseline; gap: 10px; }
+  .zh-badge .zh { font-family: 'Noto Serif SC', serif; font-weight: 600; font-size: 2rem; line-height: 1; }
+  .zh-badge .py { color: var(--praia); font-style: italic; font-weight: 600; font-size: 1.1rem; }
+
+  .group-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 8px; }
+  @media (max-width: 820px) { .group-grid { grid-template-columns: 1fr; } }
+  .group-card { background: #fff; border-radius: 16px; padding: 30px 32px;
+    box-shadow: 0 2px 12px rgba(43,31,24,0.06); border-top: 4px solid var(--mar); }
+  .group-card:nth-child(2) { border-top-color: var(--terracota); }
+  .group-card .kicker { color: var(--mar); font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; font-size: 0.78rem; margin-bottom: 8px; display: block; }
+  .group-card:nth-child(2) .kicker { color: var(--terracota); }
+  .group-card h3 { font-size: 1.5rem; margin-bottom: 6px; }
+  .group-card .time { font-weight: 700; font-size: 1.15rem; color: var(--chocolate); margin: 0; }
+  .group-card .dates { color: var(--galao); font-weight: 600; margin: 4px 0 0; }
+  .group-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(43,31,24,0.10);
+    color: var(--galao); font-size: 0.95rem; line-height: 1.5; }
+  .group-price { font-family: var(--font-headline); color: var(--mar); font-size: 1.7rem; line-height: 1; margin-bottom: 6px; }
+  .group-card:nth-child(2) .group-price { color: var(--terracota); }
+
+  .easy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin-top: 8px; }
+  .easy { background: #fff; border-radius: 14px; padding: 22px 24px; box-shadow: 0 2px 10px rgba(43,31,24,0.06);
+    border-top: 4px solid #7A3B52; }
+  .easy h3 { font-size: 1.15rem; margin-bottom: 6px; }
+  .easy p { color: var(--galao); margin: 0; font-size: 0.96rem; }
+  .easy-note { color: var(--galao); margin-top: 18px; max-width: 70ch; }
+  .teacher-card { display: flex; gap: 30px; align-items: flex-start; background: #fff; border-radius: 16px;
+    padding: 32px; max-width: 840px; margin-top: 8px; box-shadow: 0 2px 12px rgba(43,31,24,0.06);
+    border-top: 4px solid var(--praia); }
+  .teacher-mono { width: 132px; height: 132px; flex: none; border-radius: 50%; background: #7A3B52; color: #FBF6EE;
+    display: flex; align-items: center; justify-content: center; font-family: var(--font-headline); font-size: 2.6rem;
+    letter-spacing: 0.04em; }
+  .teacher-photo { width: 160px; height: 160px; flex: none; border-radius: 50%; object-fit: cover;
+    box-shadow: 0 4px 14px rgba(43,31,24,0.18); }
+  .teacher-text p { color: var(--galao); }
+  .teacher-text p:first-child { margin-top: 0; }
+  .teacher-text .sign { color: var(--chocolate); font-weight: 700; }
+  @media (max-width: 600px) { .teacher-card { flex-direction: column; align-items: center; padding: 24px; } }
+  .photo-strip { padding: 0; }
+  .photo-strip .strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .photo-strip img { width: 100%; height: 300px; object-fit: cover; display: block; }
+  @media (max-width: 720px) { .photo-strip .strip { grid-template-columns: 1fr; } .photo-strip img { height: 220px; } }
+  .faq { max-width: 760px; }
+  .faq details { background: #fff; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(43,31,24,0.05); }
+  .faq summary { font-weight: 700; cursor: pointer; }
+  .faq details p { color: var(--galao); margin: 10px 0 0; }
+
+  .zh-form-wrap { background: #fff; border-radius: 18px; padding: 34px; max-width: 640px; margin: 24px 0 0;
+    box-shadow: 0 2px 14px rgba(43,31,24,0.08); border-top: 4px solid var(--mar); }
+  @media (max-width: 560px) { .zh-form-wrap { padding: 22px; } }
+  .zh-form-wrap form > div { display: flex; flex-direction: column; gap: 6px; }
+  .zh-form-wrap input, .zh-form-wrap select, .zh-form-wrap textarea { width: 100%; }
+  .zh-form-wrap .hint { color: var(--galao); font-size: 0.88rem; font-weight: 400; }
+  .privacy-note { color: var(--galao); font-size: 0.88rem; margin-top: 18px; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">
+      <img src="../../assets/img/Patio-Language-School-Logo-Color.png" alt="Patio Language School">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#groups">Grupos</a></li>
+        <li><a href="#how">Como funciona</a></li>
+        <li><a href="#teacher">Professora</a></li>
+        <li><a href="#faq">Perguntas</a></li>
+        <li><a href="#signup">Inscri&ccedil;&atilde;o</a></li>
+        <li class="nav-lang">
+          <a href="./" class="active" aria-current="true">PT</a>
+          <a href="../../mandarin/">EN</a>
+        </li>
+        <li class="nav-home"><a href="../index.html">&larr; In&iacute;cio Patio</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container">
+    <div>
+      <span class="eyebrow">Novidade no Patio &middot; Mandarim &middot; Lagos</span>
+      <h1>Aprende mandarim com um sorriso.</h1>
+      <p class="lede">Pequenos grupos de mandarim em Lagos, num ambiente descontra&iacute;do. Fala desde a primeira aula, com uma professora que torna tudo divertido. Todos os n&iacute;veis s&atilde;o bem-vindos, desde o teu primeiro n&#464; h&#462;o.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#signup">Reserva o teu lugar</a>
+        <a class="btn btn-secondary" href="#groups">V&ecirc; os grupos</a>
+      </div>
+    </div>
+    <div class="zh-hero">
+      <img class="zh-hero-photo" src="../../assets/img/mandarin-hero.jpg" alt="O espa&ccedil;o da Patio Language School em Lagos, com um pequeno grupo na sala do fundo">
+      <div class="zh-badge" aria-hidden="true"><span class="zh">你好</span><span class="py">n&#464; h&#462;o</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GROUPS -->
+<section class="section-alt" id="groups">
+  <div class="container">
+    <span class="eyebrow">Outono 2026 &middot; Dois grupos</span>
+    <h2>Escolhe o hor&aacute;rio que te d&aacute; jeito.</h2>
+    <p class="section-intro">Dois grupos, duas vezes por semana, aulas de 90 minutos. Ambos abertos a todos os n&iacute;veis.<br><strong>Come&ccedil;a na semana de 19 de outubro.</strong></p>
+    <div class="group-grid">
+      <div class="group-card">
+        <span class="kicker">Grupo da manh&atilde;</span>
+        <h3>Segundas e quartas</h3>
+        <p class="time">9h15 to 10h45</p>
+        <p class="dates">19 de outubro a 16 de dezembro</p>
+        <div class="group-meta">
+          <div class="group-price">295&nbsp;&euro;</div>
+          18 aulas &middot; 27 horas
+        </div>
+      </div>
+      <div class="group-card">
+        <span class="kicker">Grupo da tarde</span>
+        <h3>Ter&ccedil;as e quintas</h3>
+        <p class="time">15h00 to 16h30</p>
+        <p class="dates">20 de outubro a 17 de dezembro</p>
+        <div class="group-meta">
+          <div class="group-price">250&nbsp;&euro;</div>
+          15 aulas &middot; 22,5 horas
+        </div>
+      </div>
+    </div>
+    <div class="note-box">
+      N&atilde;o h&aacute; aulas nos feriados. O grupo da tarde n&atilde;o tem aula a 27 de outubro (feriado de Lagos), 1 de dezembro nem 8 de dezembro.
+      Os lugares s&atilde;o limitados para manter os grupos pequenos.
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<section class="photo-strip" aria-label="Fotografias dos anos da Michelle na &Aacute;sia">
+  <div class="strip">
+    <img src="../../assets/img/mandarin-hk-1.jpg" alt="Os arranha-c&eacute;us de Hong Kong ao p&ocirc;r do sol" loading="lazy">
+    <img src="../../assets/img/mandarin-michelle-asia.jpg" alt="A Michelle em frente a um pal&aacute;cio tradicional na &Aacute;sia" loading="lazy">
+    <img src="../../assets/img/mandarin-hk-2.jpg" alt="O porto e os arranha-c&eacute;us de Hong Kong ao p&ocirc;r do sol" loading="lazy">
+  </div>
+</section>
+
+<!-- PORQUE E MAIS FACIL -->
+<section id="easier">
+  <div class="container">
+    <span class="eyebrow">Boas not&iacute;cias</span>
+    <h2>Mais f&aacute;cil do que pensas.</h2>
+    <p class="section-intro">A gram&aacute;tica do mandarim &eacute; surpreendentemente simples. H&aacute; muito menos para decorar do que na maioria das l&iacute;nguas europeias, por isso come&ccedil;as depressa a construir frases a s&eacute;rio.</p>
+    <div class="easy-grid">
+      <div class="easy"><h3>Sem conjuga&ccedil;&otilde;es</h3><p>O verbo nunca muda. &ldquo;Eu vou&rdquo;, &ldquo;ela vai&rdquo;, &ldquo;n&oacute;s vamos&rdquo;: em mandarim &eacute; sempre a mesma palavra.</p></div>
+      <div class="easy"><h3>Sem tempos verbais</h3><p>Palavras como &ldquo;ontem&rdquo; ou &ldquo;amanh&atilde;&rdquo; dizem quando. O verbo fica igual.</p></div>
+      <div class="easy"><h3>Sem plurais</h3><p>Um livro, tr&ecirc;s livros. O nome n&atilde;o muda.</p></div>
+      <div class="easy"><h3>Sem g&eacute;nero</h3><p>Nada de masculino ou feminino para decorar.</p></div>
+    </div>
+    <p class="easy-note">A novidade s&atilde;o os tons. Praticamos desde a primeira aula, em voz alta e com muitas gargalhadas, para que se tornem naturais.</p>
+  </div>
+</section>
+
+<!-- CONHECE A PROFESSORA -->
+<section class="section-alt" id="teacher">
+  <div class="container">
+    <span class="eyebrow">A tua professora</span>
+    <h2>Conhece a Michelle Kanner.</h2>
+    <div class="teacher-card">
+      <img class="teacher-photo" src="../../assets/img/michelle.jpg" alt="Michelle Kanner">
+      <div class="teacher-text">
+        <p>Ol&aacute;, sou a Michelle! Vivi e trabalhei muitos anos na &Aacute;sia, incluindo Taiwan, Singapura, Hong Kong e China, e criei uma liga&ccedil;&atilde;o profunda com as l&iacute;nguas, as culturas e as tradi&ccedil;&otilde;es asi&aacute;ticas.</p>
+        <p>Sou licenciada pela Universidade de Cambridge, com especializa&ccedil;&atilde;o em aprendizagem e educa&ccedil;&atilde;o para pessoas com necessidades especiais. Sou tamb&eacute;m Mestre de Feng Shui e fundei seis empresas nas &aacute;reas da educa&ccedil;&atilde;o, alimenta&ccedil;&atilde;o, imobili&aacute;rio e agricultura biol&oacute;gica.</p>
+        <p>Ao longo dos anos, criei cursos online de design de interiores, Feng Shui, cultura e arte do Leste Asi&aacute;tico, e desenvolvi programas educativos com base na minha experi&ecirc;ncia na &Aacute;sia.</p>
+        <p>Hoje trago toda essa experi&ecirc;ncia para as minhas aulas de chin&ecirc;s. Acredito que aprender uma l&iacute;ngua deve ser simples, pr&aacute;tico e divertido, sem stress nem complica&ccedil;&otilde;es. O meu objetivo &eacute; ajudar-te a come&ccedil;ar a falar chin&ecirc;s depressa, num ambiente descontra&iacute;do e acolhedor, onde podes aprender, rir e aproveitar o caminho.</p>
+        <p class="sign">Vem descobrir como o chin&ecirc;s pode ser f&aacute;cil e divertido!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <span class="eyebrow">&Agrave; maneira do Patio</span>
+    <h2>A falar desde o primeiro dia.</h2>
+    <p class="section-intro">As nossas aulas s&atilde;o sobre conversa a s&eacute;rio, n&atilde;o s&oacute; exerc&iacute;cios. Vais praticar em voz alta, &agrave; volta de uma mesa, num espa&ccedil;o descontra&iacute;do onde errar faz parte de aprender.</p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Grupos pequenos</h3>
+        <p>Poucos alunos, para que todos tenham tempo para falar e fazer perguntas.</p>
+      </div>
+      <div class="card">
+        <h3>Tons e frases do dia a dia</h3>
+        <p>Acerta nos sons desde cedo e depois constr&oacute;i frases que vais mesmo usar.</p>
+      </div>
+      <div class="card">
+        <h3>Todos os n&iacute;veis</h3>
+        <p>Nunca estudaste ou queres retomar? Diz-nos e ajudamos-te a encontrar o teu lugar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-alt" id="faq">
+  <div class="container">
+    <span class="eyebrow">Perguntas</span>
+    <h2>Bom saber.</h2>
+    <div class="faq">
+      <details>
+        <summary>Nunca estudei mandarim. Posso participar?</summary>
+        <p>Sim. Os dois grupos est&atilde;o abertos a todos os n&iacute;veis, incluindo principiantes absolutos.</p>
+      </details>
+      <details>
+        <summary>Onde s&atilde;o as aulas?</summary>
+        <p>Na Patio Language School, Pra&ccedil;a do Poder Local, Lote 14, Loja C, 8600-524 Lagos.</p>
+      </details>
+      <details>
+        <summary>Como pago?</summary>
+        <p>Primeiro confirmamos o teu lugar e depois combinamos o pagamento.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- SIGN UP -->
+<section id="signup">
+  <div class="container">
+    <span class="eyebrow">Inscri&ccedil;&atilde;o</span>
+    <h2>Reserva o teu lugar.</h2>
+    <p class="section-intro">Inscreve-te online em poucos minutos. Respondemos para confirmar o teu lugar e o pagamento.</p>
+    <div class="zh-form-wrap" style="text-align:center;">
+      <p style="color:var(--galao);margin:0 0 22px;">Um formul&aacute;rio curto, em ingl&ecirc;s, de cerca de 3 minutos. N&atilde;o precisas de conta Google.</p>
+      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSci4YD4w--EkFHCAwl5GYAPgh70tjXKCHYPPW-VjHKt4QDe3Q/viewform" target="_blank" rel="noopener">Inscrever agora</a>
+      <p class="privacy-note">
+        Preferes enviar mensagem? <a href="https://wa.me/351928129560?text=Ol%C3%A1%20Patio!%20Gostava%20de%20me%20inscrever%20nas%20aulas%20de%20mandarim.">WhatsApp +351 928 129 560</a>
+        ou <a href="mailto:patiolanguage@gmail.com">patiolanguage@gmail.com</a>. S&oacute; usamos os teus dados para te contactar sobre estas aulas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="../../assets/img/Patio-Language-School-Logo-White.png" alt="Patio Language School">
+        <p>Uma escola de l&iacute;nguas e comunidade cultural em Lagos. Portugu&ecirc;s europeu e, agora, mandarim.</p>
+      </div>
+      <div>
+        <h4 style="color:#F3ECDD;">Contactos</h4>
+        <p>Pra&ccedil;a do Poder Local, Lote 14, Loja C, Lagos<br>
+        <a href="mailto:patiolanguage@gmail.com">patiolanguage@gmail.com</a><br>
+        <a href="https://wa.me/351928129560">WhatsApp +351 928 129 560</a></p>
+      </div>
+      <div>
+        <h4 style="color:#F3ECDD;">Mais</h4>
+        <p>
+          <a href="../index.html">Aulas de portugu&ecirc;s</a><br>
+          <a href="../../ai/" hreflang="en">Cursos de IA (EN)</a><br>
+          <a href="../../mandarin/" hreflang="en">Mandarin in English</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Patio Language School</span>
+      <span>Lagos, Portugal</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

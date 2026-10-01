@@ -101,7 +101,7 @@ TXT = {
             "aula em que n&atilde;o nos tenhamos rido. Ela torna divertido aprender "
             "uma l&iacute;ngua nova."),
   "who": "Karin Liiv",
-  "foot": "A aprender portugu&ecirc;s no P&aacute;tio &nbsp;&middot;&nbsp; patiolanguage.pt",
+  "foot": "A aprender portugu&ecirc;s no Patio &nbsp;&middot;&nbsp; patiolanguage.pt",
  },
 }
 
