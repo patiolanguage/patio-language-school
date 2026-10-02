@@ -84,6 +84,27 @@
   .zh-form-wrap input, .zh-form-wrap select, .zh-form-wrap textarea { width: 100%; }
   .zh-form-wrap .hint { color: var(--galao); font-size: 0.88rem; font-weight: 400; }
   .privacy-note { color: var(--galao); font-size: 0.88rem; margin-top: 18px; line-height: 1.5; }
+
+  /* Free taster, 12 Oct 2026. Remove after the taster. */
+  .taster-chip { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; background: #fff;
+    border: 2px solid var(--terracota); color: var(--terracota); font-weight: 700; border-radius: 999px;
+    padding: 8px 18px; text-decoration: none; font-size: 0.98rem; }
+  .taster-chip:hover { background: var(--terracota); color: #FBF6EE; }
+  #taster { padding-top: 24px; padding-bottom: 24px; }
+  .taster-card { background: var(--terracota); color: #FBF6EE; border-radius: 20px; padding: 10px;
+    box-shadow: 0 10px 30px rgba(184,89,58,0.28); }
+  .taster-in { border: 2px dashed rgba(251,246,238,0.6); border-radius: 14px; padding: 30px 34px;
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center; }
+  @media (max-width: 820px) { .taster-in { grid-template-columns: 1fr; padding: 24px 22px; } }
+  .taster-in .eyebrow { color: #F6DCC0; }
+  .taster-in h2 { color: #FBF6EE; margin-bottom: 10px; }
+  .taster-in p { color: #FBF6EE; margin: 0; }
+  .taster-when { background: rgba(251,246,238,0.12); border-radius: 14px; padding: 20px 22px; }
+  .taster-when .d { font-weight: 700; font-size: 1.2rem; }
+  .taster-when .t { font-weight: 600; margin-top: 2px; color: #F6DCC0; }
+  .taster-when .w { font-size: 0.95rem; margin-top: 8px; }
+  .taster-when .btn { margin-top: 16px; background: #FBF6EE; color: var(--terracota); border-color: #FBF6EE; }
+  .taster-when .small { font-size: 0.88rem; margin-top: 10px; color: #F6DCC0; }
 </style>
 </head>
 <body>
@@ -95,6 +116,7 @@
     </a>
     <nav>
       <ul>
+        <li><a href="#taster">Free taster</a></li>
         <li><a href="#groups">Groups</a></li>
         <li><a href="#how">How it works</a></li>
         <li><a href="#teacher">Teacher</a></li>
@@ -121,11 +143,32 @@
         <a class="btn btn-primary" href="#signup">Save your place</a>
         <a class="btn btn-secondary" href="#groups">See the groups</a>
       </div>
+      <a class="taster-chip" href="#taster">&#127873; Try it free: taster class Mon 12 Oct, 18h30 &rarr;</a>
     </div>
     <div class="zh-hero">
       <img class="zh-hero-photo" src="../assets/img/mandarin-hero.jpg" alt="Inside Patio Language School in Lagos, with a small class at the table in the back room">
       <div class="zh-badge" aria-hidden="true"><span class="zh">你好</span><span class="py">n&#464; h&#462;o</span></div>
     </div>
+  </div>
+</section>
+
+<!-- FREE TASTER, 12 Oct 2026. Remove after the taster. -->
+<section id="taster">
+  <div class="container">
+    <div class="taster-card"><div class="taster-in">
+      <div>
+        <span class="eyebrow">Free taster class</span>
+        <h2>Try Mandarin, free.</h2>
+        <p>45 minutes with Michelle Kanner at Patio Language School. No experience needed. Come and say your first words in Mandarin, meet Michelle, see the room, and then decide if the course is for you.</p>
+      </div>
+      <div class="taster-when">
+        <div class="d">Monday 12 October</div>
+        <div class="t">18h30 to 19h15</div>
+        <div class="w">Patio Language School<br>Pra&ccedil;a do Poder Local, Lote 14, Loja C, Lagos</div>
+        <a class="btn" href="/taster">Save a seat on WhatsApp</a>
+        <div class="small">Free. Limited seats. Or message +351 928 129 560.</div>
+      </div>
+    </div></div>
   </div>
 </section>
 

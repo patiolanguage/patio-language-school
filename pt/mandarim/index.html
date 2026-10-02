@@ -84,6 +84,27 @@
   .zh-form-wrap input, .zh-form-wrap select, .zh-form-wrap textarea { width: 100%; }
   .zh-form-wrap .hint { color: var(--galao); font-size: 0.88rem; font-weight: 400; }
   .privacy-note { color: var(--galao); font-size: 0.88rem; margin-top: 18px; line-height: 1.5; }
+
+  /* Free taster, 12 Oct 2026. Remove after the taster. */
+  .taster-chip { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; background: #fff;
+    border: 2px solid var(--terracota); color: var(--terracota); font-weight: 700; border-radius: 999px;
+    padding: 8px 18px; text-decoration: none; font-size: 0.98rem; }
+  .taster-chip:hover { background: var(--terracota); color: #FBF6EE; }
+  #taster { padding-top: 24px; padding-bottom: 24px; }
+  .taster-card { background: var(--terracota); color: #FBF6EE; border-radius: 20px; padding: 10px;
+    box-shadow: 0 10px 30px rgba(184,89,58,0.28); }
+  .taster-in { border: 2px dashed rgba(251,246,238,0.6); border-radius: 14px; padding: 30px 34px;
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center; }
+  @media (max-width: 820px) { .taster-in { grid-template-columns: 1fr; padding: 24px 22px; } }
+  .taster-in .eyebrow { color: #F6DCC0; }
+  .taster-in h2 { color: #FBF6EE; margin-bottom: 10px; }
+  .taster-in p { color: #FBF6EE; margin: 0; }
+  .taster-when { background: rgba(251,246,238,0.12); border-radius: 14px; padding: 20px 22px; }
+  .taster-when .d { font-weight: 700; font-size: 1.2rem; }
+  .taster-when .t { font-weight: 600; margin-top: 2px; color: #F6DCC0; }
+  .taster-when .w { font-size: 0.95rem; margin-top: 8px; }
+  .taster-when .btn { margin-top: 16px; background: #FBF6EE; color: var(--terracota); border-color: #FBF6EE; }
+  .taster-when .small { font-size: 0.88rem; margin-top: 10px; color: #F6DCC0; }
 </style>
 </head>
 <body>
@@ -95,6 +116,7 @@
     </a>
     <nav>
       <ul>
+        <li><a href="#taster">Aula gr&aacute;tis</a></li>
         <li><a href="#groups">Grupos</a></li>
         <li><a href="#how">Como funciona</a></li>
         <li><a href="#teacher">Professora</a></li>
@@ -121,11 +143,32 @@
         <a class="btn btn-primary" href="#signup">Reserva o teu lugar</a>
         <a class="btn btn-secondary" href="#groups">V&ecirc; os grupos</a>
       </div>
+      <a class="taster-chip" href="#taster">&#127873; Experimenta gr&aacute;tis: aula seg 12 out, 18h30 &rarr;</a>
     </div>
     <div class="zh-hero">
       <img class="zh-hero-photo" src="../../assets/img/mandarin-hero.jpg" alt="O espa&ccedil;o da Patio Language School em Lagos, com um pequeno grupo na sala do fundo">
       <div class="zh-badge" aria-hidden="true"><span class="zh">你好</span><span class="py">n&#464; h&#462;o</span></div>
     </div>
+  </div>
+</section>
+
+<!-- AULA GRATIS, 12 out 2026. Remover depois da aula. -->
+<section id="taster">
+  <div class="container">
+    <div class="taster-card"><div class="taster-in">
+      <div>
+        <span class="eyebrow">Aula experimental gr&aacute;tis</span>
+        <h2>Experimenta o mandarim, gr&aacute;tis.</h2>
+        <p>45 minutos com a Michelle Kanner na Patio Language School. N&atilde;o precisas de experi&ecirc;ncia. Vem dizer as tuas primeiras palavras em mandarim, conhecer a Michelle e o espa&ccedil;o, e depois decide se o curso &eacute; para ti.</p>
+      </div>
+      <div class="taster-when">
+        <div class="d">Segunda, 12 de outubro</div>
+        <div class="t">18h30 &agrave;s 19h15</div>
+        <div class="w">Patio Language School<br>Pra&ccedil;a do Poder Local, Lote 14, Loja C, Lagos</div>
+        <a class="btn" href="/taster">Reserva pelo WhatsApp</a>
+        <div class="small">Gr&aacute;tis. Lugares limitados. Ou envia mensagem para +351 928 129 560.</div>
+      </div>
+    </div></div>
   </div>
 </section>
 
