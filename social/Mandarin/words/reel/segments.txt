@@ -1,0 +1,5 @@
+file 'C:/Users/Claire/Patio Language School/social/Mandarin/words/reel/seg-0.mp4'
+file 'C:/Users/Claire/Patio Language School/social/Mandarin/words/reel/seg-1.mp4'
+file 'C:/Users/Claire/Patio Language School/social/Mandarin/words/reel/seg-2.mp4'
+file 'C:/Users/Claire/Patio Language School/social/Mandarin/words/reel/seg-3.mp4'
+file 'C:/Users/Claire/Patio Language School/social/Mandarin/words/reel/seg-4.mp4'

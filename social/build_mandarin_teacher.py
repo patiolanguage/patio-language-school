@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Meet the teacher post, Mon 5 Oct 2026. Michelle Kanner. EN and PT.
+"""Meet the teacher post (Facebook version has no link on the image, Facebook rejected it), Mon 5 Oct 2026. Michelle Kanner. EN and PT.
 
 All facts come from Michelle's bio on /mandarin/ and /pt/mandarim/.
 Quote is her own line from the bio.
@@ -47,9 +47,9 @@ COPY = {
 }
 
 FMT = {
-    "ig":    dict(w=1080, h=1350, top=40, bottom=44, photo=330, mich=380, name=96, quote=46, fact=28, tk=30, gap=22),
-    "story": dict(w=1080, h=1920, top=130, bottom=280, photo=400, mich=420, name=116, quote=58, fact=36, tk=36, gap=36),
-    "fb":    dict(w=1080, h=1080, top=36, bottom=36, photo=250, mich=290, name=76, quote=36, fact=24, tk=26, gap=12),
+    "ig":    dict(w=1080, h=1350, top=36, bottom=40, photo=230, mich=440, name=96, quote=50, fact=33, tk=33, gap=18),
+    "story": dict(w=1080, h=1920, top=130, bottom=230, photo=320, mich=540, name=120, quote=62, fact=38, tk=40, gap=30),
+    "fb":    dict(w=1080, h=1080, top=36, bottom=36, photo=190, mich=330, name=76, quote=42, fact=29, tk=29, gap=12),
 }
 
 def page(lang, fmt):
@@ -70,23 +70,23 @@ body{{font-family:'Barlow',sans-serif;background:#FBF6EE;color:#2B1F18;position:
 .mich{{position:absolute;left:50%;transform:translateX(-50%);bottom:-{m*0.62:.0f}px;width:{m}px;height:{m}px;border-radius:50%;overflow:hidden;
   border:12px solid #FBF6EE;box-shadow:0 14px 34px rgba(0,0,0,.22);}}
 .mich img{{width:100%;height:100%;object-fit:cover;object-position:center 30%;}}
-.hello{{margin-top:{m*0.62+18:.0f}px;font-family:'DM Serif Display',serif;font-style:italic;font-size:{f['name']*0.42:.0f}px;color:#B8593A;}}
+.hello{{margin-top:{m*0.62+18:.0f}px;font-family:'DM Serif Display',serif;font-style:italic;font-size:{f['name']*0.5:.0f}px;color:#B8593A;}}
 .name{{font-family:'DM Serif Display',serif;font-size:{f['name']}px;line-height:1;}}
-.role{{font-size:{f['fact']+2}px;font-weight:600;color:#617C7B;letter-spacing:.04em;margin-top:8px;}}
+.role{{font-size:{f['fact']+4}px;font-weight:700;color:#3f5a59;letter-spacing:.04em;margin-top:8px;}}
 .quote{{margin-top:{f['gap']}px;font-family:'DM Serif Display',serif;font-size:{f['quote']}px;line-height:1.15;max-width:92%;}}
 .quote span{{color:#B8593A;font-style:italic;}}
 .quote:before{{content:"\\201C";color:#C19D5F;}}
 .quote:after{{content:"\\201D";color:#C19D5F;}}
-.facts{{margin-top:{f['gap']}px;display:flex;flex-direction:column;gap:{f['gap']*0.45:.0f}px;align-items:center;}}
+.facts{{margin-top:{f['gap']}px;margin-bottom:{f['gap']}px;display:flex;flex-direction:column;gap:{f['gap']*0.4:.0f}px;align-items:center;}}
 .fact{{display:flex;align-items:center;gap:14px;background:#fff;border-radius:999px;padding:9px 24px 9px 14px;font-size:{f['fact']}px;font-weight:600;
   box-shadow:0 6px 16px rgba(43,31,24,.07);}}
 .fact i{{width:{f['fact']*0.55:.0f}px;height:{f['fact']*0.55:.0f}px;border-radius:50%;background:#C19D5F;display:block;flex:none;}}
-.ticket{{margin-top:auto;background:#B8593A;color:#FBF6EE;border-radius:20px;padding:8px;box-shadow:0 10px 26px rgba(184,89,58,.35);transform:rotate(-1.5deg);}}
+.ticket{{margin-top:auto;margin-bottom:6px;background:#B8593A;color:#FBF6EE;border-radius:20px;padding:8px;box-shadow:0 10px 26px rgba(184,89,58,.35);transform:rotate(-1.5deg);}}
 .ticket .in{{border:3px dashed rgba(251,246,238,.7);border-radius:14px;padding:12px 34px;display:flex;align-items:center;gap:26px;}}
 .ticket .k{{white-space:nowrap;font-family:'DM Serif Display',serif;font-size:{f['tk']*1.35:.0f}px;line-height:1;}}
 .ticket .r{{text-align:left;}}
 .ticket .d{{white-space:nowrap;font-size:{f['tk']*0.9:.0f}px;font-weight:700;}}
-.ticket .u{{font-size:{f['tk']*0.8:.0f}px;font-weight:600;color:#F6DCC0;margin-top:2px;}}
+.ticket .u{{font-size:{f['tk']*0.85:.0f}px;font-weight:600;color:#FBF6EE;margin-top:2px;}}
 </style></head><body>
 <div class="bar"></div>
 <div class="wrap">
@@ -102,7 +102,7 @@ body{{font-family:'Barlow',sans-serif;background:#FBF6EE;color:#2B1F18;position:
   <div class="quote">{c['quote']}</div>
   <div class="facts">{facts}</div>
   <div class="ticket"><div class="in"><div class="k">{c['tk_k']}</div>
-    <div class="r"><div class="d">{c['tk_d']}</div><div class="u">{c['tk_u']}</div></div></div></div>
+    <div class="r"><div class="d">{c['tk_d']}</div>{'' if fmt == 'fb' else '<div class="u">' + c['tk_u'] + '</div>'}</div></div></div>
 </div>
 </body></html>"""
 

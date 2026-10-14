@@ -12,6 +12,7 @@ Outputs (social/Mandarin/launch/):
   mandarin-{en,pt}-ig-1080x1350.png
   mandarin-{en,pt}-story-1080x1920.png
   mandarin-{en,pt}-fb-1080x1080.png
+  mandarin-wa-wa-1080x1350.png        WhatsApp, PT and EN in one image, reply to book
 
 Brand is "Patio", no accent. No em or en dashes.
 """
@@ -53,12 +54,29 @@ COPY = {
         tk_d="Seg 12 out &middot; 18h30",
         tk_u="patiolanguage.pt/taster",
     ),
+    "wa": dict(
+        new="Aulas de mandarim &middot; Mandarin classes",
+        bubble="Nǐ hǎo!",
+        name="Michelle Kanner",
+        role="A sua professora &middot; Your teacher. Taiwan, Singapura, Hong&nbsp;Kong, China.",
+        title='Aprenda <span class="a">mandarim</span> em Lagos.',
+        title2='Learn <span class="a">Mandarin</span> in Lagos.',
+        easy="Mais fácil do que pensa &middot; Easier than you think:",
+        ticks=["Sem conjugações &middot; No conjugations", "Sem tempos verbais &middot; No tenses", "Sem género &middot; No gender"],
+        info_h="Todos os níveis &middot; All levels",
+        info_d="Começa 19 out &middot; Starts 19 Oct",
+        info_t="Seg e Qua 9h15 &middot; Ter e Qui 15h00",
+        tk_k="Aula grátis",
+        tk_d="Free taster &middot; 12 out/Oct &middot; 18h30",
+        tk_u="Responda para reservar &middot; Reply to book",
+    ),
 }
 
 # Per format sizes
 FMT = {
     "ig":    dict(w=1080, h=1350, top=40, bottom=44, photo=560, mich=290, h1=100, tick=31, name=40, role=25, info=30, gap=26),
     "story": dict(w=1080, h=1920, top=130, bottom=300, photo=540, mich=320, h1=104, tick=36, name=46, role=28, info=34, gap=40),
+    "wa":    dict(w=1080, h=1350, top=40, bottom=44, photo=500, mich=260, h1=86, tick=26, name=36, role=23, info=27, gap=18),
     "fb":    dict(w=1080, h=1080, top=36, bottom=36, photo=400, mich=230, h1=80, tick=27, name=34, role=22, info=26, gap=16),
 }
 
@@ -89,6 +107,8 @@ body{{font-family:'Barlow',sans-serif;background:#FBF6EE;color:#2B1F18;position:
 .who .r{{font-size:{f['role']}px;font-weight:500;color:#726651;line-height:1.3;margin-top:4px;}}
 h1{{font-family:'DM Serif Display',serif;font-weight:400;font-size:{f['h1']}px;line-height:1.02;margin-top:{f['gap']}px;}}
 h1 .a{{color:#B8593A;font-style:italic;}}
+.t2{{font-family:'DM Serif Display',serif;font-size:{f['h1']*0.68:.0f}px;line-height:1.05;color:#726651;margin-top:6px;}}
+.t2 .a{{color:#B8593A;font-style:italic;}}
 .easy{{font-size:{f['tick']*1.15:.0f}px;font-weight:600;color:#4a4038;margin-top:{f['gap']*0.5:.0f}px;}}
 .ticks{{display:flex;flex-wrap:wrap;gap:12px;margin-top:{f['gap']*0.5:.0f}px;}}
 .tick{{background:#fff;border-radius:999px;padding:10px 22px 10px 12px;font-size:{f['tick']}px;font-weight:600;display:flex;align-items:center;gap:12px;
@@ -116,6 +136,7 @@ h1 .a{{color:#B8593A;font-style:italic;}}
   </div>
   <div class="who"><div class="n">{c['name']}</div><div class="r">{c['role']}</div></div>
   <h1>{c['title']}</h1>
+  {('<div class="t2">' + c['title2'] + '</div>') if c.get('title2') else ''}
   <div class="easy">{c['easy']}</div>
   <div class="ticks">{ticks}</div>
   <div class="bottom">
@@ -141,3 +162,4 @@ if __name__ == "__main__":
     for lang in ("en", "pt"):
         for fmt in ("ig", "story", "fb"):
             render(lang, fmt)
+    render("wa", "wa")  # mandarin-wa-wa-1080x1350.png, one bilingual image for WhatsApp

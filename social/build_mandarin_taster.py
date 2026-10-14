@@ -95,7 +95,7 @@ def social(lang, w, h, out):
     story = h > 1500
     square = w == h
     pad = 64
-    photo_h = 580 if story else (300 if square else 500)
+    photo_h = 580 if story else (300 if square else (420 if lang == "pt" else 500))  # PT headline wraps to 2 lines
     stamp = 300 if story else (210 if square else 260)
     mich = 220 if story else (150 if square else 180)
     h1 = 100 if story else (62 if square else 84)

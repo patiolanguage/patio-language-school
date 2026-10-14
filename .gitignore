@@ -16,3 +16,15 @@ font-preview.html
 # Python bytecode cache
 __pycache__/
 *.pyc
+
+# Private: WiFi password (cards, QR, scripts) -- repo is public
+*wifi*
+*WiFi*
+**/WiFi/
+
+# Private correspondence
+Patio-AI-Share/Email-to-Arek.txt
+
+# Zipped copies of folders that are already in the repo
+AI-Campaign.zip
+Patio-AI-Share.zip
