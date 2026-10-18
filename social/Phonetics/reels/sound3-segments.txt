@@ -1,0 +1,5 @@
+file 'C:/Users/Claire/Patio Language School/social/Phonetics/reels/sound3-seg-0.mp4'
+file 'C:/Users/Claire/Patio Language School/social/Phonetics/reels/sound3-seg-1.mp4'
+file 'C:/Users/Claire/Patio Language School/social/Phonetics/reels/sound3-seg-2.mp4'
+file 'C:/Users/Claire/Patio Language School/social/Phonetics/reels/sound3-seg-3.mp4'
+file 'C:/Users/Claire/Patio Language School/social/Phonetics/reels/sound3-seg-4.mp4'
