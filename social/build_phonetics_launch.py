@@ -13,6 +13,7 @@ Outputs (social/Phonetics/launch/):
   phonetics-{en,pt}-story-1080x1920.png
   phonetics-{en,pt}-fb-1080x1080.png
   phonetics-wa-wa-1080x1350.png       WhatsApp, PT and EN in one image, reply to book
+  phonetics-bi-{ig,story,fb}-*.png    bilingual posts, same wording as the A5 print flyer (BI)
 
 Brand is "Patio", no accent. No em or en dashes.
 """
@@ -25,6 +26,8 @@ PHOTO = bm.b64_photo(os.path.join(bm.IMG, "phonetics-tiles-banner.jpg"))  # lett
 ADDR = "Praça do Poder Local, Lote&nbsp;14, Loja&nbsp;C, Lagos"
 PIN = ('<svg viewBox="0 0 24 24" width="1em" height="1em"><path fill="#B8593A" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>')
 QR = bm.b64_png(os.path.join(bm.IMG, "qr-whatsapp-phonetics.png"))  # wa.me/351928129560, text "Phonetics Workshop"
+QR_LOGO = bm.b64_png(os.path.join(bm.IMG, "qr-whatsapp-phonetics-logo.png"))  # same link, colour Patio logo in the centre
+ADDR_FULL = "<b>Patio Language School</b><br>Praça do Poder Local, Lote&nbsp;14, Loja&nbsp;C, Lagos"
 
 COPY = {
     "en": dict(
@@ -69,6 +72,21 @@ COPY = {
         tk_d="2 sessões",
         tk_u="Responda a esta mensagem para reservar<br>Reply to this message to book",
     ),
+    # Bilingual posts, same wording as the A5 print flyer (build_phonetics_flyer.py "BI")
+    "bi": dict(
+        tag="Novidade", new="no Patio", qr="Reserve &middot; Book",
+        title='Workshop de <span class="a">fonética</span> portuguesa',
+        title2='Portuguese <span class="a">Phonetics</span> Workshop',
+        info_h="2 manhãs &middot; 2 mornings",
+        info_d="2 e 6 de novembro",
+        info_t="2 &amp; 6 November &middot; 9h15 to 10h45",
+        tk_k="35&nbsp;&euro;",
+        tk_d="2 sessões &middot; 2 sessions",
+        tk_u="WhatsApp +351&nbsp;928&nbsp;129&nbsp;560",
+        addr=ADDR_FULL, qr_img=QR_LOGO,
+        # longer bilingual text: smaller banner and title so it all fits
+        fmt={"ig": dict(photo=220, h1=88, info=46, gap=24), "story": dict(photo=360, h1=100, info=50, gap=36)},
+    ),
 }
 
 FMT = {
@@ -79,8 +97,10 @@ FMT = {
 }
 
 def page(lang, fmt):
-    c, f = COPY[lang], FMT[fmt]
-    ticks = "".join(f'<div class="tick"><span>&#10003;</span>{t}</div>' for t in c["ticks"])
+    c = COPY[lang]
+    f = dict(FMT[fmt], **c.get("fmt", {}).get(fmt, {}))
+    ticks = "".join(f'<div class="tick"><span>&#10003;</span>{t}</div>' for t in c.get("ticks", []))
+    addr, qr_img = c.get("addr", ADDR), c.get("qr_img", QR)
     return f"""<!DOCTYPE html><html><head>{bm.FONTS}<style>
 *{{margin:0;padding:0;box-sizing:border-box;}}
 html,body{{width:{f['w']}px;height:{f['h']}px;overflow:hidden;}}
@@ -130,8 +150,8 @@ h1 .a{{color:#B8593A;font-style:italic;}}
   <h1>{c['title']}</h1>
   {('<div class="t2">' + c['title2'] + '</div>') if c.get('title2') else ''}
   <div class="bottom">
-    <div class="info"><div class="h">{c['info_h']}</div><div class="d">{c['info_d']}</div><div class="t">{c['info_t']}</div><div class="ad">{PIN}<span>{ADDR}</span></div></div>
-    <div class="ticket"><div class="in"><div><div class="l"><div class="k">{c['tk_k']}</div><div class="d">{c['tk_d']}</div></div><div class="u">{c['tk_u']}</div></div>{'' if lang == 'wa' else '<div class="qr"><img src="' + QR + '"><div>' + c['qr'] + '</div></div>'}</div></div>
+    <div class="info"><div class="h">{c['info_h']}</div><div class="d">{c['info_d']}</div><div class="t">{c['info_t']}</div><div class="ad">{PIN}<span>{addr}</span></div></div>
+    <div class="ticket"><div class="in"><div><div class="l"><div class="k">{c['tk_k']}</div><div class="d">{c['tk_d']}</div></div><div class="u">{c['tk_u']}</div></div>{'' if lang == 'wa' else '<div class="qr"><img src="' + qr_img + '"><div>' + c['qr'] + '</div></div>'}</div></div>
   </div>
 </div>
 </body></html>"""
@@ -153,3 +173,5 @@ if __name__ == "__main__":
         for fmt in ("ig", "story", "fb"):
             render(lang, fmt)
     render("wa", "wa")
+    for fmt in ("ig", "story", "fb"):
+        render("bi", fmt)

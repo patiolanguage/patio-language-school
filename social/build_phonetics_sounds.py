@@ -75,28 +75,30 @@ body{{font-family:'Barlow',sans-serif;background:#FBF6EE;color:#2B1F18;position:
 .dots i.on{{background:#617C7B;}}
 .swipe{{position:absolute;bottom:84px;right:56px;font-weight:700;font-size:36px;color:#617C7B;}}
 /* cover */
-.ph{{position:absolute;left:56px;right:56px;top:160px;height:520px;width:calc(100% - 112px);object-fit:cover;object-position:center 50%;border-radius:30px;box-shadow:0 14px 34px rgba(43,31,24,.16);}}
+.ph{{position:absolute;left:56px;right:56px;top:160px;height:420px;width:calc(100% - 112px);object-fit:cover;object-position:center 50%;border-radius:30px;box-shadow:0 14px 34px rgba(43,31,24,.16);}}
 .bub{{position:absolute;left:86px;top:560px;background:#fff;border-radius:26px;padding:12px 32px 16px;box-shadow:0 10px 26px rgba(0,0,0,.2);
   font-family:'DM Serif Display',serif;font-size:76px;line-height:1;}}
-.badge{{position:absolute;left:56px;top:720px;display:flex;align-items:center;gap:16px;background:#617C7B;color:#FBF6EE;font-weight:700;font-size:40px;padding:12px 30px 12px 14px;border-radius:999px;}}
-.badge .tg{{background:#C19D5F;color:#2B1F18;font-size:24px;letter-spacing:.12em;text-transform:uppercase;padding:8px 16px;border-radius:999px;}}
-.cover{{position:absolute;left:56px;right:56px;top:830px;}}
-.cover h1{{font-family:'DM Serif Display',serif;font-weight:400;font-size:116px;line-height:1.0;}}
+.badge{{position:absolute;left:56px;top:610px;display:flex;align-items:center;gap:24px;background:#617C7B;color:#FBF6EE;font-weight:700;font-size:58px;line-height:1.05;padding:16px 44px 16px 18px;border-radius:40px;}}
+.badge .tg{{background:#C19D5F;color:#2B1F18;font-size:44px;padding:20px 22px;border-radius:30px;align-self:stretch;display:flex;align-items:center;}}
+.badge small{{display:block;font-size:40px;font-weight:600;color:#DDE7E6;margin-top:4px;}}
+.cover{{position:absolute;left:56px;right:56px;top:790px;}}
+.cover h1{{font-family:'DM Serif Display',serif;font-weight:400;font-size:144px;line-height:1.0;}}
 .cover h1 .a,.cover h2 .a{{color:#B8593A;font-style:italic;}}
-.cover h2{{font-family:'DM Serif Display',serif;font-weight:400;font-size:68px;line-height:1.1;color:#726651;margin-top:10px;}}
-.cover .how{{margin-top:34px;font-size:44px;font-weight:600;line-height:1.3;}}
+.cover h2{{font-family:'DM Serif Display',serif;font-weight:400;font-size:86px;line-height:1.1;color:#726651;margin-top:10px;}}
+.cover .how{{margin-top:30px;font-size:52px;font-weight:600;line-height:1.3;}}
 .cover .how b{{color:#3f5a59;}}
 /* word */
 .card{{position:absolute;left:56px;right:56px;top:170px;bottom:150px;background:#fff;border-radius:34px;box-shadow:0 14px 34px rgba(43,31,24,.08);
   display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;border-top:16px solid #C19D5F;}}
-.wd{{font-family:'DM Serif Display',serif;font-size:210px;line-height:1.0;}}
-.wd.long{{font-size:136px;}}
+.wd{{font-family:'DM Serif Display',serif;font-size:270px;line-height:1.0;}}
+.wd.mid{{font-size:210px;}}
+.wd.long{{font-size:164px;}}
 .like{{margin-top:22px;font-size:40px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#617C7B;}}
 .say{{font-family:'DM Serif Display',serif;font-style:italic;font-size:104px;color:#B8593A;line-height:1.05;}}
 .say.long{{font-size:80px;}}
-.mean{{margin-top:34px;}}
-.mean span{{font-size:52px;font-weight:700;background:#F1E9DA;border-radius:999px;padding:10px 32px;}}
-.tip{{margin-top:44px;font-size:44px;color:#2B1F18;font-weight:600;line-height:1.3;}}
+.mean{{margin-top:44px;}}
+.mean span{{font-size:68px;font-weight:700;background:#F1E9DA;border-radius:999px;padding:12px 40px;}}
+.tip{{margin-top:52px;font-size:58px;color:#2B1F18;font-weight:600;line-height:1.3;}}
 .tip b{{color:#3f5a59;}}
 /* cta */
 .cta{{position:absolute;left:56px;right:56px;top:170px;}}
@@ -114,33 +116,44 @@ body{{font-family:'Barlow',sans-serif;background:#FBF6EE;color:#2B1F18;position:
 .ticket .u{{font-size:46px;font-weight:700;margin-top:24px;background:#FBF6EE;color:#B8593A;display:inline-block;padding:10px 28px;border-radius:999px;}}
 </style>"""
 
-def frame(n, body, swipe=True):
+REEL_CSS = """<style>
+html,body{width:1080px;height:1920px;}
+.stage{position:absolute;left:0;top:330px;width:1080px;height:1350px;}
+.sound{position:absolute;top:200px;left:0;right:0;text-align:center;}
+.sound span{display:inline-block;background:#B8593A;color:#FBF6EE;font-family:'Barlow',sans-serif;font-weight:700;font-size:46px;
+  padding:16px 38px;border-radius:999px;box-shadow:0 10px 26px rgba(184,89,58,.35);}
+</style>"""
+
+def frame(n, body, swipe=True, reel=False):
+    """reel=True: 1080x1920 frame for the audio Reel (build_phonetics_reel.py), no swipe hint or dots."""
+    if reel:
+        return (f'<!DOCTYPE html><html><head>{bm.FONTS}{CSS}{REEL_CSS}</head><body><div class="bar"></div>'
+                f'<div class="sound"><span>&#128266; Ligue o som &middot; Turn the sound on</span></div>'
+                f'<div class="stage"><img class="logo" src="{bm.LOGO_COLOR}">{body}</div></body></html>')
     dots = "".join(f'<i class="{"on" if k == n else ""}"></i>' for k in range(1, 6))
     sw = '<div class="swipe">Deslize / Swipe &rarr;</div>' if swipe else ""
     return (f'<!DOCTYPE html><html><head>{bm.FONTS}{CSS}</head><body><div class="bar"></div>'
             f'<img class="logo" src="{bm.LOGO_COLOR}"><div class="count">{n}/5</div>'
             f'{body}{sw}<div class="dots">{dots}</div></body></html>')
 
-def slides(s):
+def slides(s, reel=False):
     out = [frame(1, f"""
 <img class="ph" src="{bm.b64_photo(os.path.join(bm.IMG, 'phonetics-tiles-' + s['key'] + '.jpg'))}">
-<div class="badge"><span class="tg">{s['n']}/3</span>Som da semana &middot; Sound of the week</div>
+<div class="badge"><span class="tg">{s['n']}/3</span><div>Sound of the week<small>Som da semana</small></div></div>
 <div class="cover">
   <h1>{s['title_en']}.</h1>
   <h2>{s['title_pt']}.</h2>
   <div class="how">{s['sub_en']}<br><b>{s['sub_pt']}</b></div>
-</div>""")]
+</div>""", reel=reel)]
     for i, (wd, like, mean, tip_en, tip_pt) in enumerate(s["words"], start=2):
-        lw = " long" if len(wd) > 8 else ""
+        lw = " long" if len(wd) > 10 else " mid" if len(wd) > 6 else ""
         ls = " long" if len(like) > 12 else ""
         out.append(frame(i, f"""
 <div class="card">
   <div class="wd{lw}">{wd}</div>
-  <div class="like">Sounds like &middot; Soa como</div>
-  <div class="say{ls}">{like}</div>
   <div class="mean"><span>{mean}</span></div>
   <div class="tip">{tip_en}<br><b>{tip_pt}</b></div>
-</div>"""))
+</div>""", reel=reel))
     out.append(frame(5, """
 <div class="cta">
   <h1>Practise these sounds <span class="a">with Sofia</span>.</h1>
@@ -153,13 +166,13 @@ def slides(s):
     <div class="p">&euro;35<small>both sessions &middot; as duas sessões</small></div>
     <div class="u">WhatsApp +351 928 129 560</div>
   </div></div>
-</div>""", swipe=False))
+</div>""", swipe=False, reel=reel))
     return out
 
 def fb_single(s):
     """One square image for Facebook: the sound, its 3 words and the workshop."""
     S = 1080
-    cards = "".join(f"""<div class="w"><div class="wd">{wd}</div><div class="say">{like}</div>
+    cards = "".join(f"""<div class="w"><div class="wd">{wd}</div>
       <div class="m">{mean}</div></div>""" for wd, like, mean, _, _ in s["words"])
     return f"""<!DOCTYPE html><html><head>{bm.FONTS}<style>
 *{{margin:0;padding:0;box-sizing:border-box;}}
@@ -178,9 +191,9 @@ h2{{font-family:'DM Serif Display',serif;font-weight:400;font-size:52px;line-hei
 .cards{{display:flex;gap:20px;margin-top:30px;flex:1;margin-bottom:34px;}}
 .w{{flex:1;background:#fff;border-radius:24px;border-top:10px solid #C19D5F;padding:40px 12px;text-align:center;box-shadow:0 10px 26px rgba(43,31,24,.08);
   display:flex;flex-direction:column;align-items:center;justify-content:center;}}
-.w .wd{{font-family:'DM Serif Display',serif;font-size:66px;line-height:1.05;}}
+.w .wd{{font-family:'DM Serif Display',serif;font-size:80px;line-height:1.05;}}
 .w .say{{white-space:nowrap;font-family:'DM Serif Display',serif;font-style:italic;font-size:34px;color:#B8593A;margin-top:8px;line-height:1.1;}}
-.w .m{{font-size:28px;font-weight:700;background:#F1E9DA;border-radius:999px;padding:5px 18px;margin-top:16px;}}
+.w .m{{font-size:34px;font-weight:700;background:#F1E9DA;border-radius:999px;padding:5px 18px;margin-top:16px;}}
 .ticket{{margin-top:auto;background:#B8593A;color:#FBF6EE;border-radius:24px;padding:9px;box-shadow:0 12px 30px rgba(184,89,58,.32);transform:rotate(-1.2deg);}}
 .ticket .in{{border:3px dashed rgba(251,246,238,.7);border-radius:17px;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;}}
 .ticket .k{{font-family:'DM Serif Display',serif;font-size:58px;line-height:1.0;}}

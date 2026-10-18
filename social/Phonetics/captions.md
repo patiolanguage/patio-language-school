@@ -15,7 +15,6 @@ One is your grandfather, the other your grandmother. The only difference is one 
 If you know the words but locals still answer you in English, it's usually not your grammar. It's a handful of sounds.
 
 Join Sofia for a two-morning Phonetics Workshop on the sounds that give foreign speakers away:
-✔ swallowed vowels
 ✔ the nasal "ão"
 ✔ the "s" that sounds like "sh"
 ✔ lh, nh and r
@@ -36,7 +35,6 @@ Um é o avô, a outra é a avó. A diferença está só numa vogal, e é fácil 
 Sabe as palavras, mas continuam a responder-lhe em inglês? Muitas vezes não é a gramática. São meia dúzia de sons.
 
 Junte-se à Sofia num workshop de fonética de duas manhãs, sobre os sons que denunciam um estrangeiro:
-✔ as vogais "engolidas"
 ✔ o "ão" nasal
 ✔ o "s" que soa "ch"
 ✔ lh, nh e r
@@ -92,7 +90,7 @@ Patio Language School
 
 ## Facebook groups post (around 22 Oct, text only + launch image)
 
-Hi all. For anyone learning European Portuguese in the Lagos area: we're running a small pronunciation workshop at Patio Language School on Mon 2 and Fri 6 November (mornings, 9h15 to 10h45). It focuses on the sounds English speakers find hardest, like nasal "ão", swallowed vowels, and lh/nh/r. €35 for both mornings, max 12 people, taught by Sofia (native, Director of Studies). Message +351 928 129 560 if you'd like a place. Obrigada!
+Hi all. For anyone learning European Portuguese in the Lagos area: we're running a small pronunciation workshop at Patio Language School on Mon 2 and Fri 6 November (mornings, 9h15 to 10h45). It focuses on the sounds English speakers find hardest, like the nasal "ão", the "sh" s, and lh/nh/r. €35 for both mornings, max 12 people, taught by Sofia (native, Director of Studies). Message +351 928 129 560 if you'd like a place. Obrigada!
 
 ---
 

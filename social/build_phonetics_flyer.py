@@ -4,7 +4,7 @@
 Same content as the launch posts (build_phonetics_launch.py): classroom photo,
 Patio logo, title, dates + address, €35 box, WhatsApp QR.
 
-Outputs (social/Phonetics/print/):
+Outputs (social/Phonetics/print/), EN, PT and BI (bilingual):
   Patio-Phonetics-Flyer-A5-EN.pdf / .png
   Patio-Phonetics-Flyer-A5-PT.pdf / .png
 Brand is "Patio", no accent. No em or en dashes.
@@ -15,8 +15,8 @@ import build_mandarin as bm
 OUT = os.path.join(bm.SOCIAL, "Phonetics", "print")
 os.makedirs(OUT, exist_ok=True)
 PHOTO = bm.b64_photo(os.path.join(bm.IMG, "phonetics-tiles-banner.jpg"))
-QR = bm.b64_png(os.path.join(bm.IMG, "qr-whatsapp-phonetics.png"))
-ADDR = "Praça do Poder Local, Lote&nbsp;14, Loja&nbsp;C, Lagos"
+QR = bm.b64_png(os.path.join(bm.IMG, "qr-whatsapp-phonetics-logo.png"))  # colour Patio logo in the centre
+ADDR = "<b>Patio Language School</b><br>Praça do Poder Local, Lote&nbsp;14, Loja&nbsp;C, Lagos"
 PIN = ('<svg viewBox="0 0 24 24" width="1em" height="1em"><path fill="#B8593A" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>')
 
 COPY = {
@@ -36,6 +36,16 @@ COPY = {
         k="35&nbsp;&euro;", kd="As duas sessões",
         scan="Leia para reservar no WhatsApp", phone="+351 928 129 560",
     ),
+    # Bilingual, same wording as the WhatsApp image (phonetics-wa-wa)
+    "BI": dict(
+        tag="Novidade", new="no Patio",
+        title='Workshop de <span class="a">fonética</span> portuguesa',
+        sub='Portuguese <span class="a">Phonetics</span> Workshop',
+        h="2 manhãs &middot; 2 mornings", d="2 e 6 de novembro",
+        t="2 &amp; 6 November &middot; 9h15 to 10h45",
+        k="35&nbsp;&euro;", kd="2 sessões &middot; 2 sessions",
+        scan="Reserve &middot; Book<br>WhatsApp", phone="+351 928 129 560",
+    ),
 }
 
 def html(c):
@@ -50,7 +60,7 @@ body{{font-family:'Barlow',sans-serif;background:#FBF6EE;color:#2B1F18;-webkit-p
 .head img{{height:15mm;display:block;}}
 .new{{display:flex;align-items:center;gap:2.2mm;background:#617C7B;color:#FBF6EE;font-weight:700;font-size:5.6mm;line-height:1.1;padding:1.6mm 4mm 1.6mm 1.8mm;border-radius:99mm;}}
 .new .tg{{background:#C19D5F;color:#2B1F18;font-size:3.4mm;letter-spacing:.12em;text-transform:uppercase;padding:1.1mm 2.4mm;border-radius:99mm;}}
-.ph{{margin-top:5mm;height:36mm;flex:none;width:100%;object-fit:cover;object-position:center 50%;border-radius:4mm;display:block;}}
+.ph{{margin-top:5mm;height:30mm;flex:none;width:100%;object-fit:cover;object-position:center 50%;border-radius:4mm;display:block;}}
 h1{{font-family:'DM Serif Display',serif;font-weight:400;font-size:12mm;line-height:1.0;margin-top:5mm;}}
 h1 .a,.sub .a{{color:#B8593A;font-style:italic;}}
 .sub{{font-family:'DM Serif Display',serif;font-size:8mm;line-height:1.1;color:#726651;margin-top:2mm;margin-bottom:4mm;}}
@@ -58,7 +68,7 @@ h1 .a,.sub .a{{color:#B8593A;font-style:italic;}}
 .info .h{{font-size:4.4mm;font-weight:700;letter-spacing:.06em;color:#617C7B;text-transform:uppercase;}}
 .info .d{{font-family:'DM Serif Display',serif;font-size:8.6mm;line-height:1.1;margin-top:.8mm;}}
 .info .t{{font-size:5.4mm;font-weight:600;color:#726651;margin-top:.6mm;}}
-.info .ad{{display:flex;gap:1.6mm;align-items:center;font-size:4.2mm;font-weight:600;margin-top:2.4mm;padding-top:2mm;border-top:.4mm solid #F1E9DA;}}
+.info .ad{{display:flex;gap:1.6mm;align-items:flex-start;font-size:4.2mm;font-weight:500;line-height:1.3;margin-top:2.4mm;padding-top:2mm;border-top:.4mm solid #F1E9DA;}}
 .book{{margin-top:4mm;}}
 .ticket{{background:#B8593A;color:#FBF6EE;border-radius:3mm;padding:1.4mm;}}
 .ticket .in{{border:.5mm dashed rgba(251,246,238,.7);border-radius:2mm;padding:2.4mm 2.4mm 2.4mm 5mm;display:flex;align-items:center;justify-content:space-between;gap:4mm;}}
