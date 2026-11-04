@@ -151,7 +151,7 @@ h1 .a{{color:#B8593A;font-style:italic;}}
   {('<div class="t2">' + c['title2'] + '</div>') if c.get('title2') else ''}
   <div class="bottom">
     <div class="info"><div class="h">{c['info_h']}</div><div class="d">{c['info_d']}</div><div class="t">{c['info_t']}</div><div class="ad">{PIN}<span>{addr}</span></div></div>
-    <div class="ticket"><div class="in"><div><div class="l"><div class="k">{c['tk_k']}</div><div class="d">{c['tk_d']}</div></div><div class="u">{c['tk_u']}</div></div>{'' if lang == 'wa' else '<div class="qr"><img src="' + qr_img + '"><div>' + c['qr'] + '</div></div>'}</div></div>
+    <div class="ticket"><div class="in"><div><div class="l"><div class="k">{c['tk_k']}</div><div class="d">{c['tk_d']}</div></div><div class="u">{c['tk_u']}</div></div>{'' if lang.endswith('wa') else '<div class="qr"><img src="' + qr_img + '"><div>' + c['qr'] + '</div></div>'}</div></div>
   </div>
 </div>
 </body></html>"""
