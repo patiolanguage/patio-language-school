@@ -3,12 +3,16 @@
 """Header image for the Phonetics Workshop Google Form (1600x400, same size as form-header-mandarin.png).
 Letter-tile banner on the right, logo + title on cream on the left.
 Upload by hand: form editor > Customize theme (palette icon) > Header > Upload.
+Round 2 header: python build_form_phonetics.py 2  ->  form-header-phonetics2.png
 Brand is "Patio", no accent. No em or en dashes.
 """
 import os, subprocess
 import build_mandarin as bm
 
-OUT = os.path.join(bm.SOCIAL, "form-header-phonetics")
+import sys
+ROUND2 = "2" in sys.argv[1:]
+OUT = os.path.join(bm.SOCIAL, "form-header-phonetics2" if ROUND2 else "form-header-phonetics")
+EYEBROW = "Novas datas &middot; 23 &amp; 27 Nov &middot; 8h30 &middot; Lagos" if ROUND2 else "2 &amp; 6 Nov &middot; 9h15 &middot; Lagos"
 TILES = bm.b64_photo(os.path.join(bm.IMG, "phonetics-tiles-banner.jpg"))
 html = f"""<!DOCTYPE html><html><head>{bm.FONTS}<style>
 *{{margin:0;padding:0;box-sizing:border-box}}
@@ -26,7 +30,7 @@ h1 .a{{color:#B8593A;font-style:italic}}
 </style></head><body><div class="bar"></div>
 <img class="tiles" src="{TILES}"><div class="fade"></div>
 <div class="left"><img src="{bm.LOGO_COLOR}">
-<div class="eyebrow">2 &amp; 6 Nov &middot; 9h15 &middot; Lagos</div>
+<div class="eyebrow">{EYEBROW}</div>
 <h1>Workshop de <span class="a">fonética</span> portuguesa</h1>
 <div class="sub">Portuguese <span class="a">Phonetics</span> Workshop</div></div>
 </body></html>"""
