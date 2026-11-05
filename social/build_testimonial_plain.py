@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Photo-free testimonial card (Karin Liiv) for Patio Language School.
+"""Photo-free testimonial card (Kadi Liiv) for Patio Language School.
 Neutral cream background, colour logo, gold quote mark, chocolate serif quote.
 EN + PT, IG post 1080x1350, IG story 1080x1920, FB square 1080x1080.
 No dashes; "Patio" no accent.
@@ -70,7 +70,7 @@ TXT = {
   "quote": ("Sofia knows exactly when to push my edge (and when to ease up!). "
             "I can&rsquo;t remember a single class where we didn&rsquo;t laugh. "
             "She makes learning a whole new language fun. Who could ask for more?"),
-  "who": "Karin Liiv",
+  "who": "Kadi Liiv",
   "foot": "Learning Portuguese at Patio &nbsp;&middot;&nbsp; patiolanguage.pt",
  },
  "pt": {
@@ -78,7 +78,7 @@ TXT = {
   "quote": ("A Sofia sabe exatamente quando me desafiar (e quando aliviar!). "
             "N&atilde;o me lembro de uma &uacute;nica aula em que n&atilde;o nos tenhamos rido. "
             "Ela torna divertido aprender uma l&iacute;ngua nova. Quem podia pedir mais?"),
-  "who": "Karin Liiv",
+  "who": "Kadi Liiv",
   "foot": "A aprender portugu&ecirc;s no Patio &nbsp;&middot;&nbsp; patiolanguage.pt",
  },
 }

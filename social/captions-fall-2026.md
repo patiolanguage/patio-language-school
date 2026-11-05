@@ -111,18 +111,18 @@ Inscrições abertas para o outono 👉 patiolanguage.pt
 
 ---
 
-## 4. Testimonial (Karin Liiv)
+## 4. Testimonial (Kadi Liiv)
 Graphics (pick one look):
 - Neutral cream card, teal quote, no photo: `patio-testimonial-plain-story/ig/fb-*` (EN), `patio-testimonial-plain-pt-*` (PT)
 - Bright photo of Sofia laughing: `patio-testimonial-karin-story/ig/fb-*` (EN), `patio-testimonial-karin-pt-*` (PT)
 
-The graphics carry a shortened pull-quote; the captions below use Karin's full quote.
+The graphics carry a shortened pull-quote; the captions below use Kadi's full quote.
 
 ### English
 "What students say" 💛
 
 "Sofia is a deeply caring and committed teacher who knows exactly when to push my edge (and when to ease up!) as I learn Portuguese. She takes genuine delight in watching all of her students become more proficient and, best of all, I cannot remember one single class over the last year in which we did not laugh uproariously. She makes the challenge of learning a brand-new language fun. Who could ask for more?"
-— Karin Liiv
+— Kadi Liiv
 
 Fall term starts 21 September. Come and laugh your way to Portuguese with us. 👉 patiolanguage.pt
 
@@ -132,7 +132,7 @@ Fall term starts 21 September. Come and laugh your way to Portuguese with us. �
 "O que dizem os alunos" 💛
 
 "A Sofia é uma professora dedicada e atenta, que sabe exatamente quando me desafiar (e quando aliviar!) enquanto aprendo português. Sente uma alegria genuína ao ver os alunos a progredir e, melhor ainda, não me lembro de uma única aula neste último ano em que não nos tenhamos rido às gargalhadas. Ela torna divertido o desafio de aprender uma língua nova. Quem podia pedir mais?"
-— Karin Liiv
+— Kadi Liiv
 
 As aulas de outono começam a 21 de setembro. Vem aprender português a rir connosco. 👉 patiolanguage.pt
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Testimonial post (Karin Liiv) for Patio Language School.
+"""Testimonial post (Kadi Liiv) for Patio Language School.
 IG portrait 1080x1350 + IG story 1080x1920 + FB square 1080x1080.
 Photo: class-conversation.jpg (Sofia laughing with a student) - matches the
 'we laugh every class' quote. No em dashes (brand rule).
@@ -91,7 +91,7 @@ TXT = {
   "quote": ("Sofia knows exactly when to push my edge (and when to ease up!) as I "
             "learn Portuguese. I can&rsquo;t remember one single class where we did "
             "not laugh. She makes learning a brand-new language fun."),
-  "who": "Karin Liiv",
+  "who": "Kadi Liiv",
   "foot": "Learning Portuguese at Patio &nbsp;&middot;&nbsp; patiolanguage.pt",
  },
  "pt": {
@@ -100,7 +100,7 @@ TXT = {
             "medida que aprendo portugu&ecirc;s. N&atilde;o me lembro de uma &uacute;nica "
             "aula em que n&atilde;o nos tenhamos rido. Ela torna divertido aprender "
             "uma l&iacute;ngua nova."),
-  "who": "Karin Liiv",
+  "who": "Kadi Liiv",
   "foot": "A aprender portugu&ecirc;s no Patio &nbsp;&middot;&nbsp; patiolanguage.pt",
  },
 }
